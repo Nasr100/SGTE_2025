@@ -42,8 +42,7 @@
               "RelativeToolTip": "User-Service\\Program.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAAAAFcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T15:51:25.209Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T15:51:25.209Z"
             },
             {
               "$type": "Document",
@@ -55,8 +54,7 @@
               "RelativeToolTip": "User-Service\\Services\\Auth\\IAuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T15:30:13.122Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T15:30:13.122Z"
             },
             {
               "$type": "Document",
@@ -68,8 +66,7 @@
               "RelativeToolTip": "User-Service\\Services\\Auth\\AuthService.cs",
               "ViewState": "AgIAAFAAAAAAAAAAAAAwwGIAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T15:29:38.963Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T15:29:38.963Z"
             },
             {
               "$type": "Document",
@@ -79,7 +76,7 @@
               "RelativeDocumentMoniker": "User-Service\\Controllers\\AuthController.cs",
               "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Controllers\\AuthController.cs",
               "RelativeToolTip": "User-Service\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwBYAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-23T13:55:32.427Z",
               "EditorCaption": ""

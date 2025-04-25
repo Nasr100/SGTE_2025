@@ -1,0 +1,85 @@
+<div class="min-h-screen grid grid-rows-[auto_1fr_auto] lg:gap-y-10 gap-y-30 py-7 md:px10 lg:px-18 px-5 ">
+    <header class="">
+        <h1 class="text-4xl font-bold tracking-wider">LOGO</h1>
+    </header>
+     <main class="grid lg:grid-cols-2 gap-x-5">
+        <div class=" bg-neutral-300 rounded-lg hidden lg:block w-full" >
+
+        </div>
+        <div class="flex lg:items-center justify-center ">
+            <form action=""  tuiForm="l" [formGroup]="loginForm" class="w-full lg:w-150" (ngSubmit)="this.login()">
+            <header>
+                <h3  class="text-3xl font-semibold">
+                    LOGIN
+                </h3>
+            <span class="text-xs font-light">Form with large controls</span>
+
+            </header>
+            <tui-textfield>
+                <label tuiLabel>Email</label>
+                <input
+                    formControlName="Email"
+                    placeholder="Entrer email"
+                    tuiTextfield
+                />
+                
+            </tui-textfield>
+            <tui-error formControlName="Email" [error]="[] | tuiFieldError | async" >
+                <ng-template let-error>
+                    <span *ngIf="error == 'required'">Email is required</span>
+                    <span *ngIf="error == 'email'">Please enter a valid email</span>
+                  </ng-template>
+            </tui-error>
+            <fieldset>
+                
+                    <tui-textfield>
+                        <label tuiLabel>password</label>
+                        <input
+                            formControlName="Password"
+                            tuiTextfield
+                            placeholder="Entrer mot de passe"
+                            type="password"
+                        />
+                        <tui-icon tuiPassword />
+                        
+                    </tui-textfield>
+            </fieldset>
+            <tui-error formControlName="Password" [error]="[] | tuiFieldError | async">
+                <ng-template let-error>
+                    <span *ngIf="error === 'required'">password is required</span>
+                  </ng-template>
+            </tui-error>
+
+            <div tuiGroup [collapsed]="true">
+            <label tuiBlock>
+                Employee
+                <input
+                    formControlName="LayoutType"
+                    tuiRadio
+                    type="radio"
+                    value="Admin"
+                    [style.margin-left]="'auto'"
+                />
+            </label>
+            <label tuiBlock>
+                Admin
+                <input
+                    formControlName="LayoutType"
+                    tuiRadio
+                    type="radio"
+                    value="Employee"
+                    [style.margin-left]="'auto'"
+                />
+            </label>
+        </div>
+        <footer>
+            <button
+            tuiButton 
+            type="submit" class="w-full" [disabled]="this.loginForm.invalid">
+            Login
+        </button>
+        </footer>
+            </form>
+        </div>
+     </main>
+</div>
