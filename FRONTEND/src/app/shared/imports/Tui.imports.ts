@@ -19,6 +19,7 @@ import {
     TuiPassword,
     TuiRadio,
     TuiTooltip,
+    
 } from '@taiga-ui/kit';
 import {TuiForm, TuiHeader} from '@taiga-ui/layout';
 import {
@@ -33,7 +34,11 @@ import {
 } from '@taiga-ui/legacy';
 import { TuiValidationError } from '@taiga-ui/cdk/classes';
 import { TuiValidator } from '@taiga-ui/cdk/directives/validator';
-
+import {
+    CdkFixedSizeVirtualScroll,
+    CdkVirtualForOf,
+    CdkVirtualScrollViewport,
+} from '@angular/cdk/scrolling';
 
 export const TUI_IMPOTS = [
 
@@ -67,4 +72,7 @@ export const TUI_IMPOTS = [
     TuiFieldErrorPipe,
     TuiFieldErrorContentPipe,
     TuiValidator,
+    CdkFixedSizeVirtualScroll,
+    CdkVirtualForOf,
+    CdkVirtualScrollViewport,
 ]

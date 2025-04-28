@@ -35,8 +35,12 @@
               "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
               "node_modules/@taiga-ui/core/styles/taiga-ui-fonts.less",
               "src/styles.css"
+
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/lodash/lodash.min.js",
+              "node_modules/preline/dist/index.js"
+            ]
           },
           "configurations": {
             "production": {

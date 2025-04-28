@@ -1,28 +1,31 @@
-<div class="navbar bg-base-100 shadow-sm">
-    <div class="flex-1">
-      <a class="btn btn-ghost text-xl">daisyUI</a>
+<div class="navbar shadow-sm md:px-20 fixed">
+
+    <div class="flex-1 pl-2 ">
+      <span class="md:hidden cursor-pointer" (click)="toggleSideBar()"><i class="fa-solid fa-bars text-2xl "></i></span>
+      <a class="font-bold text-2xl ml-5 md:ml-0">LOGO</a>
     </div>
-    <div class="flex gap-2">
-      <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
-      <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+    <div class="flex gap-2 relative">
+      <div class="dropdown dropdown-end ">
+        <div role="button" tabindex="0" class="cursor-pointer btn-circle avatar items-center gap-x-2 md:gap-x-3">
           <div class="w-10 rounded-full">
             <img
-              alt="Tailwind CSS Navbar component"
+              alt="Profile image"
               src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
           </div>
+          <p class="text-lg font-medium hidden lg:block">Nasrallah Benkhali</p>
+          <i class="fa-solid fa-chevron-down"></i>
         </div>
         <ul
           tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+          class="menu menu-sm dropdown-content  rounded-box bg-white mt-3 w-52 p-2 shadow ">
           <li>
             <a class="justify-between">
               Profile
-              <span class="badge">New</span>
+              <!-- <span class="badge">New</span> -->
             </a>
           </li>
-          <li><a>Settings</a></li>
-          <li><a>Logout</a></li>
+          <!-- <li><a>Settings</a></li> -->
+          <li><a class="active:bg-amber-300">Logout</a></li>
         </ul>
       </div>
     </div>

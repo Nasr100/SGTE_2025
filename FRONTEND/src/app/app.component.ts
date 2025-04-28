@@ -1,6 +1,6 @@
 import { TuiRoot } from "@taiga-ui/core";
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {  Component, OnInit, } from '@angular/core';
+import { RouterOutlet ,Router,Event,NavigationEnd } from '@angular/router';
 import { LoginComponent } from "./pages/login/login.component";
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 
@@ -10,6 +10,26 @@ import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.compon
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent  implements OnInit {
   title = 'FRONTEND';
+  constructor(private router: Router) {
+    
+  }
+
+  
+
+  ngOnInit() {
+
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        setTimeout(() => {
+          if (window.HSStaticMethods) {
+              window.HSStaticMethods.autoInit();
+          }
+        }, 300);
+      }
+    });
+  }
+    
+
 }
