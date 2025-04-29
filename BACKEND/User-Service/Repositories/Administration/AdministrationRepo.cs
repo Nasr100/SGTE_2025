@@ -36,9 +36,9 @@ namespace User_Service.Repositories.Administration
             return administration;
         }
 
-        public async Task<List<Models.Administration>> GetAll()
+        public  IQueryable<Models.Administration> GetAll()
         {
-            var administrations = await _context.Administrations.Where(e=>!e.Employee.IsDeleted).Include(e=>e.Employee.Roles).ToListAsync();
+            var administrations = _context.Administrations.Where(e=>!e.Employee.IsDeleted).Include(e=>e.Employee.Roles).AsQueryable();
             return administrations;
         }
 

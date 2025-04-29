@@ -1,4 +1,7 @@
-﻿using Mapster;
+﻿using Gridify;
+using Mapster;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 using Shared.Dtos;
 using User_Service.Models;
 using User_Service.Repositories.Administration;
@@ -20,10 +23,13 @@ namespace User_Service.Services.Administration
 
             return responseModel;
         }
-        public async Task<List<AdministrationResponse>>  GetAll()
+        public  Paging<AdministrationResponse> GetAll(GridifyQuery gridifyQuery)
         {
-            var response = await _administrationService.GetAll();
-            return response.Adapt<List<AdministrationResponse>>();
+           
+                var response = _administrationService.GetAll().Gridify(gridifyQuery);
+                return response.Adapt<Paging<AdministrationResponse>>();
+            
+        
         }
 
         public async Task<AdministrationResponse> GetById(int id)

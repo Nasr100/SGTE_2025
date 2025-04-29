@@ -4,5 +4,5 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 
 export const routes: Routes = [
     {path:"login",component:LoginComponent},
-    {path:"Admin",component:AdminLayoutComponent,children:[]}
+    {path:"Admin",loadChildren:()=>import('./features/administrations/administration.routes').then(r=>r.administrations)}
 ];

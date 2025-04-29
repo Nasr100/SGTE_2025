@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Gridify;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -26,12 +27,24 @@ namespace User_Service.Controllers
             await _administrationService.Add(administration);
             return Ok("Administration added succefully");
         }
-        [Authorize(Roles ="Admin")]
+        //[Authorize(Roles ="Admin")]
         [HttpGet]
-        public async Task<ActionResult> GetAll()
+        public  ActionResult GetAll([FromQuery] GridifyQuery gridifyQuery)
         {
-            var response = await _administrationService.GetAll();
-            return Ok(response);
+            try
+            {
+                var response = _administrationService.GetAll(gridifyQuery);
+                return Ok(response);
+            }
+            catch ( Exception ex)
+            {
+                //if(ex is GridifyMapperException)
+                //return BadRequest(ex.Message);
+                //if(ex is GridifyFilteringException)
+                return BadRequest(ex.Message);
+            }
+           
+            
         }
 
         [HttpGet("{id}")]

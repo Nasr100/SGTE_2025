@@ -1,11 +1,12 @@
-﻿using Shared.Dtos;
+﻿using Gridify;
+using Shared.Dtos;
 
 namespace User_Service.Services.Administration
 {
     public interface IAdministrationService
     {
         public Task<AdministrationResponse> Add(AdministrationRequest administration);
-        public  Task<List<AdministrationResponse>> GetAll();
+        public Paging<AdministrationResponse> GetAll(GridifyQuery gridifyQuery);
         public Task<AdministrationResponse> GetById(int id);
         public Task Delete(int id);
         public Task<AdministrationResponse> Update(int id, AdministrationRequest administration);
