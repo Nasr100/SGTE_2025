@@ -98,6 +98,11 @@ namespace User_Service.Migrations
                         .HasColumnType("datetime(6)")
                         .HasColumnName("access_token_expiry");
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("address");
+
                     b.Property<string>("BadgeNumber")
                         .IsRequired()
                         .HasColumnType("longtext")
@@ -151,28 +156,13 @@ namespace User_Service.Migrations
                     b.Property<DateTime?>("Updated_at")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<bool>("isAdmin")
+                        .HasColumnType("tinyint(1)")
+                        .HasColumnName("is_admin");
+
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
-                });
-
-            modelBuilder.Entity("User_Service.Models.Role", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("RoleName")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("role");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("User_Service.Models.Worker", b =>
@@ -201,21 +191,6 @@ namespace User_Service.Migrations
                     b.HasIndex("EmployeeId");
 
                     b.ToTable("Workers");
-                });
-
-            modelBuilder.Entity("roles_employees", b =>
-                {
-                    b.Property<int>("EmployeesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RolesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("EmployeesId", "RolesId");
-
-                    b.HasIndex("RolesId");
-
-                    b.ToTable("roles_employees");
                 });
 
             modelBuilder.Entity("User_Service.Models.Administration", b =>
@@ -249,21 +224,6 @@ namespace User_Service.Migrations
                         .IsRequired();
 
                     b.Navigation("Employee");
-                });
-
-            modelBuilder.Entity("roles_employees", b =>
-                {
-                    b.HasOne("User_Service.Models.Employee", null)
-                        .WithMany()
-                        .HasForeignKey("EmployeesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("User_Service.Models.Role", null)
-                        .WithMany()
-                        .HasForeignKey("RolesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

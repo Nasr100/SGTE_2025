@@ -9,7 +9,7 @@ using User_Service.Services.Administration;
 
 namespace User_Service.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/user/[controller]")]
     [ApiController]
     public class AdministrationController : ControllerBase
     {
@@ -38,9 +38,7 @@ namespace User_Service.Controllers
             }
             catch ( Exception ex)
             {
-                //if(ex is GridifyMapperException)
-                //return BadRequest(ex.Message);
-                //if(ex is GridifyFilteringException)
+
                 return BadRequest(ex.Message);
             }
            
@@ -50,8 +48,16 @@ namespace User_Service.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetById(int id)
         {
-            var response = await _administrationService.GetById(id);
-            return Ok(response);
+            try
+            {
+                var response = await _administrationService.GetById(id);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        
         }
 
         [HttpDelete("{id}")]

@@ -20,6 +20,6 @@ namespace User_Service.Models
 
         [Column("stop_id")]
         public int? StopId { get; set; }
-
+       
     }
 }

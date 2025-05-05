@@ -1,13 +1,13 @@
-import { Employee } from "../models/employee.model";
+import { EmployeeRequest, EmployeeResponse } from "./Employee.dto";
 
 export interface AdministartionRequest{
     departement:string;
-    employee:Employee;
+    employee:EmployeeRequest;
 }
 
 
 export interface AdministartionResponse{
     id:number;
     departement:string;
-    employee:Employee;
+    employee:EmployeeResponse;
 }

@@ -2,9 +2,9 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { env } from '../../../../environments/environment.dev';
 import { GridifyRequest, GridifyResponse } from '../../../shared/types/Dtos/gridify.dto';
-import { Administrations } from '../types/administration.model';
 import { Observable } from 'rxjs';
-import { AdministartionResponse } from '../../../shared/types/Dtos/administration.dto';
+import { AdministartionRequest, AdministartionResponse } from '../../../shared/types/Dtos/administration.dto';
+import { makeEmployeeRequest } from '../../../shared/helpers/GridifyRequestBuilder';
 
 @Injectable({
   providedIn: 'root'
@@ -13,31 +13,28 @@ export class AdministrationService {
 
   constructor(private client:HttpClient) { }
    
-  url:string = `${env.apiBaseUrl}/Administration`;
+  url:string = `${env.apiBaseUrl}/user/Administration`;
 
   getAdministrations(query:GridifyRequest):Observable<GridifyResponse<AdministartionResponse>>{
-    const searchfilter = query.search ? `employee.firstname=*${query.search}|employee.lastname=*${query.search}` : '';
-let concatFilter:string = "";
-    let params = new HttpParams()
-      .set('page', query.pagination.getPageNumber())
-      .set('pageSize', query.pagination.getPageSize());
+    const params = makeEmployeeRequest(query,[{field:"employee.badgeNumber",type:"string"},{field:"employee.firstname",type:"string"},{field:"employee.lastname",type:"string"}]);
+    return this.client.get<GridifyResponse<AdministartionResponse>>(this.url,{params});
+  }
 
-    if (query.filters) {
-      concatFilter = query.filters;
-      params = params.set('filter', concatFilter);
+  addAdministration(administrationReq:AdministartionRequest){
+    return this.client.post(this.url,administrationReq);
+  }
 
-    }
-    if(query.search){
-      if(concatFilter.length != 0){
-        concatFilter += 'and';
-      }
-      concatFilter +=searchfilter;
-      params = params.set('filter', concatFilter);
-    }
+  updateAdministration(id:number,administrationReq:AdministartionRequest){
+    return this.client.put(this.url,{id,administrationReq})
+  }
 
-    if (query.sort) {
-      params = params.set('sort', query.sort);
-    }
-    return this.client.get<GridifyResponse<AdministartionResponse>>(this.url, {params});
+  deleteAdministration(id:number){
+    return this.client.put(this.url,id)
+  }
+
+  getAdministrationById(id:number):Observable<GridifyResponse<AdministartionResponse>>{
+   const params:HttpParams = new HttpParams()
+      .set("id", id.toString())
+    return this.client.get<GridifyResponse<AdministartionResponse>>(`${this.url}/${id}`);
   }
 }

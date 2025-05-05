@@ -18,7 +18,7 @@ import { env } from '../../../environments/environment.dev';
 })
 export class LoginComponent {
   loginForm!:FormGroup;
-  constructor(private fb:FormBuilder,private authService:AuthService,private sessionService:SessionService){
+  constructor(private authService:AuthService,private sessionService:SessionService){
     this.loginForm = new FormGroup({
         Email:new FormControl('',[Validators.email,Validators.required]),
         Password:new FormControl('',[Validators.required]),

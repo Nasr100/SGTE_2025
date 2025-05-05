@@ -1,0 +1,15 @@
+{
+
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:7043",
+        "RequestIdKey": "OcelotRequestId",
+        "RateLimitOptions": {
+            "DisableRateLimitHeaders": false,
+            "QuotaExceededMessage": "API rate limit exceeded",
+            "HttpStatusCode": 429,
+            "ClientIdHeader": "X-ClientId",
+            "EnableRateLimiting": true,
+            "StackBlockedRequests": false
+        }
+    }
+}

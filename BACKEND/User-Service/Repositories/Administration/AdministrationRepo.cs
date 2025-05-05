@@ -28,7 +28,7 @@ namespace User_Service.Repositories.Administration
 
         public async Task<Models.Administration> GetAdministrationById(int id)
         {
-           var administration =  await _context.Administrations.Include(e=>e.Employee.Roles).FirstOrDefaultAsync(e=>e.Id == id);
+           var administration =  await _context.Administrations.Include(e=>e.Employee).FirstOrDefaultAsync(e=>e.Id == id);
             if (administration == null)
             {
                 throw new InvalidOperationException("administration member with the id "+id+"not found");
@@ -38,7 +38,7 @@ namespace User_Service.Repositories.Administration
 
         public  IQueryable<Models.Administration> GetAll()
         {
-            var administrations = _context.Administrations.Where(e=>!e.Employee.IsDeleted).Include(e=>e.Employee.Roles).AsQueryable();
+            var administrations = _context.Administrations.Where(e=>!e.Employee.IsDeleted).AsQueryable();
             return administrations;
         }
 

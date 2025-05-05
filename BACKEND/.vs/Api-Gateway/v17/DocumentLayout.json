@@ -3,40 +3,44 @@
   "WorkspaceRootPath": "D:\\PFE\\CODE-BASE\\BACKEND\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|d:\\pfe\\code-base\\backend\\user-service\\controllers\\administrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|solutionrelative:user-service\\controllers\\administrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|d:\\pfe\\code-base\\backend\\user-service\\repositories\\administration\\administrationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|solutionrelative:user-service\\repositories\\administration\\administrationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|d:\\pfe\\code-base\\backend\\user-service\\services\\administration\\administrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|solutionrelative:user-service\\services\\administration\\administrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|d:\\pfe\\code-base\\backend\\user-service\\controllers\\administrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|solutionrelative:user-service\\controllers\\administrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|d:\\pfe\\code-base\\backend\\user-service\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|solutionrelative:user-service\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|d:\\pfe\\code-base\\backend\\user-service\\services\\administration\\iadministrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|solutionrelative:user-service\\services\\administration\\iadministrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D6E998F-0CA0-404B-B514-B1AF4DE9EF0C}|Api-Gateway\\Api-Gateway.csproj|d:\\pfe\\code-base\\backend\\api-gateway\\ocelotconfiguration\\ocelot.user.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2D6E998F-0CA0-404B-B514-B1AF4DE9EF0C}|Api-Gateway\\Api-Gateway.csproj|solutionrelative:api-gateway\\ocelotconfiguration\\ocelot.user.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|d:\\pfe\\code-base\\backend\\user-service\\repositories\\administration\\administrationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|solutionrelative:user-service\\repositories\\administration\\administrationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D6E998F-0CA0-404B-B514-B1AF4DE9EF0C}|Api-Gateway\\Api-Gateway.csproj|d:\\pfe\\code-base\\backend\\api-gateway\\ocelotconfiguration\\ocelot.global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2D6E998F-0CA0-404B-B514-B1AF4DE9EF0C}|Api-Gateway\\Api-Gateway.csproj|solutionrelative:api-gateway\\ocelotconfiguration\\ocelot.global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|d:\\pfe\\code-base\\backend\\user-service\\repositories\\administration\\iadministrationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|solutionrelative:user-service\\repositories\\administration\\iadministrationrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|d:\\pfe\\code-base\\backend\\user-service\\controllers\\drivercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|solutionrelative:user-service\\controllers\\drivercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D6E998F-0CA0-404B-B514-B1AF4DE9EF0C}|Api-Gateway\\Api-Gateway.csproj|d:\\pfe\\code-base\\backend\\api-gateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D6E998F-0CA0-404B-B514-B1AF4DE9EF0C}|Api-Gateway\\Api-Gateway.csproj|solutionrelative:api-gateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|d:\\pfe\\code-base\\backend\\user-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|solutionrelative:user-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|d:\\pfe\\code-base\\backend\\user-service\\services\\auth\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|solutionrelative:user-service\\services\\auth\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|d:\\pfe\\code-base\\backend\\user-service\\services\\auth\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|solutionrelative:user-service\\services\\auth\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|d:\\pfe\\code-base\\backend\\user-service\\repositories\\worker\\workerrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7F0543B-99BA-41F5-91A6-1E4E07B75B4A}|User-Service\\User-Service.csproj|solutionrelative:user-service\\repositories\\worker\\workerrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,8 +49,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 201,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 224,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,29 +58,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IAdministrationService.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Services\\Administration\\IAdministrationService.cs",
-              "RelativeDocumentMoniker": "User-Service\\Services\\Administration\\IAdministrationService.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Services\\Administration\\IAdministrationService.cs",
-              "RelativeToolTip": "User-Service\\Services\\Administration\\IAdministrationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AdministrationRepo.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Repositories\\Administration\\AdministrationRepo.cs",
+              "RelativeDocumentMoniker": "User-Service\\Repositories\\Administration\\AdministrationRepo.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Repositories\\Administration\\AdministrationRepo.cs",
+              "RelativeToolTip": "User-Service\\Repositories\\Administration\\AdministrationRepo.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAcwEAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T13:02:13.201Z",
+              "WhenOpened": "2025-05-03T14:37:45.068Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "User-Service\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "User-Service\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowDoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T19:32:04.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ocelot.user.json",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Api-Gateway\\OcelotConfiguration\\ocelot.user.json",
+              "RelativeDocumentMoniker": "Api-Gateway\\OcelotConfiguration\\ocelot.user.json",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Api-Gateway\\OcelotConfiguration\\ocelot.user.json",
+              "RelativeToolTip": "Api-Gateway\\OcelotConfiguration\\ocelot.user.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-01T14:39:11.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AdministrationController.cs",
               "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Controllers\\AdministrationController.cs",
               "RelativeDocumentMoniker": "User-Service\\Controllers\\AdministrationController.cs",
               "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Controllers\\AdministrationController.cs",
               "RelativeToolTip": "User-Service\\Controllers\\AdministrationController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAowBUAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowDEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T10:43:43.751Z",
+              "WhenOpened": "2025-05-01T13:59:51.566Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DriverController.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Controllers\\DriverController.cs",
+              "RelativeDocumentMoniker": "User-Service\\Controllers\\DriverController.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Controllers\\DriverController.cs",
+              "RelativeToolTip": "User-Service\\Controllers\\DriverController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T13:59:05.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ocelot.global.json",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Api-Gateway\\OcelotConfiguration\\ocelot.global.json",
+              "RelativeDocumentMoniker": "Api-Gateway\\OcelotConfiguration\\ocelot.global.json",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Api-Gateway\\OcelotConfiguration\\ocelot.global.json",
+              "RelativeToolTip": "Api-Gateway\\OcelotConfiguration\\ocelot.global.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-01T13:52:42.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Api-Gateway\\Program.cs",
+              "RelativeDocumentMoniker": "Api-Gateway\\Program.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Api-Gateway\\Program.cs",
+              "RelativeToolTip": "Api-Gateway\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T12:56:12.996Z"
             },
             {
               "$type": "Document",
@@ -86,86 +154,34 @@
               "RelativeDocumentMoniker": "User-Service\\Services\\Administration\\AdministrationService.cs",
               "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Services\\Administration\\AdministrationService.cs",
               "RelativeToolTip": "User-Service\\Services\\Administration\\AdministrationService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB4AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T10:21:54.306Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IAdministrationRepo.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Repositories\\Administration\\IAdministrationRepo.cs",
-              "RelativeDocumentMoniker": "User-Service\\Repositories\\Administration\\IAdministrationRepo.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Repositories\\Administration\\IAdministrationRepo.cs",
-              "RelativeToolTip": "User-Service\\Repositories\\Administration\\IAdministrationRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T10:21:37.364Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AdministrationRepo.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Repositories\\Administration\\AdministrationRepo.cs",
-              "RelativeDocumentMoniker": "User-Service\\Repositories\\Administration\\AdministrationRepo.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Repositories\\Administration\\AdministrationRepo.cs",
-              "RelativeToolTip": "User-Service\\Repositories\\Administration\\AdministrationRepo.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T10:18:47.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Program.cs",
-              "RelativeDocumentMoniker": "User-Service\\Program.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Program.cs",
-              "RelativeToolTip": "User-Service\\Program.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAFcAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T15:51:25.209Z",
+              "WhenOpened": "2025-04-30T14:45:16.206Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Services\\Auth\\IAuthService.cs",
-              "RelativeDocumentMoniker": "User-Service\\Services\\Auth\\IAuthService.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Services\\Auth\\IAuthService.cs",
-              "RelativeToolTip": "User-Service\\Services\\Auth\\IAuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Program.cs",
+              "RelativeDocumentMoniker": "User-Service\\Program.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Program.cs",
+              "RelativeToolTip": "User-Service\\Program.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAFcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T15:30:13.122Z"
+              "WhenOpened": "2025-04-30T14:43:51.394Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Services\\Auth\\AuthService.cs",
-              "RelativeDocumentMoniker": "User-Service\\Services\\Auth\\AuthService.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Services\\Auth\\AuthService.cs",
-              "RelativeToolTip": "User-Service\\Services\\Auth\\AuthService.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAwwGIAAABIAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "WorkerRepo.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Repositories\\Worker\\WorkerRepo.cs",
+              "RelativeDocumentMoniker": "User-Service\\Repositories\\Worker\\WorkerRepo.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Repositories\\Worker\\WorkerRepo.cs",
+              "RelativeToolTip": "User-Service\\Repositories\\Worker\\WorkerRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T15:29:38.963Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "User-Service\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\User-Service\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "User-Service\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwCMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T13:55:32.427Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T14:33:08.276Z"
             }
           ]
         }

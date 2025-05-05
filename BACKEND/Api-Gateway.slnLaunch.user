@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Start All ",
+    "Projects": [
+      {
+        "Path": "Api-Gateway\\Api-Gateway.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "User-Service\\User-Service.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

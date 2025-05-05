@@ -6,8 +6,10 @@ export interface Employee{
      lastName:string;
      phoneNumber:string;
      badgeNumber:string;
-     roles:Array<Role>;
+    //  roles:Array<Role>;
      email:string;
      password:string;
+     address:string;
+     isAdmin:boolean;
 
 } 

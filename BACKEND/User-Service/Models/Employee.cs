@@ -11,6 +11,8 @@ namespace User_Service.Models
         [Required]
         [Column("first_name")]
         public required string FirstName { get; set; }
+        [Column("address")]
+        public required string Address {  get; set; }
         [Required]
         [Column("last_name")]
         public required string LastName { get; set; }
@@ -43,8 +45,11 @@ namespace User_Service.Models
         public bool IsDeleted { get; set; } = false;
         public DateTime Created_at { get; set; } = DateTime.UtcNow;
         public DateTime? Updated_at { get; set; } = null;
+        [Column("is_admin")]
+        public bool isAdmin { get; set; }
 
-        public List<Role> Roles { get; set; } = [];
+
+        //public List<Role> Roles { get; set; } = [];
 
 
     }

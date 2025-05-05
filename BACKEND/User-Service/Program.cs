@@ -9,6 +9,9 @@ using Scalar.AspNetCore;
 using Serilog;
 using User_Service.Repositories.Employee;
 using User_Service.Services.Auth;
+using User_Service.Repositories.Driver;
+using User_Service.Services.Driver;
+using User_Service.Repositories.Worker;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,9 +20,12 @@ builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration));
 //services
 builder.Services.AddScoped<IAdministrationRepo,AdministrationRepo>();
-builder.Services.AddScoped<IAdministrationService, AdministrationService>();
-
+builder.Services.AddScoped<IDriverRepo, DriverRepo>();
 builder.Services.AddScoped<IEmployeeRepo, EmployeeRepo>();
+builder.Services.AddScoped<IWorkerRepo,WorkerRepo>();
+
+builder.Services.AddScoped<IAdministrationService, AdministrationService>();
+builder.Services.AddScoped<IDriverService, DriverService>();
 
 builder.Services.AddScoped<IAuthService,AuthService>();
 

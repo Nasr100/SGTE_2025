@@ -6,7 +6,7 @@ using User_Service.Repositories.Employee;
 using User_Service.Services.Auth;
 namespace User_Service.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/user/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {
@@ -47,5 +47,15 @@ namespace User_Service.Controllers
                 return BadRequest($"{ex.Message}");
             } 
         }
+
+        //[HttpPost("Logout")]
+        //public async Task<ActionResult> Logout(int id)
+        //{
+        //    try
+        //    {
+
+        //    }
+        //}
+      
     }
 }

@@ -17,7 +17,7 @@ namespace User_Service.Repositories.Employee
         public async Task<Models.Employee> GetByEmail(string email)
         {
 
-            var administration = await _context.Employees.Include(e=>e.Roles).FirstOrDefaultAsync(e => e.Email == email);
+            var administration = await _context.Employees.FirstOrDefaultAsync(e => e.Email == email);
             if (administration == null)
             {
                 throw new KeyNotFoundException("Email not found");

@@ -50,13 +50,13 @@ namespace User_Service.Data
            .HasConversion<string>();
 
 
-            modelBuilder.Entity<Employee>().HasMany(d => d.Roles).WithMany(d => d.Employees).UsingEntity("roles_employees");
+            //modelBuilder.Entity<Employee>().HasMany(d => d.Roles).WithMany(d => d.Employees).UsingEntity("roles_employees");
 
         }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Administration> Administrations { get; set; }  
-        public DbSet<Role> Roles { get; set; }
+        //public DbSet<Role> Roles { get; set; }
     }
 }

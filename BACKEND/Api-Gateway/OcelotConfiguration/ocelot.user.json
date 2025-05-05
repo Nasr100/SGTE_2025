@@ -1,0 +1,26 @@
+{
+    "Routes": [
+        // Administration
+        {
+            "DownstreamPathTemplate": "/api/user/Administration/{everything}",
+            "DownstreamScheme": "https",
+            "RateLimitOptions": {
+                "Limit": 3,
+                "Period": "10s",
+                "EnableRateLimiting": true,
+                "PeriodTimeSpan": 10
+            },
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7115
+                }
+            ],
+            "UpstreamPathTemplate": "/users/Administration/{everything}",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "PATCH" ]
+
+        }
+    ]
+
+
+}

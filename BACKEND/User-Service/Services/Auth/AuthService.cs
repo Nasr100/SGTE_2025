@@ -51,13 +51,13 @@ namespace User_Service.Services.Auth
             {
                 new Claim(ClaimTypes.NameIdentifier, employee.Id.ToString()),
                 new Claim(ClaimTypes.Email, employee.Email),
+               
             };
-
-            foreach (var role in employee.Roles) 
+            if (employee.isAdmin)
             {
-               claims.Add(new Claim(ClaimTypes.Role, role.RoleName));
-
+                claims.Add(new Claim(ClaimTypes.Role, "Admin"));
             }
+
         
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtSettings:SecretKey"]!));

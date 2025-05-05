@@ -16,6 +16,9 @@ namespace Shared.Dtos
         [Required]
         public required string LastName { get; set; }
         [Required]
+        public required string Address { get; set; }
+
+        [Required]
         [Phone]
         public required string PhoneNumber { get; set; }
         [Required]

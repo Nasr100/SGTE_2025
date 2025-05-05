@@ -1,0 +1,86 @@
+<div class="h-screen p-12 ">
+    <div class="h-full border-gray-200 border-2 rounded-lg p-10">
+        
+            <form  class="flex-col flex  h-full" [formGroup]="this.administrationForm">
+                <div class="flex-grow">
+                    <div class="mb-15">
+                        <h2 class="text-3xl font-semibold underline text-black">Employee Informations</h2>
+                        <div class="w-full pt-10">
+                            <div class="grid grid-cols-3 gap-10 px-5">
+                                <div class="">
+                                     <label for="" class="ml-1 text-lg text-gray-900 tracking-wider">Badge number*</label>
+                                    <input type="text" formControlName="badgeNumber" placeholder="Badge number" class="block w-full rounded-lg border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"/>
+                                    <span class="text-red-400" *ngIf="administrationForm.get('badgeNumber')?.errors?.['required'] && administrationForm.get('badgeNumber')?.touched">Badge number Required</span>
+                                </div>
+                                <div class="">
+                                        <label for="" class="ml-1 text-lg text-gray-900 tracking-wider">First Name*</label>
+                                        <input type="text" placeholder="first name" formControlName="firstName" class="block w-full rounded-lg border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"/>
+                                        <span class="text-red-400" *ngIf="administrationForm.get('firstName')?.errors?.['required'] && administrationForm.get('firstName')?.touched">First name Required</span>
+                                </div>
+                                    <div class="">
+                                        <label for="" class="ml-1 text-lg text-gray-900 tracking-wider">Last Name*</label>
+                                        <input type="text" placeholder="Badge number" formControlName="lastName" class="block w-full rounded-lg border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"/>
+                                        <span class="text-red-400" *ngIf="administrationForm.get('lastName')?.errors?.['required'] && administrationForm.get('lastName')?.touched">Last name Required</span>
+                                    </div>
+                                   
+                                    <div class="">
+                                        <label for="" class="ml-1 text-lg text-gray-900 tracking-wider">Phone number*</label>
+                                        <input type="text" placeholder="Badge number" formControlName="phoneNumber" class="block w-full rounded-lg border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"/>
+                                        <span class="text-red-400" *ngIf="administrationForm.get('phoneNumber')?.errors?.['required'] && administrationForm.get('phoneNumber')?.touched">phone number Required</span>
+                                    </div>
+                                    <div class="">
+                                        <label for="" class="ml-1 text-lg text-gray-900 tracking-wider">Address*</label>
+                                        <input type="text" placeholder="Badge number" formControlName="address" class="block w-full rounded-lg border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"/>
+                                        <span class="text-red-400" *ngIf="administrationForm.get('address')?.errors?.['required'] && administrationForm.get('adress')?.touched">Adress Required</span>
+                                    </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="">
+                        <h2 class="text-3xl font-semibold underline text-black">Employee Account</h2>
+                        <div class="w-full pt-10">
+                            <div class="grid grid-cols-2 gap-10 px-5">
+                                <div class="">
+                                     <label for="" class="ml-1 text-lg text-gray-900 tracking-wider">Email*</label>
+                                    <input type="text" placeholder="Badge number" formControlName="email" class="block w-full rounded-lg border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"/>
+                                    <span class="text-red-400" *ngIf="administrationForm.get('email')?.errors?.['required'] && administrationForm.get('email')?.touched">email Required</span>
+                                    <span class="text-red-400" *ngIf="administrationForm.get('email')?.errors?.['email'] && administrationForm.get('email')?.touched">email </span>
+                                </div>
+                                <div class="">
+                                        <label for="" class="ml-1 text-lg text-gray-900 tracking-wider">Password*</label>
+                                        <div class="relative">
+                                            <input type="password" placeholder="Badge number" formControlName="password" class="block w-full rounded-lg border ps-3  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"  />
+                                            <div class="absolute right-3 top-1/2 transform  -translate-y-1/2 cursor-pointer">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye">
+                                                  <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/>
+                                                  <circle cx="12" cy="12" r="3"/>
+                                                </svg>
+                                              </div>
+                                              <span class="text-red-400" *ngIf="administrationForm.get('password')?.errors?.['required'] && administrationForm.get('password')?.touched">password Required</span>
+                                              <span class="text-red-400" *ngIf="administrationForm.get('password')?.errors?.['minlength'] && administrationForm.get('password')?.touched">password too short</span>
+
+                                        </div>
+
+                                </div>
+                                <div class="flex items-center  gap-3">
+                                    <label for="" class="ml-1 text-lg text-gray-900 tracking-wider">Admin</label>
+                                    <input type="checkbox" formControlName="isAdmin" class="block w-5 h-5 cursor-pointer border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-white ring-4 ring-transparent transition placeholder:text-neutral-500"/>
+                                </div>
+                                    
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-auto px-5 flex justify-end">
+                    <button type="submit"  (click)="this.onSubmit()" class="cursor-pointer active:mt-0.5 text-white bg-gray-800 hover:bg-gray-900   font-medium rounded-lg text-sm px-6 py-3.5 me-2 mb-2  dark:hover:bg-gray-700  dark:border-gray-700">Save Employee</button>
+
+                </div>
+            </form>
+         
+        
+        
+    </div>
+        
+</div>
