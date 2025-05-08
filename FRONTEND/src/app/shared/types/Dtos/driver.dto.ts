@@ -4,7 +4,7 @@ import { EmployeeRequest } from "./Employee.dto";
 export interface DriverRequest{
     employee:EmployeeRequest;
     licenceNumber:string;
-    permis:permisType;
+    permisType:permisType;
 }
 
 
@@ -12,5 +12,5 @@ export interface DriverResponse{
     id:number;
     employee:EmployeeRequest;
     licenceNumber:string;
-    permis:permisType;
+    permisType:permisType;
 }

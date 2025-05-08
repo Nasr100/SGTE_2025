@@ -23,7 +23,7 @@ namespace Shared.Dtos
         public int  Id { get; set; }
         public required string Departement { get; set; }
 
-        public EmployeeRequest? Employee { get; set; }
+        public EmployeeResponse? Employee { get; set; }
 
         public int? StopId { get; set; } = null;
     }

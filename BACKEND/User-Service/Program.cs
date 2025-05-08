@@ -12,6 +12,7 @@ using User_Service.Services.Auth;
 using User_Service.Repositories.Driver;
 using User_Service.Services.Driver;
 using User_Service.Repositories.Worker;
+using User_Service.Services.Worker;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,7 @@ builder.Services.AddScoped<IWorkerRepo,WorkerRepo>();
 
 builder.Services.AddScoped<IAdministrationService, AdministrationService>();
 builder.Services.AddScoped<IDriverService, DriverService>();
+builder.Services.AddScoped<IWorkerService, WorkerService>();
 
 builder.Services.AddScoped<IAuthService,AuthService>();
 

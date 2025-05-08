@@ -1,14 +1,13 @@
-import { Component,effect,inject, OnInit, signal} from '@angular/core';
+import { Component,effect,inject, OnInit, signal, TemplateRef, ViewChild} from '@angular/core';
 import { TUI_IMPOTS } from '../../../shared/imports/Tui.imports';
 import { FORM_IMPORTS } from '../../../shared/imports/Form.imports';
 import { AdministrationService } from '../services/administration.service';
 import { Pagination } from '../../../shared/helpers/pagination';
-import { AdministartionResponse } from '../../../shared/types/Dtos/administration.dto';
-import {TuiDialogService} from '@taiga-ui/core';
-import { TuiDialogContext, TuiDialogSize } from '@taiga-ui/core';
-import type {PolymorpheusContent} from '@taiga-ui/polymorpheus';
+import { AdministartionRequest, AdministartionResponse } from '../../../shared/types/Dtos/administration.dto';
+import {TuiAlertService, TuiDialogService} from '@taiga-ui/core';
 import { AddFormComponent } from "./add-form/add-form.component";
-import { RouterLink,RouterModule } from '@angular/router';
+import {RouterModule } from '@angular/router';
+import { catchError, switchMap, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-administrations',
@@ -17,20 +16,20 @@ import { RouterLink,RouterModule } from '@angular/router';
   styleUrl: './administrations.component.css'
 })
 export class AdministrationsComponent implements OnInit{
-  
+  @ViewChild('addForm') addForm!: TemplateRef<any>;
+
   administration = signal<AdministartionResponse[]>([]);
   search=signal('') ;
   pagination= signal( new Pagination());
   count = signal(0);
 
- constructor(private administrationService:AdministrationService){
+ constructor(private administrationService:AdministrationService,private readonly dialogService: TuiDialogService){
 
   effect(()=>{
     let paginationValue = this.pagination();
     let searchValue = this.search();
     this.administrationService.getAdministrations({pagination:paginationValue,search:searchValue}).subscribe(data=>{
       this.administration.set(data.data);
-      console.log(data.data);
       this.count.set(data.count);
     })
 
@@ -73,18 +72,31 @@ Onsearch(event:Event){
   })
  }
 
- private readonly dialogs = inject(TuiDialogService);
- 
- protected onClick(
-     content: PolymorpheusContent<TuiDialogContext>,
-     size: TuiDialogSize,
- ): void {
-     this.dialogs
-         .open(content, {
-             size,
-         })
-         .subscribe(res=>{console.log(res)});
+   private readonly alerts = inject(TuiAlertService);
+
+ openAddForm(){
+  this.dialogService.open<AdministartionRequest>(this.addForm,{
+        size: 'page',
+        dismissible: true,
+        closeable: true,
+        data:null
+      }).subscribe((result: AdministartionRequest) => {
+        if(result){
+            
+            this.administrationService.addAdministration(result).subscribe({
+              next: (res) => {
+                this.administration.update((current) => [...current, res]);
+                this.alerts.open("Successfully added");
+              },
+              error: (err) => {
+                this.alerts.open('Add failed');
+                console.error('Add failed:', err);
+              }
+            });
+      }
+    });
  }
+
   
 }
 

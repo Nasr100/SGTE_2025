@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using Shared.Dtos;
 using User_Service.Models;
 using User_Service.Services.Administration;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace User_Service.Controllers
 {
@@ -24,8 +25,8 @@ namespace User_Service.Controllers
         [HttpPost]
         public async Task<ActionResult> addAdministration(AdministrationRequest administration)
         {
-            await _administrationService.Add(administration);
-            return Ok("Administration added succefully");
+            var administa = await _administrationService.Add(administration);
+            return Ok(administa);
         }
         //[Authorize(Roles ="Admin")]
         [HttpGet]
@@ -76,10 +77,16 @@ namespace User_Service.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Update(int id, [FromBody] AdministrationRequest administration)
+        public async Task<ActionResult> Update([FromRoute]int id, [FromBody] AdministrationRequest administration)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState.Values);
+            }
             try
             {
+                _logger.LogInformation("DEP" + administration.Departement);
+
                 var response = await _administrationService.Update(id, administration);
                 return Ok(response);
 

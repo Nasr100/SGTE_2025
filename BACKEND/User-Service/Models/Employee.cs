@@ -49,7 +49,6 @@ namespace User_Service.Models
         public bool isAdmin { get; set; }
 
 
-        //public List<Role> Roles { get; set; } = [];
 
 
     }

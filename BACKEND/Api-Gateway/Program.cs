@@ -15,7 +15,18 @@ builder.Configuration.
     .AddJsonFile("OcelotConfiguration/ocelot.user.json", optional: false, reloadOnChange: true)
     .AddEnvironmentVariables()
     ;
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularDevClient",
+        builder =>
+        {
+            builder
+                .WithOrigins("http://localhost:4200") // Angular dev server
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+        });
+});
 builder.Services.AddOcelot(builder.Configuration);
 var app = builder.Build();
 
@@ -24,6 +35,7 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+app.UseCors("AllowAngularDevClient");
 
 app.UseOcelot().Wait();
 app.UseHttpsRedirection();

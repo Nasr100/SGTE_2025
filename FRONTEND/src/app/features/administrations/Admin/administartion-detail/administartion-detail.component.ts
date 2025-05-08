@@ -5,9 +5,9 @@ import { TUI_CONFIRM, TuiConfirmData } from '@taiga-ui/kit';
 import { catchError, map,switchMap,throwError } from 'rxjs';
 import { AdministrationService } from '../../services/administration.service';
 import { ROUTER_IMPORT } from '../../../../shared/imports/Router.imports';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AddFormComponent } from "../add-form/add-form.component";
-import { AdministartionResponse } from '../../../../shared/types/Dtos/administration.dto';
+import { AdministartionRequest, AdministartionResponse } from '../../../../shared/types/Dtos/administration.dto';
 
 @Component({
   selector: 'app-administartion-detail',
@@ -18,8 +18,8 @@ import { AdministartionResponse } from '../../../../shared/types/Dtos/administra
 export class AdministartionDetailComponent implements OnInit{
   @ViewChild('editForm') EditForm!: TemplateRef<any>;
   AdministartionId!:number;
-  AdministrationMember!:any;
-  constructor(private administrationService:AdministrationService,private route: ActivatedRoute,private readonly dialogService: TuiDialogService){
+  AdministrationMember?:AdministartionResponse ;
+  constructor(private administrationService:AdministrationService,private route: ActivatedRoute,private readonly dialogService: TuiDialogService,private router:Router){
 
   }
   
@@ -28,9 +28,8 @@ export class AdministartionDetailComponent implements OnInit{
       this.AdministartionId = Number( param.get('id'));
     })
     
-    this.administrationService.getAdministrationById(3).subscribe(res=>{
+    this.administrationService.getAdministrationById(this.AdministartionId).subscribe(res=>{
       this.AdministrationMember = res;
-      // console.log(this.AdministrationMember)
     });
 
   }
@@ -38,19 +37,25 @@ export class AdministartionDetailComponent implements OnInit{
   private readonly alerts = inject(TuiAlertService);
 
   openEditForm() {
-    this.dialogService.open(this.EditForm,{
+    this.dialogService.open<AdministartionRequest>(this.EditForm,{
       size: 'page',
       dismissible: true,
       closeable: true,
       data:this.AdministrationMember
-    }).subscribe(result => {
-        console.log(result)
+    }).subscribe((result: AdministartionRequest) => {
+      if(result){
+        this.administrationService.updateAdministration(this.AdministartionId,result).pipe(
+          switchMap((res) => this.alerts.open("Successfully Updated")),
+          catchError(err=>{
+            this.alerts.open('Update failed');
+          return throwError(err);})
+        ).subscribe()
+      }
   });
   }
 
 
 onClick() {
-   
       const data: TuiConfirmData = {
         content:
         '',
@@ -80,7 +85,7 @@ onClick() {
     }))
     .subscribe();
     
-
+    this.router.navigate(["/Admin/administration"]);
   }
 
 

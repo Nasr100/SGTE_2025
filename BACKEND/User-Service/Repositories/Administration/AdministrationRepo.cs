@@ -38,13 +38,16 @@ namespace User_Service.Repositories.Administration
 
         public  IQueryable<Models.Administration> GetAll()
         {
-            var administrations = _context.Administrations.Where(e=>!e.Employee.IsDeleted).AsQueryable();
+            var administrations = _context.Administrations.Where(e=>!e.Employee.IsDeleted).Include(e=>e.Employee).AsQueryable();
             return administrations;
         }
 
         public async Task Delete(int id)
         {
-            var member = await GetAdministrationById(id);
+          
+                var member = await GetAdministrationById(id);
+
+        
             _logger.LogInformation("member = "+member.EmployeeId);
             member.Employee.IsDeleted = true;
              _context.Administrations.Update(member);
@@ -54,8 +57,8 @@ namespace User_Service.Repositories.Administration
         public async Task<AdministrationResponse> UpdateAdministration(int id, AdministrationRequest administration)
         {
             var member = await GetAdministrationById(id);
-            member = administration.Adapt<Models.Administration>();
-            _context.Administrations.Update(member);
+           administration.Adapt(member);
+             //_context.Administrations.Update(member);
             await _context.SaveChangesAsync();
             return member.Adapt<AdministrationResponse>();
 

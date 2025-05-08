@@ -2,49 +2,50 @@
 using Mapster;
 using Shared.Dtos;
 using User_Service.Repositories.Driver;
+using User_Service.Repositories.Worker;
 
 namespace User_Service.Services.Worker
 {
-    public class WorkerService
+    public class WorkerService: IWorkerService
     {
-        private readonly IDriverRepo _adriverRepo;
-        public WorkerService(IDriverRepo adriverRepo)
+        private readonly IWorkerRepo _workerRepo;
+        public WorkerService(IWorkerRepo adriverRepo)
         {
-            _adriverRepo = adriverRepo;
+            _workerRepo = adriverRepo;
         }
 
-        public async Task<DriverResponse> Add(DriverRequest driverRequest)
+        public async Task<WorkerResponse> Add(WorkerRequest workerRequest)
         {
-            var responseModel = await _adriverRepo.AddDriver(driverRequest);
+            var responseModel = await _workerRepo.AddWorker(workerRequest);
 
             return responseModel;
         }
 
-        public Paging<DriverResponse> GetAll(GridifyQuery gridifyQuery)
+        public Paging<WorkerResponse> GetAll(GridifyQuery gridifyQuery)
         {
-            var response = _adriverRepo.GetAll().Gridify(gridifyQuery);
-            return response.Adapt<Paging<DriverResponse>>();
+            var response = _workerRepo.GetAll().Gridify(gridifyQuery);
+            return response.Adapt<Paging<WorkerResponse>>();
         }
 
-        public async Task<DriverResponse> GetById(int id)
+        public async Task<WorkerResponse> GetById(int id)
         {
-            var response = await _adriverRepo.GetDriverById(id);
-            return response.Adapt<DriverResponse>();
+            var response = await _workerRepo.GetWorkerById(id);
+            return response.Adapt<WorkerResponse>();
         }
 
-        public async Task<DriverResponse> Update(int id, DriverRequest driverRequest)
+        public async Task<WorkerResponse> Update(int id, WorkerRequest workerRequest)
         {
-            var response = await _adriverRepo.UpdateDriver(id, driverRequest);
+            var response = await _workerRepo.UpdateWorker(id, workerRequest);
             return response;
         }
         public async Task Delete(int id)
         {
-            await _adriverRepo.Delete(id);
+            await _workerRepo.Delete(id);
         }
 
-        public async Task<DriverResponse> PartialUpdate(int id, Dictionary<string, object> updates)
+        public async Task<WorkerResponse> PartialUpdate(int id, Dictionary<string, object> updates)
         {
-            var response = await _adriverRepo.PartialUpdateAsync(id, updates);
+            var response = await _workerRepo.PartialUpdateAsync(id, updates);
             return response;
         }
     }

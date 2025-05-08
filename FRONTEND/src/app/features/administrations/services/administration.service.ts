@@ -13,28 +13,26 @@ export class AdministrationService {
 
   constructor(private client:HttpClient) { }
    
-  url:string = `${env.apiBaseUrl}/user/Administration`;
+  url:string = `${env.apiBaseUrl}/users/administration`;
 
   getAdministrations(query:GridifyRequest):Observable<GridifyResponse<AdministartionResponse>>{
     const params = makeEmployeeRequest(query,[{field:"employee.badgeNumber",type:"string"},{field:"employee.firstname",type:"string"},{field:"employee.lastname",type:"string"}]);
     return this.client.get<GridifyResponse<AdministartionResponse>>(this.url,{params});
   }
 
-  addAdministration(administrationReq:AdministartionRequest){
-    return this.client.post(this.url,administrationReq);
+  addAdministration(administrationReq:AdministartionRequest):Observable<AdministartionResponse>{
+    return this.client.post<AdministartionResponse>(this.url,administrationReq);
   }
 
   updateAdministration(id:number,administrationReq:AdministartionRequest){
-    return this.client.put(this.url,{id,administrationReq})
+    return this.client.put(`${this.url}/${id}`,{administrationReq})
   }
 
   deleteAdministration(id:number){
-    return this.client.put(this.url,id)
+    return this.client.delete(`${this.url}/${id}`)
   }
 
-  getAdministrationById(id:number):Observable<GridifyResponse<AdministartionResponse>>{
-   const params:HttpParams = new HttpParams()
-      .set("id", id.toString())
-    return this.client.get<GridifyResponse<AdministartionResponse>>(`${this.url}/${id}`);
+  getAdministrationById(id:number):Observable<AdministartionResponse>{
+    return this.client.get<AdministartionResponse>(`${this.url}/${id}`);
   }
 }

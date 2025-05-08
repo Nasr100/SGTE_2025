@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Shared.Dtos;
 using User_Service.Data;
+using User_Service.Models;
 
 namespace User_Service.Repositories.Driver
 {
@@ -26,7 +27,7 @@ namespace User_Service.Repositories.Driver
 
         public async Task<Models.Driver> GetDriverById(int id)
         {
-            var driver = await _context.Drivers.FirstOrDefaultAsync(e => e.Id == id);
+            var driver = await _context.Drivers.Include(e=>e.Employee).FirstOrDefaultAsync(e => e.Id == id);
             if (driver == null)
             {
                 throw new InvalidOperationException("administration member with the id " + id + "not found");
@@ -36,7 +37,7 @@ namespace User_Service.Repositories.Driver
 
         public IQueryable<Models.Driver> GetAll()
         {
-            var driver = _context.Drivers.Where(e => !e.Employee.IsDeleted).AsQueryable();
+            var driver = _context.Drivers.Where(e => !e.Employee.IsDeleted).Include(e => e.Employee).AsQueryable();
             return driver;
         }
 
@@ -51,12 +52,13 @@ namespace User_Service.Repositories.Driver
         public async Task<DriverResponse> UpdateDriver(int id, DriverRequest driverRequest)
         {
             var driver = await GetDriverById(id);
-            driver = driverRequest.Adapt<Models.Driver>();
-            _context.Drivers.Update(driver);
+            driverRequest.Adapt(driver);
             await _context.SaveChangesAsync();
             return driver.Adapt<DriverResponse>();
 
         }
+
+       
 
         public async Task<DriverResponse> PartialUpdateAsync(int id, Dictionary<string, object> updates)
         {

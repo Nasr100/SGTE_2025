@@ -4,19 +4,59 @@
         {
             "DownstreamPathTemplate": "/api/user/Administration/{everything}",
             "DownstreamScheme": "https",
-            "RateLimitOptions": {
-                "Limit": 3,
-                "Period": "10s",
-                "EnableRateLimiting": true,
-                "PeriodTimeSpan": 10
-            },
+            //"RateLimitOptions": {
+            //    "Limit": 3,
+            //    "Period": "10s",
+            //    "EnableRateLimiting": true,
+            //    "PeriodTimeSpan": 10
+            //},
             "DownstreamHostAndPorts": [
                 {
                     "Host": "localhost",
                     "Port": 7115
                 }
             ],
-            "UpstreamPathTemplate": "/users/Administration/{everything}",
+            "UpstreamPathTemplate": "/users/administration/{everything}",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "PATCH" ]
+
+        },
+        // Driver
+        {
+            "DownstreamPathTemplate": "/api/user/Driver/{everything}",
+            "DownstreamScheme": "https",
+            //"RateLimitOptions": {
+            //    "Limit": 3,
+            //    "Period": "10s",
+            //    "EnableRateLimiting": true,
+            //    "PeriodTimeSpan": 10
+            //},
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7115
+                }
+            ],
+            "UpstreamPathTemplate": "/users/driver/{everything}",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "PATCH" ]
+
+        },
+        // Worker
+        {
+            "DownstreamPathTemplate": "/api/user/Worker/{everything}",
+            "DownstreamScheme": "https",
+            //"RateLimitOptions": {
+            //    "Limit": 3,
+            //    "Period": "10s",
+            //    "EnableRateLimiting": true,
+            //    "PeriodTimeSpan": 10
+            //},
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7115
+                }
+            ],
+            "UpstreamPathTemplate": "/users/worker/{everything}",
             "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "PATCH" ]
 
         }

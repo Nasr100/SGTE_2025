@@ -25,7 +25,7 @@ namespace User_Service.Repositories.Worker
 
         public async Task<Models.Worker> GetWorkerById(int id)
         {
-            var worker = await _context.Workers.FirstOrDefaultAsync(e => e.Id == id);
+            var worker = await _context.Workers.Include(e => e.Employee).FirstOrDefaultAsync(e => e.Id == id);
             if (worker == null)
             {
                 throw new InvalidOperationException("worker  with the id " + id + "not found");
@@ -35,7 +35,7 @@ namespace User_Service.Repositories.Worker
 
         public IQueryable<Models.Worker> GetAll()
         {
-            var worker = _context.Workers.Where(e => !e.Employee.IsDeleted).AsQueryable();
+            var worker = _context.Workers.Where(e => !e.Employee.IsDeleted).Include(e => e.Employee).AsQueryable();
             return worker;
         }
 
@@ -47,11 +47,10 @@ namespace User_Service.Repositories.Worker
             await _context.SaveChangesAsync();
         }
 
-        public async Task<WorkerResponse> UpdateAdministration(int id, WorkerRequest workerRequest)
+        public async Task<WorkerResponse> UpdateWorker(int id, WorkerRequest workerRequest)
         {
             var member = await GetWorkerById(id);
-            member = workerRequest.Adapt<Models.Worker>();
-            _context.Workers.Update(member);
+            workerRequest.Adapt(member);
             await _context.SaveChangesAsync();
             return member.Adapt<WorkerResponse>();
 

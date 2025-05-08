@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User-Service", "User-Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{F4266A0C-C58F-47F9-B8D1-55F699CDDF99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Route-Service", "Route-Service\Route-Service.csproj", "{94389265-0B1E-42E7-9988-E68D690C754F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{F4266A0C-C58F-47F9-B8D1-55F699CDDF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4266A0C-C58F-47F9-B8D1-55F699CDDF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4266A0C-C58F-47F9-B8D1-55F699CDDF99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94389265-0B1E-42E7-9988-E68D690C754F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94389265-0B1E-42E7-9988-E68D690C754F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94389265-0B1E-42E7-9988-E68D690C754F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94389265-0B1E-42E7-9988-E68D690C754F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

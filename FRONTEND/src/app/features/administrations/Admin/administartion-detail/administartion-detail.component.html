@@ -18,30 +18,35 @@
             <div class="">
                 <div class="mb-5">
                     <p class="font-bold text-xl ">First Name</p> 
-                     <p class="text-lg">Nasrallah</p> 
+                     <p class="text-lg">{{AdministrationMember?.employee?.firstName}}</p> 
                 </div>
                 <div class="mb-5 ">
                     <p class="text-xl font-bold">Address</p> 
-                    <p class="text-lg">2 RUE TOKYO</p> 
+                    <p class="text-lg">{{AdministrationMember?.employee?.address}}</p> 
                 </div>
                 <div class="mb-5 ">
                     <p class="text-xl font-bold">Email</p> 
-                    <p class="text-lg">nasr&#64;gmail.com</p> 
+                    <p class="text-lg">{{AdministrationMember?.employee?.email}}</p> 
                 </div>
+                <div class="mb-5">
+                    <p class="text-xl font-bold"> Departement</p> 
+                    <p class="text-lg">{{AdministrationMember?.departement}}</p> 
+                 </div>
             </div>
             <div class="">
                 <div class=" mb-5">
                     <p class="text-xl font-bold">Last Name</p> 
-                    <p class="text-lg">Benkhali</p> 
+                    <p class="text-lg">{{AdministrationMember?.employee?.lastName}}</p> 
                 </div>
                 <div class="mb-5">
                     <p class="text-xl font-bold"> Phone</p> 
-                    <p class="text-lg">+212 687985456</p> 
+                    <p class="text-lg">{{AdministrationMember?.employee?.phoneNumber}}</p> 
                  </div>
                 <div class="mb-5">
                     <p class="text-xl font-bold"> Password</p> 
-                    <p class="text-lg">azaduhdzjefkzdpod:ù</p> 
+                    <p class="text-lg">{{AdministrationMember?.employee?.password}}</p> 
                  </div>
+               
             </div>
            
             

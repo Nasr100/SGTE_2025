@@ -12,15 +12,27 @@ import { makeEmployeeRequest } from '../../../shared/helpers/GridifyRequestBuild
 export class DriverService {
 
   constructor(private client:HttpClient) { }
-    url:string = `${env.apiBaseUrl}/Driver`;
+    url:string = `${env.apiBaseUrl}/users/driver`;
 
     getDrivers(query:GridifyRequest):Observable<GridifyResponse<DriverResponse>>{
       const params = makeEmployeeRequest(query,[{field:"employee.badgeNumber",type:"string"},{field:"employee.firstname",type:"string"},{field:"employee.lastname",type:"string"}]);
           return this.client.get<GridifyResponse<DriverResponse>>(this.url,{params}); 
     }
 
-    addDriver(driver:DriverRequest){
-      return this.client.post(this.url,driver);
+    addDriver(driver:DriverRequest):Observable<DriverResponse>{
+      return this.client.post<DriverResponse>(this.url,driver);
+    }
+
+    updateDriver(id:number,driver:DriverRequest){
+      return this.client.put(`${this.url}/${id}`,driver);
+    }
+
+    deleteDriver(id:number){
+      return this.client.delete(`${this.url}/${id}`)
+    }
+
+    getDriverbyId(id:number):Observable<DriverResponse>{
+      return this.client.get<DriverResponse>(`${this.url}/${id}`);
     }
 
 }

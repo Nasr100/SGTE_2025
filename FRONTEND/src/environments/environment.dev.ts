@@ -1,5 +1,5 @@
 export const env = {
-    apiBaseUrl : "https://localhost:7115/api",
+    apiBaseUrl : "https://localhost:7043",
     authTokenKey: 'SGTE_AUTH_TOKEN',
     production: false,
 }

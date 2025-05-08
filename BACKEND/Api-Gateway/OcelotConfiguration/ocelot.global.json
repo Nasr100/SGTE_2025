@@ -10,6 +10,14 @@
             "ClientIdHeader": "X-ClientId",
             "EnableRateLimiting": true,
             "StackBlockedRequests": false
+        },
+        "AllowCORS": true,
+        "CorsPolicy": {
+            "AllowedOrigins": [ "http://localhost:4200" ],
+            "AllowedMethods": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ],
+            "AllowedHeaders": [ "Content-Type", "Authorization" ],
+            "ExposedHeaders": [ "Content-Disposition" ],
+            "AllowCredentials": true
         }
     }
 }

@@ -1,4 +1,3 @@
-import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 import { AdministrationsComponent } from './Admin/administrations.component';
 import { AdministartionDetailComponent } from './Admin/administartion-detail/administartion-detail.component';
