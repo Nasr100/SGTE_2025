@@ -1,0 +1,44 @@
+{
+    "Routes": [
+        // Bus
+        {
+            "DownstreamPathTemplate": "/api/routes/Bus/{everything}",
+            "DownstreamScheme": "https",
+            //"RateLimitOptions": {
+            //    "Limit": 3,
+            //    "Period": "10s",
+            //    "EnableRateLimiting": true,
+            //    "PeriodTimeSpan": 10
+            //},
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7043
+                }
+            ],
+            "UpstreamPathTemplate": "/routes/bus/{everything}",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "PATCH" ]
+
+        },
+        // Stop
+        {
+            "DownstreamPathTemplate": "/api/routes/Stop/{everything}",
+            "DownstreamScheme": "https",
+            //"RateLimitOptions": {
+            //    "Limit": 3,
+            //    "Period": "10s",
+            //    "EnableRateLimiting": true,
+            //    "PeriodTimeSpan": 10
+            //},
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7043
+                }
+            ],
+            "UpstreamPathTemplate": "/routes/stop/{everything}",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "PATCH" ]
+
+        }
+    ]
+}

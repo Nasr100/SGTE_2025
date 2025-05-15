@@ -11,10 +11,11 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Configuration.
-    AddJsonFile("OcelotConfiguration/ocelot.global.json", optional: false, reloadOnChange: true)
+     AddJsonFile("OcelotConfiguration/ocelot.global.json", optional: false, reloadOnChange: true)
     .AddJsonFile("OcelotConfiguration/ocelot.user.json", optional: false, reloadOnChange: true)
-    .AddEnvironmentVariables()
-    ;
+    .AddJsonFile("OcelotConfiguration/ocelot.route.json", optional: false, reloadOnChange: true)
+    .AddEnvironmentVariables();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularDevClient",

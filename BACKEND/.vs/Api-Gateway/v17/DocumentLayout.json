@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "D:\\PFE\\CODE-BASE\\BACKEND\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|d:\\pfe\\code-base\\backend\\route-service\\reposetories\\stop\\stoprepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|solutionrelative:route-service\\reposetories\\stop\\stoprepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|d:\\pfe\\code-base\\backend\\route-service\\reposetories\\stop\\istoprepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|solutionrelative:route-service\\reposetories\\stop\\istoprepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|d:\\pfe\\code-base\\backend\\route-service\\controllers\\stopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|solutionrelative:route-service\\controllers\\stopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|d:\\pfe\\code-base\\backend\\route-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|solutionrelative:route-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|d:\\pfe\\code-base\\backend\\route-service\\models\\stop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|solutionrelative:route-service\\models\\stop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|d:\\pfe\\code-base\\backend\\route-service\\migrations\\20250514173000_description column stop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|solutionrelative:route-service\\migrations\\20250514173000_description column stop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,82 +13,24 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 235,
+          "DockedWidth": 276,
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Program.cs",
-              "RelativeDocumentMoniker": "Route-Service\\Program.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Program.cs",
-              "RelativeToolTip": "Route-Service\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T20:09:15.979Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IStopRepo.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Reposetories\\Stop\\IStopRepo.cs",
-              "RelativeDocumentMoniker": "Route-Service\\Reposetories\\Stop\\IStopRepo.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Reposetories\\Stop\\IStopRepo.cs",
-              "RelativeToolTip": "Route-Service\\Reposetories\\Stop\\IStopRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T20:08:06.744Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StopController.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Controllers\\StopController.cs",
-              "RelativeDocumentMoniker": "Route-Service\\Controllers\\StopController.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Controllers\\StopController.cs",
-              "RelativeToolTip": "Route-Service\\Controllers\\StopController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T19:53:44.693Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Stop.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Models\\Stop.cs",
-              "RelativeDocumentMoniker": "Route-Service\\Models\\Stop.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Models\\Stop.cs",
-              "RelativeToolTip": "Route-Service\\Models\\Stop.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T15:08:24.058Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 235,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StopRepo.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Reposetories\\Stop\\StopRepo.cs",
-              "RelativeDocumentMoniker": "Route-Service\\Reposetories\\Stop\\StopRepo.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Reposetories\\Stop\\StopRepo.cs",
-              "RelativeToolTip": "Route-Service\\Reposetories\\Stop\\StopRepo.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowCwAAAAVAAAAAAAAAA==",
+              "Title": "20250514173000_description column Stop.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Migrations\\20250514173000_description column Stop.cs",
+              "RelativeDocumentMoniker": "Route-Service\\Migrations\\20250514173000_description column Stop.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Migrations\\20250514173000_description column Stop.cs",
+              "RelativeToolTip": "Route-Service\\Migrations\\20250514173000_description column Stop.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T19:54:24.56Z",
+              "WhenOpened": "2025-05-14T17:30:00.962Z",
               "EditorCaption": ""
             }
           ]

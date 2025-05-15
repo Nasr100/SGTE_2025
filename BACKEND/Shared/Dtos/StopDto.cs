@@ -13,14 +13,14 @@ namespace Shared.Dtos
         [Required]
         public required string Name { get; set; }
         public  string? Address { get; set; }
+        public  string? Description { get; set; }
+
         [Required]
         public required decimal x { get; set; }
         [Required]
         public required decimal y { get; set; }
         public string? Status { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime? UpdatedAt { get; set; } = null;
-        public bool IsDeleted { get; set; } = false;
+      
     }
 
     public class StopResponse
@@ -28,11 +28,10 @@ namespace Shared.Dtos
         public int Id { get; set; }
         public required string Name { get; set; }
         public string? Address { get; set; }
+        public string? Description { get; set; }
         public required decimal x { get; set; }
         public required decimal y { get; set; }
         public string? Status { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime? UpdatedAt { get; set; } = null;
-        public bool IsDeleted { get; set; } = false;
+        
     }
 }

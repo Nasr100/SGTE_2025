@@ -14,7 +14,7 @@ namespace Shared.Dtos
         public required string Number { get; set; }
         [Required]
         public required string Plate { get; set; }
-
+        public int? RouteId { get; set; }
         public short? StartYear { get; set; }
         public string? Status { get; set; }
     }
@@ -24,7 +24,7 @@ namespace Shared.Dtos
         public int Id { get; set; }
         public required string Number { get; set; }
         public required string Plate { get; set; }
-
+        public RouteStopsResponse? RouteStops { get; set; }
         public short? StartYear { get; set; }
         public string? Status { get; set; }
     }

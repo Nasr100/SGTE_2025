@@ -9,6 +9,10 @@
       {
         "Path": "User-Service\\User-Service.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "Route-Service\\Route-Service.csproj",
+        "Action": "Start"
       }
     ]
   }

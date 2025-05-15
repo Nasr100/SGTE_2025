@@ -1,0 +1,302 @@
+2025-05-14 16:58:38.752 +01:00 [INF] Now listening on: https://localhost:7025
+2025-05-14 16:58:38.800 +01:00 [INF] Now listening on: http://localhost:5067
+2025-05-14 16:58:38.847 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-14 16:58:38.858 +01:00 [INF] Hosting environment: Development
+2025-05-14 16:58:38.860 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-05-14 16:59:41.945 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 16:59:41.980 +01:00 [INF] CORS policy execution successful.
+2025-05-14 16:59:41.983 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 16:59:42.004 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 16:59:43.528 +01:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 16:59:43.585 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-05-14 16:59:43.595 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-05-14 16:59:43.660 +01:00 [INF] Executed DbCommand (14ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 16:59:43.831 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 16:59:43.866 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 1830.7189ms
+2025-05-14 16:59:43.871 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 16:59:43.887 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 1945.9376ms
+2025-05-14 17:04:45.384 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:04:45.398 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:04:45.399 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:04:45.400 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:04:45.597 +01:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:04:45.608 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:04:45.614 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:04:45.620 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 216.6313ms
+2025-05-14 17:04:45.622 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:04:45.623 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 270.305ms
+2025-05-14 17:05:34.960 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:05:34.973 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:05:34.973 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:05:34.974 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:05:35.044 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:05:35.047 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:05:35.049 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:05:35.050 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 75.043ms
+2025-05-14 17:05:35.051 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:05:35.052 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 92.1006ms
+2025-05-14 17:10:30.161 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:10:30.172 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:10:30.173 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:10:30.174 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:10:30.205 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:10:30.211 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:10:30.214 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:10:30.215 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 38.5681ms
+2025-05-14 17:10:30.217 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:10:30.218 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 57.7739ms
+2025-05-14 17:11:33.980 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:11:34.023 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:11:34.024 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:11:34.026 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:11:34.039 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:11:34.044 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:11:34.046 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:11:34.049 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 20.6542ms
+2025-05-14 17:11:34.052 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:11:34.054 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 74.543ms
+2025-05-14 17:16:40.919 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:16:40.924 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:16:40.925 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:16:40.926 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:16:40.975 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:16:40.981 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:16:40.983 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:16:40.986 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 58.8699ms
+2025-05-14 17:16:40.988 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:16:40.990 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 70.3287ms
+2025-05-14 17:19:50.978 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:19:50.982 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:19:50.983 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:19:50.984 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:19:51.009 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:19:51.014 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:19:51.017 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:19:51.019 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 33.1825ms
+2025-05-14 17:19:51.020 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:19:51.022 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 43.6944ms
+2025-05-14 17:19:57.482 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:19:57.492 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:19:57.494 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:19:57.496 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:19:57.516 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:19:57.520 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:19:57.523 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:19:57.524 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 25.7566ms
+2025-05-14 17:19:57.526 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:19:57.527 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 44.9474ms
+2025-05-14 17:20:06.931 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:20:06.940 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:20:06.941 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:20:06.944 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:20:06.957 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:20:06.961 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:20:06.963 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:20:06.965 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 18.9375ms
+2025-05-14 17:20:06.966 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:20:06.968 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 37.8983ms
+2025-05-14 17:23:33.973 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:23:34.009 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:23:34.010 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:23:34.013 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:23:34.036 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:23:34.041 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:23:34.054 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:23:34.056 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 37.4118ms
+2025-05-14 17:23:34.064 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:23:34.067 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 93.4383ms
+2025-05-14 17:24:48.795 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:24:48.798 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:24:48.799 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:24:48.800 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:24:48.811 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:24:48.814 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:24:48.817 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:24:48.818 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 16.1993ms
+2025-05-14 17:24:48.861 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:24:48.864 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 69.3678ms
+2025-05-14 17:25:27.746 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:25:27.797 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:25:27.798 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:25:27.800 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:25:27.814 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:25:27.817 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:25:27.821 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:25:27.822 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 18.356ms
+2025-05-14 17:25:27.823 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:25:27.824 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 78.9927ms
+2025-05-14 17:27:24.855 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:27:24.880 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:27:24.883 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:27:24.887 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:27:24.904 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:27:24.909 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:27:24.913 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:27:24.915 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 23.0731ms
+2025-05-14 17:27:24.924 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:27:24.925 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 99.0704ms
+2025-05-14 17:27:56.116 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:27:56.134 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:27:56.135 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:27:56.138 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:27:56.149 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:27:56.155 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:27:56.158 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:27:56.160 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 20.2854ms
+2025-05-14 17:27:56.161 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:27:56.162 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 46.3179ms
+2025-05-14 17:28:14.482 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:28:14.486 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:28:14.487 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:28:14.488 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:28:14.497 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:28:14.501 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:28:14.503 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:28:14.504 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 14.9229ms
+2025-05-14 17:28:14.506 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:28:14.507 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 25.0518ms
+2025-05-14 17:28:29.566 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-05-14 17:28:29.570 +01:00 [INF] CORS policy execution successful.
+2025-05-14 17:28:29.571 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:28:29.572 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-05-14 17:28:29.584 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-05-14 17:28:29.593 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+LIMIT @__p_1 OFFSET @__p_0
+2025-05-14 17:28:29.595 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-14 17:28:29.597 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 21.9862ms
+2025-05-14 17:28:29.598 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-05-14 17:28:29.599 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 33.5549ms
+2025-05-14 18:30:20.751 +01:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-05-14 18:30:20.789 +01:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT GET_LOCK('__route_service_db_EFMigrationsLock', 259200)
+2025-05-14 18:30:20.855 +01:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS `__EFMigrationsHistory` (
+    `MigrationId` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+    `ProductVersion` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK___EFMigrationsHistory` PRIMARY KEY (`MigrationId`)
+) CHARACTER SET=utf8mb4;
+2025-05-14 18:30:20.878 +01:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='route_service_db' AND TABLE_NAME='__EFMigrationsHistory';
+2025-05-14 18:30:20.880 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2025-05-14 18:30:20.887 +01:00 [INF] Applying migration '20250514173000_description column Stop'.
+2025-05-14 18:30:20.943 +01:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE `Stops` ADD `description` longtext CHARACTER SET utf8mb4 NULL;
+2025-05-14 18:30:20.948 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20250514173000_description column Stop', '9.0.4');
+2025-05-14 18:30:20.950 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT RELEASE_LOCK('__route_service_db_EFMigrationsLock')

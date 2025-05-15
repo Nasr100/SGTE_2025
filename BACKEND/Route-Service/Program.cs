@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Route_Service.Data;
 using Route_Service.Reposetories.Bus;
+using Route_Service.Reposetories.Route;
 using Route_Service.Reposetories.Stop;
 using Route_Service.Services.Bus;
+using Route_Service.Services.Stop;
 using Scalar.AspNetCore;
 using Serilog;
 
@@ -14,10 +16,13 @@ builder.Host.UseSerilog((context, configuration) =>
 
 builder.Services.AddScoped<IBusRepo, BusRepo>();
 builder.Services.AddScoped<IStopRepo, StopRepo>();
+builder.Services.AddScoped<IRouteRepo, RouteRepo>();
 
 
 
 builder.Services.AddScoped<IBusService, BusService>();
+builder.Services.AddScoped<IStopService, StopService>();
+
 
 
 
@@ -44,6 +49,7 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 
 var app = builder.Build();

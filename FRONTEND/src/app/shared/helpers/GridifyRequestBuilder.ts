@@ -17,7 +17,7 @@ export function makeEmployeeRequest(query:GridifyRequest,searchFields:{ field: s
     let params = new HttpParams()
       .set('page', query.pagination.getPageNumber())
       .set('pageSize', query.pagination.getPageSize());
-    if (query.search) {
+    if (query.search){
       params = params.set('filter', filters.join('|'));
     }
     

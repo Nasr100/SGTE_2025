@@ -9,6 +9,8 @@ namespace Route_Service.Models
         public int Id { get; set; }
         [Column("name")]
         public required string Name { get; set; }
+        [Column("description")]
+        public  string? Description { get; set; }
         [Column("address")]
         public required string Address { get; set; }
         [Column("longitude")]
@@ -22,6 +24,9 @@ namespace Route_Service.Models
         public DateTime? UpdatedAt { get; set; } = null;
         [Column("is_deleted")]
         public bool IsDeleted { get; set; } = false;
+        public List<Route> Routes { get; } = [];
+        public List<RouteStops> Stops { get; set; } = [];
+
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Route_Service.Models;
 
 namespace Route_Service.Data
@@ -18,8 +19,8 @@ namespace Route_Service.Data
 
             foreach (var entry in entries)
             {
-                var createdProperty = entry.Entity.GetType().GetProperty("Created_at");
-                var updatedProperty = entry.Entity.GetType().GetProperty("Updated_at");
+                var createdProperty = entry.Entity.GetType().GetProperty("CreatedAt");
+                var updatedProperty = entry.Entity.GetType().GetProperty("UpdatedAt");
 
                 if (entry.State == EntityState.Added && createdProperty != null)
                 {
@@ -50,11 +51,17 @@ namespace Route_Service.Data
           .Property(d => d.Status)
           .HasConversion<string>();
 
+            modelBuilder.Entity<Models.Route>()
+            .HasMany(e => e.Stops)
+            .WithMany(r=>r.Routes)
+            .UsingEntity<RouteStops>();
 
 
         }
 
         public DbSet<Bus> Buses { get; set; }
         public DbSet<Stop> Stops { get; set; }
+        public DbSet<Models.Route>  Routes { get; set; }
+        public DbSet<RouteStops> RouteStops { get; set; }
     }
 }

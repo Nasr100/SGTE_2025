@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "61brR563I1c=",
+  "dgSpecHash": "4gxfoQADSLU=",
   "success": true,
   "projectFilePath": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Route-Service.csproj",
   "expectedPackageFiles": [
@@ -38,7 +38,7 @@
     "C:\\Users\\nasr0\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.4\\microsoft.extensions.logging.abstractions.9.0.4.nupkg.sha512",
     "C:\\Users\\nasr0\\.nuget\\packages\\microsoft.extensions.options\\9.0.4\\microsoft.extensions.options.9.0.4.nupkg.sha512",
     "C:\\Users\\nasr0\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.4\\microsoft.extensions.primitives.9.0.4.nupkg.sha512",
-    "C:\\Users\\nasr0\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
+    "C:\\Users\\nasr0\\.nuget\\packages\\microsoft.openapi\\1.6.23\\microsoft.openapi.1.6.23.nupkg.sha512",
     "C:\\Users\\nasr0\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512",
     "C:\\Users\\nasr0\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
     "C:\\Users\\nasr0\\.nuget\\packages\\mysqlconnector\\2.4.0\\mysqlconnector.2.4.0.nupkg.sha512",
@@ -53,6 +53,8 @@
     "C:\\Users\\nasr0\\.nuget\\packages\\serilog.sinks.console\\6.0.0\\serilog.sinks.console.6.0.0.nupkg.sha512",
     "C:\\Users\\nasr0\\.nuget\\packages\\serilog.sinks.debug\\3.0.0\\serilog.sinks.debug.3.0.0.nupkg.sha512",
     "C:\\Users\\nasr0\\.nuget\\packages\\serilog.sinks.file\\6.0.0\\serilog.sinks.file.6.0.0.nupkg.sha512",
+    "C:\\Users\\nasr0\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\8.1.1\\swashbuckle.aspnetcore.swagger.8.1.1.nupkg.sha512",
+    "C:\\Users\\nasr0\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\8.1.1\\swashbuckle.aspnetcore.swaggergen.8.1.1.nupkg.sha512",
     "C:\\Users\\nasr0\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\nasr0\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
     "C:\\Users\\nasr0\\.nuget\\packages\\system.composition\\7.0.0\\system.composition.7.0.0.nupkg.sha512",

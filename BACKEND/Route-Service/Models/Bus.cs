@@ -1,19 +1,27 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Route_Service.Enums;
 
 namespace Route_Service.Models
 {
     public class Bus
     {
+       
         [Column("id")]
         public int Id { get; set; }
         [Column("number")]
         public required string Number { get; set; }
         [Column("plate")]
         public required string Plate { get; set; }
+        [Column("capacity")]
+        public required int Capacity { get; set; }
 
         [Column(name:"start_year",TypeName = "YEAR")]
         public short? StartYear { get; set; }
+        [Column("route_id")]
+        public int? RouteId { get; set; }
+        [ForeignKey("RouteId")]
+        public virtual Route? Route { get; set; }
         [Column("status")]
         public BusStatusEnum Status { get; set; } = BusStatusEnum.Active;
         [Column("created_at")]

@@ -1,0 +1,36 @@
+<div class="w-full h-full grid grid-cols-3">
+    <div class="w-full col-span-2 ">
+        <app-map [pointSignal]="point()" (stop)="getAddress($event)"></app-map>
+    </div>
+        <form action="" [formGroup]="StopForm">
+            <div class="px-5 py-10">
+                 <h2 class="text-2xl underline font-bold tracking-wide">Add Stop</h2>
+                <div class="flex flex-col pt-5">
+                    <div class="w-full max-w-lg mb-6">
+                        <label for="" class="text-lg  font-semibold">Address</label>
+                        <input (input)="getPoint($event)" formControlName="address" class="text-xl mt-4 w-full bg-transparent placeholder:text-slate-400 text-slate-700  border border-slate-200 rounded-md px-3 py-3 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Address" />
+                        <span class="text-red-400" *ngIf="StopForm.get('address')?.errors?.['required'] && StopForm.get('address')?.touched">Addresse Required</span>
+
+                    </div>
+                    <div class="w-full max-w-lg mb-6">
+                        <label for="" class="text-lg  font-semibold">Name</label>
+                        <input formControlName="name" class="text-xl mt-4 w-full bg-transparent  placeholder:text-slate-400 text-slate-700  border border-slate-200 rounded-md px-3 py-3 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Name" />
+                        <span class="text-red-400" *ngIf="StopForm.get('name')?.errors?.['required'] && StopForm.get('name')?.touched">Name Required</span>
+                    </div>
+                    <div class="w-full max-w-lg mb-6">
+                        <label for="" class="text-lg font-semibold">Description</label>
+                        <textarea 
+                        formControlName="description"
+                            name="" 
+                            class="text-xl w-full bg-transparent placeholder:text-slate-400 text-slate-700 border border-slate-200 rounded-md px-3 py-3 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" 
+                            id="" 
+                            rows="10" 
+                            placeholder="Description"></textarea>
+                    </div>
+                    <button type="button" (click)="submit()" class="active:bg-gray-900 cursor-pointer   text-white bg-gray-800 hover:bg-gray-700  font-medium rounded-lg text-sm px-20 py-3">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </form>
+</div>

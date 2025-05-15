@@ -8,7 +8,7 @@ export interface GridifyResponse<T>{
 
 
 export interface GridifyRequest{
-    filters?:string;
+    filters?:Map<string,string>;
     search:string;
     sort?:string;
     pagination:Pagination;

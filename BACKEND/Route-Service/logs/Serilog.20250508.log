@@ -1,0 +1,86 @@
+2025-05-08 17:35:39.450 +01:00 [INF] Now listening on: https://localhost:7025
+2025-05-08 17:35:39.478 +01:00 [INF] Now listening on: http://localhost:5067
+2025-05-08 17:35:39.518 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-08 17:35:39.520 +01:00 [INF] Hosting environment: Development
+2025-05-08 17:35:39.520 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-05-08 17:39:07.082 +01:00 [INF] Now listening on: https://localhost:7025
+2025-05-08 17:39:07.111 +01:00 [INF] Now listening on: http://localhost:5067
+2025-05-08 17:39:07.156 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-08 17:39:07.157 +01:00 [INF] Hosting environment: Development
+2025-05-08 17:39:07.158 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-05-08 17:40:33.296 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/v1 - null null
+2025-05-08 17:40:33.408 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-05-08 17:40:33.444 +01:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-05-08 17:40:33.451 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-05-08 17:40:33.459 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/v1 - 200 null text/html 167.3591ms
+2025-05-08 17:40:33.469 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.js - null null
+2025-05-08 17:40:33.469 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-08 17:40:33.476 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-05-08 17:40:33.469 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - null null
+2025-05-08 17:40:33.513 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2025-05-08 17:40:33.524 +01:00 [INF] Sending file with download name ''.
+2025-05-08 17:40:33.530 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 60.7019ms
+2025-05-08 17:40:33.531 +01:00 [INF] CORS policy execution failed.
+2025-05-08 17:40:33.537 +01:00 [INF] Request origin https://localhost:7025 does not have permission to access the resource.
+2025-05-08 17:40:33.541 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-05-08 17:40:33.545 +01:00 [INF] Sending file with download name ''.
+2025-05-08 17:40:33.547 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-05-08 17:40:33.550 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - 200 2212 text/javascript 80.4938ms
+2025-05-08 17:40:33.567 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-05-08 17:40:33.569 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.js - 200 2854851 text/javascript 99.9158ms
+2025-05-08 17:40:33.631 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 118.3924ms
+2025-05-08 17:40:33.704 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/openapi/v1.json - null null
+2025-05-08 17:40:33.706 +01:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-05-08 17:40:33.853 +01:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-05-08 17:40:33.855 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/openapi/v1.json - 200 null application/json;charset=utf-8 150.9841ms
+2025-05-08 17:40:34.536 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/favicon.ico - null null
+2025-05-08 17:40:34.540 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/favicon.ico - 404 0 null 4.2933ms
+2025-05-08 17:40:34.545 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/favicon.ico, Response status code: 404
+2025-05-08 17:42:06.835 +01:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-05-08 17:42:06.863 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT GET_LOCK('__route_service_db_EFMigrationsLock', 259200)
+2025-05-08 17:42:06.936 +01:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS `__EFMigrationsHistory` (
+    `MigrationId` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+    `ProductVersion` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK___EFMigrationsHistory` PRIMARY KEY (`MigrationId`)
+) CHARACTER SET=utf8mb4;
+2025-05-08 17:42:06.947 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='route_service_db' AND TABLE_NAME='__EFMigrationsHistory';
+2025-05-08 17:42:06.952 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+2025-05-08 17:42:06.957 +01:00 [INF] Applying migration '20250508164150_bus and Stop models added'.
+2025-05-08 17:42:06.975 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER DATABASE CHARACTER SET utf8mb4;
+2025-05-08 17:42:07.002 +01:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Buses` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `number` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `plate` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `start_year` YEAR NULL,
+    `status` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `created_at` datetime(6) NOT NULL,
+    `updated_at` datetime(6) NULL,
+    `is_deleted` tinyint(1) NOT NULL,
+    CONSTRAINT `PK_Buses` PRIMARY KEY (`id`)
+) CHARACTER SET=utf8mb4;
+2025-05-08 17:42:07.021 +01:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE `Stops` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `name` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `address` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `longitude` decimal(65,30) NOT NULL,
+    `latitude` decimal(65,30) NOT NULL,
+    `status` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `CreatedAt` datetime(6) NOT NULL,
+    `updated_at` datetime(6) NULL,
+    `is_deleted` tinyint(1) NOT NULL,
+    CONSTRAINT `PK_Stops` PRIMARY KEY (`id`)
+) CHARACTER SET=utf8mb4;
+2025-05-08 17:42:07.026 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20250508164150_bus and Stop models added', '9.0.4');
+2025-05-08 17:42:07.027 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT RELEASE_LOCK('__route_service_db_EFMigrationsLock')

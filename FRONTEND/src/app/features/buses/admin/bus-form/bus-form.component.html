@@ -1,0 +1,52 @@
+<div class="h-screen p-12 ">
+    <div class="h-full border-gray-200 border-2 rounded-lg p-10">
+        
+            <form  class="flex-col flex  h-full" [formGroup]="this.busForm">
+                <div class="flex-grow">
+                    <div class="mb-15">
+                        <h2 class="text-3xl font-semibold underline text-black">Bus</h2>
+                        <div class="w-full pt-10">
+                            <div class="grid grid-cols-3 gap-10 px-5">
+                                <div class="">
+                                     <label for="" class="ml-1 text-lg text-gray-900 tracking-wider">Bus Number*</label>
+                                    <input type="text" formControlName="number" placeholder="Badge number" class="block w-full rounded-lg border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"/>
+                                    <span class="text-red-400" *ngIf="busForm.get('number')?.errors?.['required'] && busForm.get('number')?.touched">Bus Number Required</span>
+                                </div>
+                                <div class="">
+                                        <label for="" class="ml-1 text-lg text-gray-900 tracking-wider">Plate Number*</label>
+                                        <input type="text" placeholder="first name" formControlName="plate" class="block w-full rounded-lg border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"/>
+                                        <span class="text-red-400" *ngIf="busForm.get('plate')?.errors?.['required'] && busForm.get('plate')?.touched">Plate Number Required</span>
+                                </div>
+                                    <div class="">
+                                        <label for="" class="ml-1 text-lg text-gray-900 tracking-wider">Year Start</label>
+                                        <input type="text" placeholder="Badge number" formControlName="startYear" class="block w-full rounded-lg border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"/>
+                                        <!-- <span class="text-red-400" *ngIf="busForm.get('startYear')?.errors?.['required'] && busForm.get('startYear')?.touched">Year Start</span> -->
+                                    </div>
+                                   
+                                    <div class="">
+                                        <label for="" class="ml-1 text-lg text-gray-900 tracking-wider">Bus status</label>
+                                       <select formControlName="status"  class="block w-full rounded-lg border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5">
+                                        <option value="Active" selected>Active</option>
+                                        <option value="Retired">Retired</option>
+                                        <option value="Maintenance">Maintenance</option>
+                                       </select>
+                                        <!-- <input type="text" placeholder="Badge number" formControlName="address" class="block w-full rounded-lg border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"/> -->
+                                        <!-- <span class="text-red-400" *ngIf="driverForm.get('permisType')?.errors?.['required'] && driverForm.get('permisType')?.touched">Adress Required</span> -->
+                                    </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                 
+                </div>
+                <div class="mt-auto px-5 flex justify-end">
+                    <button type="submit"  (click)="this.onSubmit()" class="cursor-pointer active:mt-0.5 text-white bg-gray-800 hover:bg-gray-900   font-medium rounded-lg text-sm px-6 py-3.5 me-2 mb-2  dark:hover:bg-gray-700  dark:border-gray-700">Save Employee</button>
+
+                </div>
+            </form>
+         
+        
+        
+    </div>
+        
+</div>

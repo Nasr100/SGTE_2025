@@ -25,7 +25,7 @@ namespace Route_Service.Reposetories.Bus
 
         public async Task<Models.Bus> GetBusById(int id)
         {
-            var bus = await _context.Buses.FindAsync(id);
+            var bus = await _context.Buses.Include(b=>b.Route).FirstOrDefaultAsync(b=>b.Id == id);
             if (bus == null)
             {
                 throw new Exception("bus with id "+id+"not found");
