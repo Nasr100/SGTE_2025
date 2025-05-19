@@ -4,7 +4,7 @@
                 <app-map [pointSignal]="this.makePoint()"></app-map>
          </div>
         <div class="p-5">
-        <a href="#">
+        <a [routerLink]="['/admin/stop/details',this.stop()?.id]">
             <h5 class="mb-2 text-2xl font-bold tracking-wider  text-gray-600">{{this.stop()?.name}} </h5>
         </a>
         <p class="mb-3 font-normal text-gray-500">{{this.stop()?.address}} </p>

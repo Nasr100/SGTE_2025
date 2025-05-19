@@ -1,5 +1,6 @@
 ﻿using Mapster;
 using Route_Service.Data;
+using Route_Service.Services.Stop;
 using Shared.Dtos;
 
 namespace Route_Service.Reposetories.Stop
@@ -7,9 +8,12 @@ namespace Route_Service.Reposetories.Stop
     public class StopRepo : IStopRepo
     {
         private readonly RouteServiceContext _context;
-        public StopRepo(RouteServiceContext context)
+        private readonly ILogger<StopService> _logger;
+
+        public StopRepo(RouteServiceContext context, ILogger<StopService> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         public async Task<StopResponse> AddStop(StopRequest stopRequest)
@@ -24,7 +28,9 @@ namespace Route_Service.Reposetories.Stop
         public async Task<Models.Stop> GetStopById(int id)
         {
             var stop = await _context.Stops.FindAsync(id);
-            if(stop == null)
+            _logger.LogDebug("THE STOP HHHHHHHHHHHHHHHHHHHHHH" + stop?.ToString() + "\n");
+
+            if (stop == null)
             {
                 throw new Exception("stop with the id :" + id + "not found");
             }

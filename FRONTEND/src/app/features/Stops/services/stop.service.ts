@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { GridifyRequest, GridifyResponse } from '../../../shared/types/Dtos/gridify.dto';
 import { StopRequest, StopResponse } from '../../../shared/types/Dtos/stop.dto';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { makeEmployeeRequest } from '../../../shared/helpers/GridifyRequestBuilder';
 import { env } from '../../../../environments/environment.dev';
 
@@ -10,6 +10,7 @@ import { env } from '../../../../environments/environment.dev';
   providedIn: 'root'
 })
 export class StopService {
+  
 
   constructor(private client:HttpClient) { }
     // url:string = `${env.apiBaseUrl}/routes/stop`;
@@ -27,4 +28,6 @@ export class StopService {
   getStopById(id:number):Observable<StopResponse>{
     return this.client.get<StopResponse>(`${this.url}/${id}`);
   }
+
+
 }

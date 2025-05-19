@@ -8,10 +8,12 @@ namespace Route_Service.Services.Stop
     public class StopService : IStopService
     {
         private readonly IStopRepo _stopRepo;
+        private readonly ILogger<StopService> _logger;
 
-        public StopService(IStopRepo stopRepo)
+        public StopService(IStopRepo stopRepo ,ILogger<StopService> logger)
         {
             _stopRepo = stopRepo;
+            _logger = logger;
         }
 
         public async Task<StopResponse> AddStop(StopRequest stopRequest)

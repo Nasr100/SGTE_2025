@@ -4,10 +4,11 @@ import { MAP_IMPORTS } from '../../../../shared/imports/Map.imports';
 import { StopResponse } from '../../../../shared/types/Dtos/stop.dto';
 import { FORM_IMPORTS } from '../../../../shared/imports/Form.imports';
 import { LatLng, LatLngExpression } from 'leaflet';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-map-card',
-  imports: [MapComponent,MAP_IMPORTS,FORM_IMPORTS],
+  imports: [MapComponent,MAP_IMPORTS,FORM_IMPORTS,RouterModule],
   templateUrl: './map-card.component.html',
   styleUrl: './map-card.component.css'
 })

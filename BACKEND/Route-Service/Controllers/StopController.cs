@@ -44,11 +44,11 @@ namespace Route_Service.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult GetStopById(int id)
+        public async Task<ActionResult> GetStopById(int id)
         {
             try
             {
-                var stops = _stopService.GetStopById(id);
+                var stops = await _stopService.GetStopById(id);
                 return Ok(stops);
             }
             catch (Exception ex)

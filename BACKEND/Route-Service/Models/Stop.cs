@@ -24,8 +24,8 @@ namespace Route_Service.Models
         public DateTime? UpdatedAt { get; set; } = null;
         [Column("is_deleted")]
         public bool IsDeleted { get; set; } = false;
-        public List<Route> Routes { get; } = [];
-        public List<RouteStops> Stops { get; set; } = [];
+        public  virtual List<Route> Routes { get; set; } = [];
+        public virtual List<RouteStops> Stops { get; set; } = [];
 
 
     }

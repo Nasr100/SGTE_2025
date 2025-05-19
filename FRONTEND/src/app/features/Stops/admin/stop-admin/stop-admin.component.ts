@@ -4,10 +4,11 @@ import { StopResponse } from '../../../../shared/types/Dtos/stop.dto';
 import { StopService } from '../../services/stop.service';
 import { Pagination } from '../../../../shared/helpers/pagination';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-stop-admin',
-  imports: [MapCardComponent,CommonModule],
+  imports: [MapCardComponent,CommonModule,RouterModule],
   templateUrl: './stop-admin.component.html',
   styleUrl: './stop-admin.component.css'
 })

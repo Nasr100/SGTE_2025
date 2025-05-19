@@ -13,7 +13,7 @@ import { StopRequest } from '../../types/Dtos/stop.dto';
   styleUrl: './map.component.css'
 })
 export class MapComponent {
-
+pointCard  = input<[number, number] | null>(null)
  pointSignal = input<[number, number] | null>(null);
   stop = output<StopRequest>();
   map: Map | null = null;
@@ -30,12 +30,12 @@ export class MapComponent {
   layers: Layer[] = [];
 
   constructor(private mapService:MapService) {
-    // effect(() => {
-    //   const coords = this.pointSignal();
-    //   if (this.map && coords) {
-    //     this.updateMarker(coords);
-    //   }
-    // });
+    effect(() => {
+      const coords = this.pointSignal();
+      if (this.map && coords) {
+        this.updateMarker(coords);
+      }
+    });
   }
 
   // onMapReady(map: Map) {
@@ -47,20 +47,23 @@ export class MapComponent {
   //   }
   // }
 
-  // private updateMarker(coords: [number, number]) {
-  //   // Remove existing marker
-  //   if (this.currentMarker) {
-  //     this.map?.removeLayer(this.currentMarker);
-  //   }
+  private updateMarker(coords: [number, number]) {
+    if (this.currentMarker) {
+      this.map?.removeLayer(this.currentMarker);
+    }
     
-  //   // Add new marker
-  //   this.currentMarker = marker([coords[1], coords[0]]);
-  //   this.layers = [this.currentMarker];
+    this.currentMarker = marker([coords[1], coords[0]]);
+    this.layers = [this.currentMarker];
     
-  //   // Center map
-  //   this.map?.setView([coords[1], coords[0]], 13);
-  // }
+    this.map?.setView([coords[1], coords[0]], 13);
+  }
+// centerMarker(number:[number,number]){
+// if(this.map)
 
+// this.currentMarker = marker(number).addTo(this.map);
+//   this.map?.setView(number, 13);
+
+// }
   
   onMapReady(map: Map) {
     this.map = map;
@@ -79,7 +82,6 @@ export class MapComponent {
       }
       const lat = e.latlng.lat;
       const lng = e.latlng.lng;
-      
      if(this.map){
             this.currentMarker = marker([lat, lng]).addTo(this.map);
                   this.layers = [this.currentMarker];

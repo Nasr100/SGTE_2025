@@ -29,7 +29,7 @@ namespace Route_Service.Controllers
             }
         }
         [HttpGet]
-        public  ActionResult GetAllBuses(GridifyQuery gridify)
+        public  ActionResult GetAllBuses([FromQuery]GridifyQuery gridify)
         {
             try
             {
