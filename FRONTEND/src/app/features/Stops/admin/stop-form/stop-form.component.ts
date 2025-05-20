@@ -19,6 +19,7 @@ export class StopFormComponent {
 // point = signal<number[]|null>(null);
 editFlagFromParent = input<boolean>();
 editFlag:boolean = false;
+editId!:number ;
 stopRequest!:StopRequest;
 stopResponse = input<StopResponse|null>(null);
   point = signal<[number, number] | null>(null);
@@ -29,6 +30,7 @@ stopResponse = input<StopResponse|null>(null);
     this.StopForm = new FormGroup({
       address : new FormControl('',[Validators.required]),
       name: new FormControl('',[Validators.required]),
+      status: new FormControl('',[Validators.required]),
       description : new FormControl('')
     })
     
@@ -38,7 +40,9 @@ stopResponse = input<StopResponse|null>(null);
     
     if (response) {
       this.editFlag = true;
+      this.editId = response.id;
       this.setFormValues(); 
+      this.stopRequest = response;
       this.point.set([response.x,response.y]); 
     }else{
       this.StopForm.reset();
@@ -72,10 +76,17 @@ getAddress(stop:any) {
   }
 
   submit(){
+    
+    this.getFormValues();
     if(this.editFlag){
       
+      this.stopService.updateStop(this.stopRequest,this.editId).subscribe({
+        complete:()=>{
+          console.log("edited succefully");
+        }
+      })
+      
     }else{
-      this.getFormValues();
       this.stopService.addStop(this.stopRequest).subscribe({
         next: (data)=>{
 
@@ -93,9 +104,11 @@ getAddress(stop:any) {
   
 
   getFormValues(){
+    
     this.stopRequest.name = this.StopForm.controls["name"].value;
-    this.stopRequest.description = this.StopForm.controls["description"].value;    
-    this.stopRequest.status = "active";    
+    this.stopRequest.description = this.StopForm.controls["description"].value;
+    this.stopRequest.status = this.StopForm.controls["status"].value;  
+    this.stopRequest.address = this.StopForm.controls["address"].value;
   }
 
   setFormValues(){
@@ -106,7 +119,8 @@ getAddress(stop:any) {
   this.StopForm.patchValue({
     address: stop.address || '',
     name: stop.name || '',
-    description: stop.description || ''
+    description: stop.description || '',
+    status: stop.status || 'active',
   });
   }
 }

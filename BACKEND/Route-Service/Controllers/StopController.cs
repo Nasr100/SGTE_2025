@@ -59,11 +59,11 @@ namespace Route_Service.Controllers
 
 
         [HttpPut("{id}")]
-        public ActionResult UpdateStop(int id, StopRequest stopreq)
+        public async Task<ActionResult> UpdateStop(int id, [FromBody]StopRequest stopreq)
         {
             try
             {
-                var stops = _stopService.UpdateStop(id, stopreq);
+                var stops = await _stopService.UpdateStop(id, stopreq);
                 return Ok(stops);
             }
             catch (Exception ex)
@@ -73,12 +73,12 @@ namespace Route_Service.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult DeleteStop(int id)
+        public async Task<ActionResult> DeleteStop(int id)
         {
             try
             {
-                var stops = _stopService.DeleteStop(id);
-                return Ok(stops);
+                 await _stopService.DeleteStop(id);
+                return Ok();
             }
             catch (Exception ex)
             {

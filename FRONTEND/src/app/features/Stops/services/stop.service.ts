@@ -29,5 +29,12 @@ export class StopService {
     return this.client.get<StopResponse>(`${this.url}/${id}`);
   }
 
+  deleteStop(id:number){
+    return this.client.delete(`${this.url}/${id}`);
+  }
+
+  updateStop(stopReq:StopRequest,id:number){
+    return this.client.put(`${this.url}/${id}`,stopReq);
+  }
 
 }
