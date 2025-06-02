@@ -23,7 +23,7 @@ namespace Route_Service.Models
         public required TimeOnly ArrivalTime { get; set; }
         [Required]
         [Column("departure_time")]
-        public required TimeOnly Departuretime { get; set; }
+        public required TimeOnly DepartureTime { get; set; }
 
     }
 }

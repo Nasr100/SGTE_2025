@@ -53,12 +53,21 @@ namespace Route_Service.Data
 
             modelBuilder.Entity<Models.Route>()
             .HasMany(e => e.Stops)
-            .WithMany(r=>r.Routes)
-            .UsingEntity<RouteStops>();
-
-
+            .WithMany(r => r.Routes)
+            .UsingEntity<RouteStops>(
+             j => j
+            .HasOne(rs => rs.Stop)  
+            .WithMany(s => s.Stops) 
+            .HasForeignKey(rs => rs.StopId)
+            .OnDelete(DeleteBehavior.Restrict), 
+             j => j
+            .HasOne(rs => rs.Route)  
+            .WithMany(r => r.RouteStops)  
+            .HasForeignKey(rs => rs.RouteId)
+            .OnDelete(DeleteBehavior.Cascade)
+                );
+           
         }
-
         public DbSet<Bus> Buses { get; set; }
         public DbSet<Stop> Stops { get; set; }
         public DbSet<Models.Route>  Routes { get; set; }

@@ -1,39 +1,49 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, effect, OnInit, signal } from '@angular/core';
 import { MapCardComponent } from "../map-card/map-card.component";
 import { StopResponse } from '../../../../shared/types/Dtos/stop.dto';
 import { StopService } from '../../services/stop.service';
 import { Pagination } from '../../../../shared/helpers/pagination';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { GridifyBuilder } from '../../../../shared/helpers/GridifyBuilder';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-stop-admin',
-  imports: [MapCardComponent,CommonModule,RouterModule],
+  imports: [MapCardComponent,CommonModule,RouterModule,FormsModule ],
   templateUrl: './stop-admin.component.html',
   styleUrl: './stop-admin.component.css'
 })
 export class StopAdminComponent implements OnInit {
+
   stops = signal<StopResponse[]>([]);
   count = signal(0);
-  search = signal("")
+  search =signal("");
   pagination= signal( new Pagination());
+  gridifyBuilder = signal(new GridifyBuilder())
 
   constructor(private stopService:StopService){
+   effect(()=>{
    
-  }
-  ngOnInit(): void {
-      this.stopService.getStops({pagination:this.pagination(),search:this.search()}).subscribe({
+      this.gridifyBuilder().setPagination(this.pagination())
+      this.stopService.getStops(this.gridifyBuilder()).subscribe({
         next : (data)=>{
           this.stops.set(data.data)
           this.count.set(data.count)
         },
-        complete:()=>{console.log(this.stops())}
+        complete:()=>{}
       })
+   })
   }
 
- Onsearch(event:Event){
+  ngOnInit(): void {
+    
+  }
+
+ Onsearch(event:any){
     const target = event.target as HTMLInputElement;
-    this.search.set(target.value);
+    this.search.set(target.value)
+    this.gridifyBuilder().addCondition("name","=*",this.search());
     this.pagination.update(p =>{
       const newPagination = new Pagination();
         newPagination.setPagination(p);
@@ -61,4 +71,18 @@ export class StopAdminComponent implements OnInit {
       return newPagination;
     })
    }
+
+   statusFilter(event:any){
+      const target = event.target as HTMLInputElement;
+      if(target.value)
+      this.gridifyBuilder().addCondition("status","=",target.value);
+      this.pagination.update(p =>{
+      const newPagination = new Pagination();
+        newPagination.setPagination(p);
+        newPagination.resetPageNumber();
+      return newPagination;
+    }) 
+   }
+
+   
 }

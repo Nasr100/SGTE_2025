@@ -100,6 +100,106 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Route_Service.Controllers.RouteController",
+    "Method": "GetAllRoutes",
+    "RelativePath": "api/Route",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Filter",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Route_Service.Controllers.RouteController",
+    "Method": "AddRoute",
+    "RelativePath": "api/Route",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "routeReq",
+        "Type": "Shared.Dtos.ComplexRouteStopsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Route_Service.Controllers.RouteController",
+    "Method": "GetRouteById",
+    "RelativePath": "api/Route/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Route_Service.Controllers.RouteController",
+    "Method": "DeleteRoute",
+    "RelativePath": "api/Route/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Route_Service.Controllers.RouteController",
+    "Method": "EditRoute",
+    "RelativePath": "api/Route/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "routeReq",
+        "Type": "Shared.Dtos.RouteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Route_Service.Controllers.StopController",
     "Method": "AddStop",
     "RelativePath": "api/route/Stop",
@@ -141,6 +241,69 @@
       {
         "Name": "Filter",
         "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Route_Service.Controllers.RouteController",
+    "Method": "AssignStop",
+    "RelativePath": "api/Route/stop",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "routeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "routeStopsRequest",
+        "Type": "Shared.Dtos.RouteStopsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Route_Service.Controllers.RouteController",
+    "Method": "DeleteAssignStop",
+    "RelativePath": "api/Route/stop",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "stopId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "routeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Route_Service.Controllers.RouteController",
+    "Method": "UpdateAssignedStop",
+    "RelativePath": "api/Route/stop",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "routeStopReq",
+        "Type": "Shared.Dtos.RouteStopsRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "routeId",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],

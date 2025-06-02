@@ -3,8 +3,9 @@ import { Injectable } from '@angular/core';
 import { GridifyRequest, GridifyResponse } from '../../../shared/types/Dtos/gridify.dto';
 import { StopRequest, StopResponse } from '../../../shared/types/Dtos/stop.dto';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { makeEmployeeRequest } from '../../../shared/helpers/GridifyRequestBuilder';
+import {  makeRequestParams } from '../../../shared/helpers/GridifyRequestBuilder';
 import { env } from '../../../../environments/environment.dev';
+import { GridifyBuilder } from '../../../shared/helpers/GridifyBuilder';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,9 @@ export class StopService {
     // url:string = `${env.apiBaseUrl}/routes/stop`;
     url:string = `https://localhost:7025/api/route/Stop`;
 
-  getStops(query:GridifyRequest):Observable<GridifyResponse<StopResponse>>{
-    const params = makeEmployeeRequest(query,[{field:"employee.badgeNumber",type:"string"},{field:"employee.firstname",type:"string"},{field:"employee.lastname",type:"string"}]);
+
+  getStops(query:GridifyBuilder):Observable<GridifyResponse<StopResponse>>{
+    const params = makeRequestParams(query);
     return this.client.get<GridifyResponse<StopResponse>>(this.url,{params}); 
   }
 

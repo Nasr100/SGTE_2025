@@ -1,0 +1,99 @@
+<ng-template #routeStopsForm>
+    <app-stops-route-form></app-stops-route-form>
+</ng-template>
+<ng-template #routeForm>
+    <app-route-form></app-route-form>
+</ng-template>
+
+<div class="h-full p-5">
+    <div class="flex justify-end">
+        <button type="button" (click)="deleteRoute()" class="cursor-pointer focus:outline-none text-white bg-red-600 hover:bg-red-500 font-medium rounded-lg text-sm px-8 py-3 me-2 mb-2 active:bg-red-600">Delete</button>
+            <button type="button" (click)="editRoute()"  class="text-white cursor-pointer bg-gray-800 hover:bg-gray-900 active:bg-gray-700  font-medium rounded-lg text-sm px-10 py-3 me-2 mb-2 dark:bg-gray-800 ">Edit</button>
+
+    </div>
+    <div class="w-full h-fit  grid grid-cols-2 border-2 border-black">
+
+        <div class="p-4 ">
+            <div class="border-2 border-black p-4 rounded-2xl">
+                <div class="grid grid-cols-2 gap-4"> 
+                    <div class="flex items-start gap-2">
+                        <p class="text-lg text-gray-400">Name: </p>
+                        <p class="text-xl tracking-wide">{{this.route.name}}</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <p class="text-lg text-gray-400">Status: </p>
+                        <p class="text-xl tracking-wide">{{this.route.isActive?"Active":"Inactive"}}</p>
+                    </div>
+                    <div class="flex items-start gap-2 col-span-2">
+                        <p class="text-lg text-gray-400">Description: </p>
+                        <p class="text-xl tracking-wide break-all ">{{this.route.description}}</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between items-center mt-10">
+                        <h2 class="text-2xl underline font-bold tracking-wide ">Stops Summary</h2>
+                    <button (click)="openAddForm()" type="button"  class="active:bg-gray-900 cursor-pointer flex items-center  gap-x-4 text-white bg-gray-800 hover:bg-gray-700  font-medium rounded-full text-sm px-2.5 py-2.5  ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/>
+                    </svg></button>
+                </div>
+
+                <div class="mt-5 ">
+                    <table class="example-table mat-elevation-z8 rounded-2xl mt-2" mat-table recycleRows [dataSource]="routeStops"  cdkDropList (cdkDropListDropped)="drop($event)">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="id" >
+                        <th mat-header-cell *matHeaderCellDef> id </th>
+                        <td mat-cell *matCellDef="let element" > {{element.stop?.id}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="stopOrder">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let element" > {{element.stopOrder}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="stop">
+                        <th mat-header-cell *matHeaderCellDef> Stop </th>
+                        <td mat-cell *matCellDef="let element"> {{element.stop?.name}} </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="arrivalTime">
+                        <th mat-header-cell *matHeaderCellDef> Arrival Time </th>
+                        <td mat-cell *matCellDef="let element"> {{element.arrivalTime}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="departureTime">
+                        <th mat-header-cell *matHeaderCellDef> Departure Time </th>
+                        <td mat-cell *matCellDef="let element"> {{element.departureTime}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="actions">
+                        <th mat-header-cell *matHeaderCellDef> Actions </th>
+                        <td mat-cell *matCellDef="let element; let i = index">
+                            <button mat-icon-button color="primary" (click)="editItem(element)">
+                            <mat-icon>edit</mat-icon>
+                            </button>
+                            <button mat-icon-button color="warn" (click)="deleteStop(element.stop?.id)">
+                            <mat-icon>delete</mat-icon>
+                            </button>
+                            <button mat-icon-button cdkDragHandle>
+                            <mat-icon>drag_indicator</mat-icon>
+                            </button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"  cdkDrag 
+                        [cdkDragData]="row" ></tr>
+                    </table>
+                </div>
+            </div>
+           
+        </div>
+        <div class="h-[750px]  border-r-2 border-black">
+            <app-route-map [stopPoints]="this.points"></app-route-map>
+        </div>
+    </div>
+</div>

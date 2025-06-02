@@ -40,7 +40,7 @@ pointCard  = input<[number, number] | null>(null)
 
   // onMapReady(map: Map) {
   //   this.map = map;
-  //   // Initialize with marker if pointSignal exists
+  //   
   //   const initialCoords = this.pointSignal();
   //   if (initialCoords) {
   //     this.updateMarker(initialCoords);

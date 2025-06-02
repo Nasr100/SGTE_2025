@@ -31,7 +31,6 @@ export class BusAdminComponent {
         this.buses.set(data.data);
         this.count.set(data.count);
       })
-  
     })  
   }
 
@@ -67,7 +66,7 @@ export class BusAdminComponent {
    }
 
    private readonly dialogs = inject(TuiDialogService);
-      private readonly alerts = inject(TuiAlertService);
+    private readonly alerts = inject(TuiAlertService);
 
  openAddForm(){
    this.dialogService.open<BusRequest>(this.addForm,{

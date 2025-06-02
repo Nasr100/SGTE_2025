@@ -28,7 +28,7 @@ namespace Route_Service.Reposetories.Stop
         public async Task<Models.Stop> GetStopById(int id)
         {
             var stop = await _context.Stops.FindAsync(id);
-            _logger.LogDebug("THE STOP HHHHHHHHHHHHHHHHHHHHHH" + stop?.ToString() + "\n");
+            
 
             if (stop == null)
             {
@@ -39,7 +39,7 @@ namespace Route_Service.Reposetories.Stop
 
         public  IQueryable<Models.Stop> GetAllStops()
         {
-            var stops = _context.Stops.Where(s => s.IsDeleted == false);
+            var stops = _context.Stops.Where(s => !s.IsDeleted).OrderBy(s => s.Status);
             return stops;
         }
 

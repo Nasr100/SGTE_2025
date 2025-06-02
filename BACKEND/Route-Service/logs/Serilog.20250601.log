@@ -1,0 +1,325 @@
+2025-06-01 17:05:35.419 +01:00 [INF] Now listening on: https://localhost:7025
+2025-06-01 17:05:35.443 +01:00 [INF] Now listening on: http://localhost:5067
+2025-06-01 17:05:35.487 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-01 17:05:35.489 +01:00 [INF] Hosting environment: Development
+2025-06-01 17:05:35.490 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-06-01 17:07:32.791 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/5 - null null
+2025-06-01 17:07:32.854 +01:00 [INF] CORS policy execution successful.
+2025-06-01 17:07:32.859 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.RouteController.GetRouteById (Route-Service)'
+2025-06-01 17:07:32.891 +01:00 [INF] Route matched with {action = "GetRouteById", controller = "Route"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetRouteById(Int32) on controller Route_Service.Controllers.RouteController (Route-Service).
+2025-06-01 17:07:35.386 +01:00 [INF] Executed DbCommand (68ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r1`.`id`, `r1`.`created_at`, `r1`.`description`, `r1`.`is_activate`, `r1`.`is_deleted`, `r1`.`name`, `r1`.`updated_at`, `s0`.`route_id`, `s0`.`stop_id`, `s0`.`arrival_time`, `s0`.`departure_time`, `s0`.`stop_order`, `s0`.`id`, `s0`.`address`, `s0`.`CreatedAt`, `s0`.`description`, `s0`.`is_deleted`, `s0`.`name`, `s0`.`status`, `s0`.`updated_at`, `s0`.`longitude`, `s0`.`latitude`
+FROM (
+    SELECT `r`.`id`, `r`.`created_at`, `r`.`description`, `r`.`is_activate`, `r`.`is_deleted`, `r`.`name`, `r`.`updated_at`
+    FROM `Routes` AS `r`
+    WHERE NOT (`r`.`is_deleted`) AND (`r`.`id` = @__id_0)
+    LIMIT 1
+) AS `r1`
+LEFT JOIN (
+    SELECT `r0`.`route_id`, `r0`.`stop_id`, `r0`.`arrival_time`, `r0`.`departure_time`, `r0`.`stop_order`, `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+    FROM `RouteStops` AS `r0`
+    INNER JOIN `Stops` AS `s` ON `r0`.`stop_id` = `s`.`id`
+) AS `s0` ON `r1`.`id` = `s0`.`route_id`
+ORDER BY `r1`.`id`, `s0`.`route_id`, `s0`.`stop_id`
+2025-06-01 17:07:35.678 +01:00 [INF] Executing OkObjectResult, writing value of type 'Shared.Dtos.RouteResponse'.
+2025-06-01 17:07:35.701 +01:00 [INF] Executed action Route_Service.Controllers.RouteController.GetRouteById (Route-Service) in 2795.9178ms
+2025-06-01 17:07:35.707 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.RouteController.GetRouteById (Route-Service)'
+2025-06-01 17:07:35.719 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/5 - 200 null application/json; charset=utf-8 2936.2322ms
+2025-06-01 17:07:47.648 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-06-01 17:07:47.653 +01:00 [INF] CORS policy execution successful.
+2025-06-01 17:07:47.654 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-06-01 17:07:47.665 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-01 17:07:47.738 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-06-01 17:07:47.758 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+ORDER BY `s`.`status`
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-01 17:07:47.772 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-01 17:07:47.784 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 115.0998ms
+2025-06-01 17:07:47.791 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-06-01 17:07:47.793 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 144.6634ms
+2025-06-01 17:10:45.911 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - null null
+2025-06-01 17:10:45.945 +01:00 [INF] CORS policy execution successful.
+2025-06-01 17:10:45.946 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-06-01 17:10:45.947 +01:00 [INF] Route matched with {action = "GetAllStops", controller = "Stop"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAllStops(Gridify.GridifyQuery) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-01 17:10:46.019 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+2025-06-01 17:10:46.025 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE NOT (`s`.`is_deleted`)
+ORDER BY `s`.`status`
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-01 17:10:46.027 +01:00 [INF] Executing OkObjectResult, writing value of type 'Gridify.Paging`1[[Shared.Dtos.StopResponse, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-01 17:10:46.030 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 81.3826ms
+2025-06-01 17:10:46.031 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
+2025-06-01 17:10:46.093 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 181.9358ms
+2025-06-01 17:11:16.149 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/5 - null null
+2025-06-01 17:11:16.153 +01:00 [INF] CORS policy execution successful.
+2025-06-01 17:11:16.154 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.RouteController.GetRouteById (Route-Service)'
+2025-06-01 17:11:16.156 +01:00 [INF] Route matched with {action = "GetRouteById", controller = "Route"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetRouteById(Int32) on controller Route_Service.Controllers.RouteController (Route-Service).
+2025-06-01 17:11:16.169 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r1`.`id`, `r1`.`created_at`, `r1`.`description`, `r1`.`is_activate`, `r1`.`is_deleted`, `r1`.`name`, `r1`.`updated_at`, `s0`.`route_id`, `s0`.`stop_id`, `s0`.`arrival_time`, `s0`.`departure_time`, `s0`.`stop_order`, `s0`.`id`, `s0`.`address`, `s0`.`CreatedAt`, `s0`.`description`, `s0`.`is_deleted`, `s0`.`name`, `s0`.`status`, `s0`.`updated_at`, `s0`.`longitude`, `s0`.`latitude`
+FROM (
+    SELECT `r`.`id`, `r`.`created_at`, `r`.`description`, `r`.`is_activate`, `r`.`is_deleted`, `r`.`name`, `r`.`updated_at`
+    FROM `Routes` AS `r`
+    WHERE NOT (`r`.`is_deleted`) AND (`r`.`id` = @__id_0)
+    LIMIT 1
+) AS `r1`
+LEFT JOIN (
+    SELECT `r0`.`route_id`, `r0`.`stop_id`, `r0`.`arrival_time`, `r0`.`departure_time`, `r0`.`stop_order`, `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+    FROM `RouteStops` AS `r0`
+    INNER JOIN `Stops` AS `s` ON `r0`.`stop_id` = `s`.`id`
+) AS `s0` ON `r1`.`id` = `s0`.`route_id`
+ORDER BY `r1`.`id`, `s0`.`route_id`, `s0`.`stop_id`
+2025-06-01 17:11:16.172 +01:00 [INF] Executing OkObjectResult, writing value of type 'Shared.Dtos.RouteResponse'.
+2025-06-01 17:11:16.173 +01:00 [INF] Executed action Route_Service.Controllers.RouteController.GetRouteById (Route-Service) in 13.7178ms
+2025-06-01 17:11:16.175 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.RouteController.GetRouteById (Route-Service)'
+2025-06-01 17:11:16.175 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/5 - 200 null application/json; charset=utf-8 26.4811ms
+2025-06-01 17:48:21.596 +01:00 [INF] Now listening on: https://localhost:7025
+2025-06-01 17:48:21.626 +01:00 [INF] Now listening on: http://localhost:5067
+2025-06-01 17:48:21.680 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-01 17:48:21.682 +01:00 [INF] Hosting environment: Development
+2025-06-01 17:48:21.682 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-06-01 17:48:24.805 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/v1 - null null
+2025-06-01 17:48:24.918 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 17:48:24.955 +01:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-06-01 17:48:24.963 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 17:48:24.968 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/v1 - 200 null text/html 166.4115ms
+2025-06-01 17:48:24.977 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-01 17:48:24.977 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.js - null null
+2025-06-01 17:48:24.977 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - null null
+2025-06-01 17:48:24.987 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2025-06-01 17:48:24.987 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 17:48:24.995 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 17.7079ms
+2025-06-01 17:48:24.999 +01:00 [INF] CORS policy execution failed.
+2025-06-01 17:48:25.048 +01:00 [INF] Sending file with download name ''.
+2025-06-01 17:48:25.073 +01:00 [INF] Request origin https://localhost:7025 does not have permission to access the resource.
+2025-06-01 17:48:25.076 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 17:48:25.078 +01:00 [INF] Sending file with download name ''.
+2025-06-01 17:48:25.080 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 17:48:25.084 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - 200 2212 text/javascript 107.2524ms
+2025-06-01 17:48:25.096 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 109.734ms
+2025-06-01 17:48:25.118 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 17:48:25.120 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.js - 200 2854851 text/javascript 142.9579ms
+2025-06-01 17:48:25.253 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/openapi/v1.json - null null
+2025-06-01 17:48:25.259 +01:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 17:48:25.370 +01:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 17:48:25.371 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/openapi/v1.json - 200 null application/json;charset=utf-8 117.6013ms
+2025-06-01 17:48:25.757 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/favicon.ico - null null
+2025-06-01 17:48:25.764 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/favicon.ico - 404 0 null 7.3258ms
+2025-06-01 17:48:25.768 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/favicon.ico, Response status code: 404
+2025-06-01 17:53:01.909 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/v1 - null null
+2025-06-01 17:53:01.919 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 17:53:01.921 +01:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-06-01 17:53:01.922 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 17:53:01.923 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/v1 - 200 null text/html 14.9325ms
+2025-06-01 17:53:01.947 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.js - null null
+2025-06-01 17:53:01.947 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-01 17:53:01.947 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - null null
+2025-06-01 17:53:01.953 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 6.12ms
+2025-06-01 17:53:01.951 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 17:53:01.961 +01:00 [INF] CORS policy execution failed.
+2025-06-01 17:53:01.967 +01:00 [INF] Request origin https://localhost:7025 does not have permission to access the resource.
+2025-06-01 17:53:01.968 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 17:53:01.969 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 17:53:01.971 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 17:53:01.970 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 17:53:01.973 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 17:53:01.974 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.js - 304 null null 27.3699ms
+2025-06-01 17:53:01.976 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - 304 null null 28.2346ms
+2025-06-01 17:53:01.988 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2025-06-01 17:53:01.999 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.6315ms
+2025-06-01 17:53:02.131 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/openapi/v1.json - null null
+2025-06-01 17:53:02.135 +01:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 17:53:02.146 +01:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 17:53:02.148 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/openapi/v1.json - 200 null application/json;charset=utf-8 16.1853ms
+2025-06-01 17:53:04.988 +01:00 [INF] Now listening on: https://localhost:7025
+2025-06-01 17:53:05.020 +01:00 [INF] Now listening on: http://localhost:5067
+2025-06-01 17:53:05.071 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-01 17:53:05.073 +01:00 [INF] Hosting environment: Development
+2025-06-01 17:53:05.075 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-06-01 17:53:06.545 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/v1 - null null
+2025-06-01 17:53:06.627 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 17:53:06.721 +01:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-06-01 17:53:06.727 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 17:53:06.733 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/v1 - 200 null text/html 190.9593ms
+2025-06-01 17:53:06.744 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-01 17:53:06.744 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.js - null null
+2025-06-01 17:53:06.749 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - null null
+2025-06-01 17:53:06.780 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 17:53:06.772 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2025-06-01 17:53:06.827 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 83.9925ms
+2025-06-01 17:53:06.835 +01:00 [INF] CORS policy execution failed.
+2025-06-01 17:53:06.837 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 17:53:06.840 +01:00 [INF] Request origin https://localhost:7025 does not have permission to access the resource.
+2025-06-01 17:53:06.867 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 17:53:06.868 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.js - 304 null null 125.0547ms
+2025-06-01 17:53:06.869 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 17:53:06.871 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 17:53:06.872 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 17:53:06.874 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - 304 null null 127.3507ms
+2025-06-01 17:53:06.884 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 111.1935ms
+2025-06-01 17:53:06.904 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/openapi/v1.json - null null
+2025-06-01 17:53:06.907 +01:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 17:53:07.024 +01:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 17:53:07.027 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/openapi/v1.json - 200 null application/json;charset=utf-8 123.452ms
+2025-06-01 17:53:27.399 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/v1 - null null
+2025-06-01 17:53:27.411 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 17:53:27.412 +01:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-06-01 17:53:27.413 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 17:53:27.415 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/v1 - 200 null text/html 16.2499ms
+2025-06-01 17:53:27.425 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.js - null null
+2025-06-01 17:53:27.429 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-01 17:53:27.429 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 17:53:27.438 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 17:53:27.454 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 17:53:27.436 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2025-06-01 17:53:27.451 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 21.8339ms
+2025-06-01 17:53:27.455 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.js - 304 null null 29.9951ms
+2025-06-01 17:53:27.429 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - null null
+2025-06-01 17:53:27.472 +01:00 [INF] CORS policy execution failed.
+2025-06-01 17:53:27.472 +01:00 [INF] Request origin https://localhost:7025 does not have permission to access the resource.
+2025-06-01 17:53:27.474 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 17:53:27.474 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.5596ms
+2025-06-01 17:53:27.477 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 17:53:27.481 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 17:53:27.482 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - 304 null null 52.6566ms
+2025-06-01 17:53:27.494 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/openapi/v1.json - null null
+2025-06-01 17:53:27.497 +01:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 17:53:27.516 +01:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 17:53:27.519 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/openapi/v1.json - 200 null application/json;charset=utf-8 25.1641ms
+2025-06-01 17:55:12.355 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/v1 - null null
+2025-06-01 17:55:12.372 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 17:55:12.374 +01:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-06-01 17:55:12.375 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 17:55:12.376 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/v1 - 200 null text/html 21.2461ms
+2025-06-01 17:55:12.404 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.js - null null
+2025-06-01 17:55:12.405 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - null null
+2025-06-01 17:55:12.407 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-01 17:55:12.409 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 17:55:12.411 +01:00 [INF] CORS policy execution failed.
+2025-06-01 17:55:12.415 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 7.3729ms
+2025-06-01 17:55:12.416 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 17:55:12.417 +01:00 [INF] Request origin https://localhost:7025 does not have permission to access the resource.
+2025-06-01 17:55:12.421 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 17:55:12.422 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 17:55:12.423 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.js - 304 null null 19.356ms
+2025-06-01 17:55:12.425 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 17:55:12.429 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 17:55:12.430 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - 304 null null 24.6385ms
+2025-06-01 17:55:12.438 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2025-06-01 17:55:12.447 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.162ms
+2025-06-01 17:55:12.530 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/openapi/v1.json - null null
+2025-06-01 17:55:12.533 +01:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 17:55:12.543 +01:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 17:55:12.546 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/openapi/v1.json - 200 null application/json;charset=utf-8 16.4901ms
+2025-06-01 17:55:17.554 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/v1 - null null
+2025-06-01 17:55:17.560 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 17:55:17.561 +01:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-06-01 17:55:17.562 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 17:55:17.563 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/v1 - 200 null text/html 8.9208ms
+2025-06-01 17:55:17.574 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.js - null null
+2025-06-01 17:55:17.576 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-01 17:55:17.576 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - null null
+2025-06-01 17:55:17.582 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 6.1971ms
+2025-06-01 17:55:17.580 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 17:55:17.577 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2025-06-01 17:55:17.592 +01:00 [INF] CORS policy execution failed.
+2025-06-01 17:55:17.597 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 17:55:17.618 +01:00 [INF] Request origin https://localhost:7025 does not have permission to access the resource.
+2025-06-01 17:55:17.621 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 17:55:17.622 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.9726ms
+2025-06-01 17:55:17.624 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 17:55:17.628 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.js - 304 null null 53.6687ms
+2025-06-01 17:55:17.631 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 17:55:17.633 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 17:55:17.634 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - 304 null null 57.8879ms
+2025-06-01 17:55:17.660 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/openapi/v1.json - null null
+2025-06-01 17:55:17.664 +01:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 17:55:17.667 +01:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 17:55:17.669 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/openapi/v1.json - 200 null application/json;charset=utf-8 8.3634ms
+2025-06-01 17:58:08.985 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/5 - null null
+2025-06-01 17:58:08.993 +01:00 [INF] CORS policy execution successful.
+2025-06-01 17:58:08.994 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.RouteController.GetRouteById (Route-Service)'
+2025-06-01 17:58:09.020 +01:00 [INF] Route matched with {action = "GetRouteById", controller = "Route"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetRouteById(Int32) on controller Route_Service.Controllers.RouteController (Route-Service).
+2025-06-01 17:58:10.214 +01:00 [INF] Executed DbCommand (30ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r1`.`id`, `r1`.`created_at`, `r1`.`description`, `r1`.`is_activate`, `r1`.`is_deleted`, `r1`.`name`, `r1`.`updated_at`, `s0`.`route_id`, `s0`.`stop_id`, `s0`.`arrival_time`, `s0`.`departure_time`, `s0`.`stop_order`, `s0`.`id`, `s0`.`address`, `s0`.`CreatedAt`, `s0`.`description`, `s0`.`is_deleted`, `s0`.`name`, `s0`.`status`, `s0`.`updated_at`, `s0`.`longitude`, `s0`.`latitude`
+FROM (
+    SELECT `r`.`id`, `r`.`created_at`, `r`.`description`, `r`.`is_activate`, `r`.`is_deleted`, `r`.`name`, `r`.`updated_at`
+    FROM `Routes` AS `r`
+    WHERE NOT (`r`.`is_deleted`) AND (`r`.`id` = @__id_0)
+    LIMIT 1
+) AS `r1`
+LEFT JOIN (
+    SELECT `r0`.`route_id`, `r0`.`stop_id`, `r0`.`arrival_time`, `r0`.`departure_time`, `r0`.`stop_order`, `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+    FROM `RouteStops` AS `r0`
+    INNER JOIN `Stops` AS `s` ON `r0`.`stop_id` = `s`.`id`
+) AS `s0` ON `r1`.`id` = `s0`.`route_id`
+ORDER BY `r1`.`id`, `s0`.`route_id`, `s0`.`stop_id`
+2025-06-01 17:58:10.421 +01:00 [INF] Executing OkObjectResult, writing value of type 'Shared.Dtos.RouteResponse'.
+2025-06-01 17:58:10.439 +01:00 [INF] Executed action Route_Service.Controllers.RouteController.GetRouteById (Route-Service) in 1413.4351ms
+2025-06-01 17:58:10.440 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.RouteController.GetRouteById (Route-Service)'
+2025-06-01 17:58:10.447 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/5 - 200 null application/json; charset=utf-8 1462.4779ms
+2025-06-01 18:28:22.636 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/v1 - null null
+2025-06-01 18:28:22.647 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 18:28:22.648 +01:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-06-01 18:28:22.649 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 18:28:22.650 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/v1 - 200 null text/html 13.6458ms
+2025-06-01 18:28:22.675 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.js - null null
+2025-06-01 18:28:22.678 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - null null
+2025-06-01 18:28:22.679 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-01 18:28:22.681 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 18:28:22.684 +01:00 [INF] CORS policy execution failed.
+2025-06-01 18:28:22.689 +01:00 [INF] Request origin https://localhost:7025 does not have permission to access the resource.
+2025-06-01 18:28:22.690 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 18:28:22.687 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 7.9955ms
+2025-06-01 18:28:22.688 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 18:28:22.691 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 18:28:22.696 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 18:28:22.695 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 18:28:22.698 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - 304 null null 20.2321ms
+2025-06-01 18:28:22.699 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.js - 304 null null 24.8067ms
+2025-06-01 18:28:22.714 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2025-06-01 18:28:22.721 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 6.825ms
+2025-06-01 18:28:22.818 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/openapi/v1.json - null null
+2025-06-01 18:28:22.821 +01:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 18:28:22.831 +01:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 18:28:22.833 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/openapi/v1.json - 200 null application/json;charset=utf-8 15.5254ms
+2025-06-01 18:28:29.864 +01:00 [INF] Now listening on: https://localhost:7025
+2025-06-01 18:28:29.902 +01:00 [INF] Now listening on: http://localhost:5067
+2025-06-01 18:28:30.011 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/v1 - null null
+2025-06-01 18:28:30.034 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-01 18:28:30.035 +01:00 [INF] Hosting environment: Development
+2025-06-01 18:28:30.036 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-06-01 18:28:30.111 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 18:28:30.146 +01:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-06-01 18:28:30.155 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-06-01 18:28:30.163 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/v1 - 200 null text/html 157.018ms
+2025-06-01 18:28:30.168 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.js - null null
+2025-06-01 18:28:30.207 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - null null
+2025-06-01 18:28:30.207 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-01 18:28:30.207 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/_vs/browserLink - null null
+2025-06-01 18:28:30.218 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 18:28:30.221 +01:00 [INF] CORS policy execution failed.
+2025-06-01 18:28:30.235 +01:00 [INF] Request origin https://localhost:7025 does not have permission to access the resource.
+2025-06-01 18:28:30.236 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 67.5452ms
+2025-06-01 18:28:30.240 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 18:28:30.241 +01:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 18:28:30.243 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-06-01 18:28:30.244 +01:00 [INF] Setting HTTP status code 304.
+2025-06-01 18:28:30.244 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.js - 304 null null 76.8855ms
+2025-06-01 18:28:30.245 +01:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-06-01 18:28:30.248 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/scalar/scalar.aspnetcore.js - 304 null null 80.5701ms
+2025-06-01 18:28:30.254 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.5931ms
+2025-06-01 18:28:30.309 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/openapi/v1.json - null null
+2025-06-01 18:28:30.313 +01:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 18:28:30.406 +01:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-06-01 18:28:30.417 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/openapi/v1.json - 200 null application/json;charset=utf-8 107.9972ms

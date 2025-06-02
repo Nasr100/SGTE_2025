@@ -37,6 +37,7 @@
     "@tinkoff/ng-polymorpheus": "^4.3.0",
     "@types/leaflet-routing-machine": "^3.2.8",
     "daisyui": "^5.0.28",
+    "date-fns": "^4.1.0",
     "gridify-client": "^2.0.2",
     "leaflet": "^1.9.4",
     "leaflet-routing-machine": "^3.2.12",

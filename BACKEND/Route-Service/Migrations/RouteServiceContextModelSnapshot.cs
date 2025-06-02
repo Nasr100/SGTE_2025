@@ -130,7 +130,7 @@ namespace Route_Service.Migrations
                         .HasColumnType("time(6)")
                         .HasColumnName("arrival_time");
 
-                    b.Property<TimeOnly>("Departuretime")
+                    b.Property<TimeOnly>("DepartureTime")
                         .HasColumnType("time(6)")
                         .HasColumnName("departure_time");
 
@@ -141,6 +141,9 @@ namespace Route_Service.Migrations
                     b.HasKey("RouteId", "StopId");
 
                     b.HasIndex("StopId");
+
+                    b.HasIndex("StopOrder")
+                        .IsUnique();
 
                     b.ToTable("RouteStops");
                 });
@@ -217,7 +220,7 @@ namespace Route_Service.Migrations
                     b.HasOne("Route_Service.Models.Stop", "Stop")
                         .WithMany("Stops")
                         .HasForeignKey("StopId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Route");

@@ -13,10 +13,13 @@ import { StopFormComponent } from "../../features/Stops/admin/stop-form/stop-for
 import { AddFormComponent } from "../../features/administrations/Admin/add-form/add-form.component";
 import { StopDetailComponent } from "../../features/Stops/admin/stop-detail/stop-detail.component";
 import { AddStopComponent } from "../../features/Stops/admin/add-stop/add-stop.component";
+import { RouteAdminComponent } from "../../features/Routes/admin/route-admin/route-admin.component";
+import { RouteMapComponent } from "../../shared/components/route-map/route-map.component";
+import { DetailsRouteComponent } from "../../features/Routes/admin/details-route/details-route.component";
 
 @Component({
   selector: 'app-admin-layout',
-  imports: [HeaderComponent, SideBarComponent, RouterOutlet, AdministrationsComponent, FORM_IMPORTS, DriverAdminComponent, AdministartionDetailComponent, MapComponent, MapCardComponent, StopAdminComponent, StopFormComponent, AddFormComponent, StopDetailComponent, AddStopComponent],
+  imports: [HeaderComponent, SideBarComponent, RouterOutlet, AdministrationsComponent, FORM_IMPORTS, DriverAdminComponent, AdministartionDetailComponent, MapComponent, MapCardComponent, StopAdminComponent, StopFormComponent, AddFormComponent, StopDetailComponent, AddStopComponent, RouteAdminComponent, RouteMapComponent, DetailsRouteComponent],
   templateUrl: './admin-layout.component.html',
   styleUrl: './admin-layout.component.css'
 })

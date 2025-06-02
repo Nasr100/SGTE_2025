@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Route_Service.Data;
 using Route_Service.Models;
 using Shared.Dtos;
@@ -10,29 +11,52 @@ namespace Route_Service.Reposetories.Route
 {
     public class RouteRepo : IRouteRepo
     {
-        private RouteServiceContext _context;
-        public RouteRepo(RouteServiceContext context)
+        private readonly RouteServiceContext _context;
+        private readonly ILogger<RouteRepo> _logger;
+        public RouteRepo(RouteServiceContext context, ILogger<RouteRepo> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
-        public async Task<RouteResponse> AddRoute(RouteRequest route)
+        public async Task<RouteResponse> AddRoute(ComplexRouteStopsRequest route)
         {
-            var routeModel = route.Adapt<Models.Route>();
-            await _context.Routes.AddAsync(routeModel);
-            await _context.SaveChangesAsync();
-            return routeModel.Adapt<RouteResponse>();
+            await using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                var routeModel = route.route.Adapt<Models.Route>();
+                var x = await _context.Routes.AddAsync(routeModel);
+                await _context.SaveChangesAsync();
+                if (route.routeStops?.Count > 0)
+                {
+
+                    foreach (var stop in route.routeStops)
+                    {
+                        await this.AssignStop(x.Entity.Id, stop);
+                    }
+
+                }
+                await transaction.CommitAsync();
+
+                return routeModel.Adapt<RouteResponse>();
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
+           
         }
 
         public  IQueryable<Models.Route> GetAllRoutes()
         {
-            var routes =_context.Routes.Where(r=>r.IsDeleted == false);
+            var routes =_context.Routes.Where(r => !r.IsDeleted).Include(r=>r.RouteStops).ThenInclude(rs=>rs.Stop);
             return routes;
         }
 
         public async Task<Models.Route> GetRouteById(int id)
         {
-            var route = await _context.Routes.Include(r=>r.Stops).FirstAsync(r=>r.Id == id) ?? throw new Exception("route with id " + id + "not found");
+            var route = await _context.Routes.Where(r => !r.IsDeleted).Include(r=>r.RouteStops).ThenInclude(rs => rs.Stop).FirstAsync(r=>r.Id == id) ?? throw new Exception("route with id " + id + "not found");
             return route;
         }
 
@@ -52,16 +76,20 @@ namespace Route_Service.Reposetories.Route
             return route.Adapt<RouteResponse>();
         }
 
-        public async Task<RouteStopsResponse> AssignStop(RouteStopsRequest routeStopsRequest)
+        public async Task<RouteStopsResponse> AssignStop(int routeId, RouteStopsRequest routeStopsRequest)
         {
-            var route = await GetRouteById(routeStopsRequest.RouteId);
+           
+            var route = await GetRouteById(routeId);
+
             var stop = await _context.Stops.FindAsync(routeStopsRequest.StopId) ?? throw new ArgumentException("Stop not found");
             if (route.RouteStops.Any(rs=>rs.StopId == stop.Id))
             {
                 throw new ArgumentException("Stop already assigned to this route");
             }
             var routeStops = routeStopsRequest.Adapt<RouteStops>();
+            routeStops.RouteId = routeId;
             await _context.RouteStops.AddAsync(routeStops);
+            await _context.SaveChangesAsync(); 
             return routeStops.Adapt<RouteStopsResponse>();
         }
 
@@ -88,6 +116,16 @@ namespace Route_Service.Reposetories.Route
             await _context.SaveChangesAsync();
             return routeStopReq.Adapt<RouteStopsResponse>();
 
+        }
+
+        public async Task<bool> IsCombinationUniqueAsync(RouteStopsRequest routeStopReq, int routeId, int? excludeId = null)
+        {
+            return !await _context.RouteStops
+                .AnyAsync(rs =>
+                    rs.StopId == routeStopReq.StopId &&
+                    rs.RouteId == routeId &&
+                    rs.StopOrder == routeStopReq.StopOrder &&
+                    (excludeId == null));
         }
 
 

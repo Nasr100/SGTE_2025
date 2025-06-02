@@ -1,5 +1,6 @@
 import { GridifyRequest } from "../types/Dtos/gridify.dto";
 import { HttpParams } from '@angular/common/http';
+import { GridifyBuilder } from "./GridifyBuilder";
 
 export function makeEmployeeRequest(query:GridifyRequest,searchFields:{ field: string; type: 'string' | 'number' }[],filterFields:{field:string; type:'string'|'number'}[]=[] ) {
 
@@ -21,6 +22,19 @@ export function makeEmployeeRequest(query:GridifyRequest,searchFields:{ field: s
       params = params.set('filter', filters.join('|'));
     }
     
+    return params;
+}
+export function makeRequestParams(query:GridifyBuilder) {
+    let paramObject = query.build();
+    let params = new HttpParams()
+      .set('page', query.pagination.getPageNumber())
+      .set('pageSize', query.pagination.getPageSize())
+      
+      if(paramObject){
+        params.set('filter',paramObject.filter)
+      .set('orderBy',paramObject.orderBy);      
+    }
+
     return params;
 }
 

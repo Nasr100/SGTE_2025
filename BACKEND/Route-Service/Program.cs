@@ -4,6 +4,7 @@ using Route_Service.Reposetories.Bus;
 using Route_Service.Reposetories.Route;
 using Route_Service.Reposetories.Stop;
 using Route_Service.Services.Bus;
+using Route_Service.Services.Route;
 using Route_Service.Services.Stop;
 using Scalar.AspNetCore;
 using Serilog;
@@ -22,6 +23,7 @@ builder.Services.AddScoped<IRouteRepo, RouteRepo>();
 
 builder.Services.AddScoped<IBusService, BusService>();
 builder.Services.AddScoped<IStopService, StopService>();
+builder.Services.AddScoped<IRouteService, RouteService>();
 
 
 

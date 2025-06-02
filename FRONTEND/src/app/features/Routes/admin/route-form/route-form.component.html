@@ -1,0 +1,46 @@
+<div class="grid grid-cols-1 w-[600px] h-full px-5 py-5">
+    <div>
+        <h2 class="text-3xl font-bold">{{this.editFlag?'Edit Route':'Add Route'}} </h2>
+    </div>
+    <div class=" ">
+        <form  [formGroup]="this.routeForm" action="">
+                 <div class="flex flex-col pt-5">
+                    <div class="w-full  mb-6">
+                        <label for="" class="text-lg  font-semibold">Name</label>
+                        <input  formControlName="name" class="text-xl mt-4 w-full bg-transparent placeholder:text-slate-400 text-slate-700  border border-slate-200 rounded-md px-3 py-3 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Address" />
+                        <span class="text-red-400" *ngIf="routeForm.get('name')?.errors?.['required'] && routeForm.get('address')?.touched">Addresse Required</span>
+
+                    </div>
+                  
+                    <div class="w-full mb-6 ">
+                        <label for="" class="text-lg  font-semibold">Status</label>
+                        <div class="grid gap-2 md:grid-cols-2">
+                            <div class="flex items-center ps-4 border border-gray-200 rounded-sm ">
+                                <input id="bordered-radio-1" formControlName="status" type="radio" value="true"  class="w-4 h-4 shadow-sm text-xl bg-transparent border-gray-300  border-1  rounded-md">
+                                <label for="bordered-radio-1" class="w-full py-4 ms-2 text-sm font-medium text-slate-700">Active</label>
+                            </div>
+                            <div  class="flex items-center ps-4 border border-gray-200 rounded-sm ">
+                                <input id="bordered-radio-2" formControlName="status" type="radio" value="false"  class="w-4 h-4 shadow-sm text-xl bg-transparent border-gray-300  border-1  rounded-md">
+                                <label for="bordered-radio-2" class="w-full py-4 ms-2 text-sm font-medium text-slate-700">inactive</label>
+                            </div>
+                        </div>
+                        <span class="text-red-400" *ngIf="routeForm.get('status')?.errors?.['required'] && routeForm.get('status')?.touched">status Required</span>
+                    </div>
+                    <div class="w-full mb-6">
+                        <label for="" class="text-lg font-semibold">Description</label>
+                        <textarea 
+                        formControlName="description"
+                            name="" 
+                            class="text-xl w-full bg-transparent placeholder:text-slate-400 text-slate-700 border border-slate-200 rounded-md px-3 py-3 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" 
+                            id="" 
+                            rows="8" 
+                            placeholder="Description"></textarea>
+                    </div>
+                    <button type="button"  class="active:bg-gray-900 cursor-pointer   text-white bg-gray-800 hover:bg-gray-700  font-medium rounded-lg text-sm px-20 py-3">
+                        {{this.editFlag?'Update':'Save'}} 
+                    </button>
+                </div>
+        </form>
+    </div>
+   
+</div>

@@ -25,6 +25,7 @@ export class StopDetailComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    if(this.route.snapshot.params["id"])
     this.loadStop(+this.route.snapshot.params["id"]);
   }
 

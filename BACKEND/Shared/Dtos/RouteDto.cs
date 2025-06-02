@@ -14,7 +14,7 @@ namespace Shared.Dtos
         public required string Name { get; set; }
         [Required]
         public string? Description { get; set; }
-        public bool? IsActive { get; set; } = true;
+        public bool IsActive { get; set; } = true;
     }
 
 
@@ -24,6 +24,13 @@ namespace Shared.Dtos
         public required string Name { get; set; }
         public string? Description { get; set; }
         public bool? IsActive { get; set; } = true;
-        public List<StopResponse> Stop { get; set; } = [];
+        public List<RouteStopsResponse> RouteStops { get; set; } = [];
     }
+
+    public class ComplexRouteStopsRequest
+    {
+        public required RouteRequest route {  get; set; }
+        public List<RouteStopsRequest>? routeStops { get; set; }
+    }
+
 }

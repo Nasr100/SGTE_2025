@@ -11,22 +11,23 @@ namespace Shared.Dtos
     {
         [Required]
         public int StopId { get; set; }
-        [Required]
-        public  int RouteId { get; set; }
+        //[Required]
+        //public  int RouteId { get; set; }
+
         [Required]
         public required int StopOrder { get; set; }
         [Required]
         public required TimeOnly ArrivalTime { get; set; }
         [Required]
-        public required TimeOnly Departuretime { get; set; }
+        public required TimeOnly DepartureTime { get; set; }
     }
 
     public class RouteStopsResponse
     {
-        public required StopResponse StopResponse { get; set; }
+        public required StopResponse Stop { get; set; }
         //public  RouteResponse? RouteResponse  { get; set; }
         public required int StopOrder { get; set; }
         public required TimeOnly ArrivalTime { get; set; }
-        public required TimeOnly Departuretime { get; set; }
+        public required TimeOnly DepartureTime { get; set; }
     }
 }

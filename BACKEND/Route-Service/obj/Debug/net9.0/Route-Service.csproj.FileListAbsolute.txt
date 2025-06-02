@@ -139,7 +139,6 @@ D:\PFE\CODE-BASE\BACKEND\Route-Service\obj\Debug\net9.0\staticwebassets\msbuild.
 D:\PFE\CODE-BASE\BACKEND\Route-Service\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.Route-Service.props
 D:\PFE\CODE-BASE\BACKEND\Route-Service\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Route-Service.props
 D:\PFE\CODE-BASE\BACKEND\Route-Service\obj\Debug\net9.0\staticwebassets.pack.json
-D:\PFE\CODE-BASE\BACKEND\Route-Service\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 D:\PFE\CODE-BASE\BACKEND\Route-Service\obj\Debug\net9.0\Route-Se.53C1F347.Up2Date
 D:\PFE\CODE-BASE\BACKEND\Route-Service\obj\Debug\net9.0\Route-Service.dll
 D:\PFE\CODE-BASE\BACKEND\Route-Service\obj\Debug\net9.0\refint\Route-Service.dll
@@ -148,3 +147,4 @@ D:\PFE\CODE-BASE\BACKEND\Route-Service\obj\Debug\net9.0\Route-Service.genruntime
 D:\PFE\CODE-BASE\BACKEND\Route-Service\obj\Debug\net9.0\ref\Route-Service.dll
 D:\PFE\CODE-BASE\BACKEND\Route-Service\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\PFE\CODE-BASE\BACKEND\Route-Service\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\PFE\CODE-BASE\BACKEND\Route-Service\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

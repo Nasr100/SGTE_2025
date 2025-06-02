@@ -1,0 +1,18 @@
+
+
+    <div class="max-w-sm border-gray-200 rounded-lg shadow-sm bg-neutral-200 ">
+    
+         <div class="rounded-t-lg h-80">
+                 <app-route-map [stopPoints]="stopPoints()"></app-route-map>
+         </div>
+        <div class="p-5">
+        <a [routerLink]="['/admin/route/details',this.route()?.id]" class="flex items-center ">
+            <h5 class="mb-2 text-2xl font-bold tracking-wider  text-gray-600">{{this.route()?.name}} </h5>
+            <span class="flex w-3 h-3 me-3 mb-5  rounded-full" [ngClass]="this.route()?.isActive?'bg-green-500':'bg-red-500'"></span>
+
+
+        </a>
+        <p class="mb-3 font-normal text-gray-500">{{this.route()?.description}} </p>
+       
+        </div>
+    </div>
