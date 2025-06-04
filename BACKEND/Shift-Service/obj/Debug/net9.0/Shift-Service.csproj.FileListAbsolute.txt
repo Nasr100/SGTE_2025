@@ -1,0 +1,8 @@
+D:\PFE\CODE-BASE\BACKEND\Shift-Service\obj\Debug\net9.0\Shift-Service.csproj.AssemblyReference.cache
+D:\PFE\CODE-BASE\BACKEND\Shift-Service\obj\Debug\net9.0\Shift-Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\PFE\CODE-BASE\BACKEND\Shift-Service\obj\Debug\net9.0\Shift-Service.AssemblyInfoInputs.cache
+D:\PFE\CODE-BASE\BACKEND\Shift-Service\obj\Debug\net9.0\Shift-Service.AssemblyInfo.cs
+D:\PFE\CODE-BASE\BACKEND\Shift-Service\obj\Debug\net9.0\Shift-Service.csproj.CoreCompileInputs.cache
+D:\PFE\CODE-BASE\BACKEND\Shift-Service\obj\Debug\net9.0\Shift-Service.MvcApplicationPartsAssemblyInfo.cs
+D:\PFE\CODE-BASE\BACKEND\Shift-Service\obj\Debug\net9.0\Shift-Service.MvcApplicationPartsAssemblyInfo.cache
+D:\PFE\CODE-BASE\BACKEND\Shift-Service\obj\Debug\net9.0\Shift-Service.sourcelink.json

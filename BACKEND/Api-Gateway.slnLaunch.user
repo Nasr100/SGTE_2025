@@ -13,6 +13,10 @@
       {
         "Path": "Route-Service\\Route-Service.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "Shift-Service\\Shift-Service.csproj",
+        "Action": "Start"
       }
     ]
   }

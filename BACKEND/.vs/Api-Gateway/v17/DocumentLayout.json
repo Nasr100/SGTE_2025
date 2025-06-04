@@ -3,28 +3,36 @@
   "WorkspaceRootPath": "D:\\PFE\\CODE-BASE\\BACKEND\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|d:\\pfe\\code-base\\backend\\route-service\\reposetories\\route\\irouterepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|solutionrelative:route-service\\reposetories\\route\\irouterepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{48A993AA-41C9-4522-B6F2-EE2FBB144A74}|Shift-Service\\Shift-Service.csproj|d:\\pfe\\code-base\\backend\\shift-service\\repositories\\group\\grouprepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48A993AA-41C9-4522-B6F2-EE2FBB144A74}|Shift-Service\\Shift-Service.csproj|solutionrelative:shift-service\\repositories\\group\\grouprepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|d:\\pfe\\code-base\\backend\\route-service\\services\\route\\routeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|solutionrelative:route-service\\services\\route\\routeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{48A993AA-41C9-4522-B6F2-EE2FBB144A74}|Shift-Service\\Shift-Service.csproj|d:\\pfe\\code-base\\backend\\shift-service\\data\\shiftservicecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48A993AA-41C9-4522-B6F2-EE2FBB144A74}|Shift-Service\\Shift-Service.csproj|solutionrelative:shift-service\\data\\shiftservicecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|d:\\pfe\\code-base\\backend\\route-service\\reposetories\\route\\routerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|solutionrelative:route-service\\reposetories\\route\\routerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{48A993AA-41C9-4522-B6F2-EE2FBB144A74}|Shift-Service\\Shift-Service.csproj|d:\\pfe\\code-base\\backend\\shift-service\\repositories\\shift\\shiftrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48A993AA-41C9-4522-B6F2-EE2FBB144A74}|Shift-Service\\Shift-Service.csproj|solutionrelative:shift-service\\repositories\\shift\\shiftrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|d:\\pfe\\code-base\\backend\\route-service\\models\\routestops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|solutionrelative:route-service\\models\\routestops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4266A0C-C58F-47F9-B8D1-55F699CDDF99}|Shared\\Shared.csproj|d:\\pfe\\code-base\\backend\\shared\\dtos\\shiftdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4266A0C-C58F-47F9-B8D1-55F699CDDF99}|Shared\\Shared.csproj|solutionrelative:shared\\dtos\\shiftdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|d:\\pfe\\code-base\\backend\\route-service\\data\\routeservicecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94389265-0B1E-42E7-9988-E68D690C754F}|Route-Service\\Route-Service.csproj|solutionrelative:route-service\\data\\routeservicecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4266A0C-C58F-47F9-B8D1-55F699CDDF99}|Shared\\Shared.csproj|d:\\pfe\\code-base\\backend\\shared\\dtos\\groupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4266A0C-C58F-47F9-B8D1-55F699CDDF99}|Shared\\Shared.csproj|solutionrelative:shared\\dtos\\groupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4266A0C-C58F-47F9-B8D1-55F699CDDF99}|Shared\\Shared.csproj|d:\\pfe\\code-base\\backend\\shared\\dtos\\routestopsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4266A0C-C58F-47F9-B8D1-55F699CDDF99}|Shared\\Shared.csproj|solutionrelative:shared\\dtos\\routestopsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{48A993AA-41C9-4522-B6F2-EE2FBB144A74}|Shift-Service\\Shift-Service.csproj|d:\\pfe\\code-base\\backend\\shift-service\\repositories\\group\\igrouprepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48A993AA-41C9-4522-B6F2-EE2FBB144A74}|Shift-Service\\Shift-Service.csproj|solutionrelative:shift-service\\repositories\\group\\igrouprepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48A993AA-41C9-4522-B6F2-EE2FBB144A74}|Shift-Service\\Shift-Service.csproj|d:\\pfe\\code-base\\backend\\shift-service\\repositories\\shift\\ishiftrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48A993AA-41C9-4522-B6F2-EE2FBB144A74}|Shift-Service\\Shift-Service.csproj|solutionrelative:shift-service\\repositories\\shift\\ishiftrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48A993AA-41C9-4522-B6F2-EE2FBB144A74}|Shift-Service\\Shift-Service.csproj|d:\\pfe\\code-base\\backend\\shift-service\\models\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48A993AA-41C9-4522-B6F2-EE2FBB144A74}|Shift-Service\\Shift-Service.csproj|solutionrelative:shift-service\\models\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,96 +41,122 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 573,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 633,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IRouteRepo.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Reposetories\\Route\\IRouteRepo.cs",
-              "RelativeDocumentMoniker": "Route-Service\\Reposetories\\Route\\IRouteRepo.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Reposetories\\Route\\IRouteRepo.cs",
-              "RelativeToolTip": "Route-Service\\Reposetories\\Route\\IRouteRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T21:54:23.992Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RouteStops.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Models\\RouteStops.cs",
-              "RelativeDocumentMoniker": "Route-Service\\Models\\RouteStops.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Models\\RouteStops.cs",
-              "RelativeToolTip": "Route-Service\\Models\\RouteStops.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T21:36:26.688Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RouteRepo.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Reposetories\\Route\\RouteRepo.cs",
-              "RelativeDocumentMoniker": "Route-Service\\Reposetories\\Route\\RouteRepo.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Reposetories\\Route\\RouteRepo.cs",
-              "RelativeToolTip": "Route-Service\\Reposetories\\Route\\RouteRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T16:23:29.417Z",
-              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 639,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 629,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RouteServiceContext.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Data\\RouteServiceContext.cs",
-              "RelativeDocumentMoniker": "Route-Service\\Data\\RouteServiceContext.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Data\\RouteServiceContext.cs",
-              "RelativeToolTip": "Route-Service\\Data\\RouteServiceContext.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowDoAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T21:48:57.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RouteService.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Services\\Route\\RouteService.cs",
-              "RelativeDocumentMoniker": "Route-Service\\Services\\Route\\RouteService.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Route-Service\\Services\\Route\\RouteService.cs",
-              "RelativeToolTip": "Route-Service\\Services\\Route\\RouteService.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAA0wCcAAAApAAAAAAAAAA==",
+              "Title": "ShiftServiceContext.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Shift-Service\\Data\\ShiftServiceContext.cs",
+              "RelativeDocumentMoniker": "Shift-Service\\Data\\ShiftServiceContext.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Shift-Service\\Data\\ShiftServiceContext.cs",
+              "RelativeToolTip": "Shift-Service\\Data\\ShiftServiceContext.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAowCkAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T16:19:39.4Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-03T20:08:24.23Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "RouteStopsDto.cs",
-              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Shared\\Dtos\\RouteStopsDto.cs",
-              "RelativeDocumentMoniker": "Shared\\Dtos\\RouteStopsDto.cs",
-              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Shared\\Dtos\\RouteStopsDto.cs",
-              "RelativeToolTip": "Shared\\Dtos\\RouteStopsDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Title": "IGroupRepo.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Shift-Service\\Repositories\\Group\\IGroupRepo.cs",
+              "RelativeDocumentMoniker": "Shift-Service\\Repositories\\Group\\IGroupRepo.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Shift-Service\\Repositories\\Group\\IGroupRepo.cs",
+              "RelativeToolTip": "Shift-Service\\Repositories\\Group\\IGroupRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T21:38:50.852Z",
+              "WhenOpened": "2025-06-03T19:55:48.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GroupRepo.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Shift-Service\\Repositories\\Group\\GroupRepo.cs",
+              "RelativeDocumentMoniker": "Shift-Service\\Repositories\\Group\\GroupRepo.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Shift-Service\\Repositories\\Group\\GroupRepo.cs",
+              "RelativeToolTip": "Shift-Service\\Repositories\\Group\\GroupRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T19:55:40.103Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Group.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Shift-Service\\Models\\Group.cs",
+              "RelativeDocumentMoniker": "Shift-Service\\Models\\Group.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Shift-Service\\Models\\Group.cs",
+              "RelativeToolTip": "Shift-Service\\Models\\Group.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T17:23:19.597Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 397,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ShiftRepo.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Shift-Service\\Repositories\\Shift\\ShiftRepo.cs",
+              "RelativeDocumentMoniker": "Shift-Service\\Repositories\\Shift\\ShiftRepo.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Shift-Service\\Repositories\\Shift\\ShiftRepo.cs",
+              "RelativeToolTip": "Shift-Service\\Repositories\\Shift\\ShiftRepo.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T19:21:47.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IShiftRepo.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Shift-Service\\Repositories\\Shift\\IShiftRepo.cs",
+              "RelativeDocumentMoniker": "Shift-Service\\Repositories\\Shift\\IShiftRepo.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Shift-Service\\Repositories\\Shift\\IShiftRepo.cs",
+              "RelativeToolTip": "Shift-Service\\Repositories\\Shift\\IShiftRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T19:50:53.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GroupDto.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Shared\\Dtos\\GroupDto.cs",
+              "RelativeDocumentMoniker": "Shared\\Dtos\\GroupDto.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Shared\\Dtos\\GroupDto.cs",
+              "RelativeToolTip": "Shared\\Dtos\\GroupDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T19:26:50.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShiftDto.cs",
+              "DocumentMoniker": "D:\\PFE\\CODE-BASE\\BACKEND\\Shared\\Dtos\\ShiftDto.cs",
+              "RelativeDocumentMoniker": "Shared\\Dtos\\ShiftDto.cs",
+              "ToolTip": "D:\\PFE\\CODE-BASE\\BACKEND\\Shared\\Dtos\\ShiftDto.cs",
+              "RelativeToolTip": "Shared\\Dtos\\ShiftDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T19:22:36.01Z"
             }
           ]
         }
