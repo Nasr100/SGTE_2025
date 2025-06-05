@@ -19,8 +19,8 @@ namespace Shared.Dtos
     public class WorkerResponse
     {
         public int Id { get; set; }
-        public int? GroupId { get; set; } = null;
+        public GroupResposne? GroupResponse { get; set; } = null;
         public required EmployeeResponse Employee { get; set; }
-        public int? StopId { get; set; } = null;
+        public StopResponse? StopResponse { get; set; } = null;
     }
 }

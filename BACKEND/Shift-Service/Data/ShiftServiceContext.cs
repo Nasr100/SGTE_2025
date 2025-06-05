@@ -37,11 +37,8 @@ namespace Shift_Service.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<AdminGroup>().ToTable("AdminGroups");
-            modelBuilder.Entity<DriverGroup>().ToTable("DriverGroups");
-
-
+           base.OnModelCreating(modelBuilder);
+            
             modelBuilder
           .Entity<Models.Shift>()
           .Property(d => d.Role)
@@ -51,15 +48,15 @@ namespace Shift_Service.Data
          .Entity<Models.Shift>()
          .Property(d => d.shift)
          .HasConversion<string>();
-           
 
-
+            modelBuilder
+          .Entity<Models.Group>()
+          .Property(d => d.Role)
+          .HasConversion<string>();
 
         }
 
         public DbSet<Models.Shift> Shifts { get; set; }
-        public DbSet<Models.AdminGroup> AdminGroups { get; set; }
-        public DbSet<Models.DriverGroup> DriverGroups { get; set; } 
-        public DbSet<Models.WorkerGroup> WorkerGroups { get; set; }
+        public DbSet<Models.Group> Groups { get; set; } 
     }
 }

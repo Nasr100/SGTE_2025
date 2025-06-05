@@ -2,6 +2,6 @@
 {
     public enum ShiftTypes
     {
-        Matin,Soir,Nuit
+        Matin,Soir,Nuit,Standard
     }
 }

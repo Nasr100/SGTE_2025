@@ -14,12 +14,16 @@ namespace Shared.Dtos
         public required string Name { get; set; }
         [Required]
         public int ShiftId { get; set; }
+        [Required]
+        public required string Role { get; set; }
     }
 
     public class GroupResposne
     {
         public int Id { get; set;}
         public required string Name { get; set; }
-        public ShiftResponse? shiftResponse { get; set; }
+        public required string Role { get; set; }
+
+        public ShiftResponse? Shift { get; set; }
     }
 }

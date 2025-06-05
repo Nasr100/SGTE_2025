@@ -97,3 +97,136 @@ LIMIT @__p_1 OFFSET @__p_0
 2025-06-04 01:03:10.734 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetAllStops (Route-Service) in 22.8131ms
 2025-06-04 01:03:10.736 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetAllStops (Route-Service)'
 2025-06-04 01:03:10.740 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/Stop?page=1&pageSize=10 - 200 null application/json; charset=utf-8 39.666ms
+2025-06-04 15:39:01.467 +01:00 [INF] Now listening on: https://localhost:7025
+2025-06-04 15:39:01.493 +01:00 [INF] Now listening on: http://localhost:5067
+2025-06-04 15:39:01.545 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-04 15:39:01.564 +01:00 [INF] Hosting environment: Development
+2025-06-04 15:39:01.565 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-06-04 15:43:56.891 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - null null
+2025-06-04 15:43:56.923 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:43:56.945 +01:00 [INF] Route matched with {action = "GetStopById", controller = "Stop"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStopById(Int32) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-04 15:43:58.435 +01:00 [INF] Executed DbCommand (31ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE `s`.`id` = @__p_0
+LIMIT 1
+2025-06-04 15:43:58.623 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-04 15:43:58.632 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetStopById (Route-Service) in 1682.1322ms
+2025-06-04 15:43:58.638 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:43:58.645 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - 400 null text/plain; charset=utf-8 1755.812ms
+2025-06-04 15:46:42.523 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - null null
+2025-06-04 15:46:42.530 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:46:42.533 +01:00 [INF] Route matched with {action = "GetStopById", controller = "Stop"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStopById(Int32) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-04 15:46:42.592 +01:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE `s`.`id` = @__p_0
+LIMIT 1
+2025-06-04 15:46:42.676 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-04 15:46:42.679 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetStopById (Route-Service) in 142.86ms
+2025-06-04 15:46:42.680 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:46:42.682 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - 400 null text/plain; charset=utf-8 158.4497ms
+2025-06-04 15:46:44.601 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - null null
+2025-06-04 15:46:44.622 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:46:44.624 +01:00 [INF] Route matched with {action = "GetStopById", controller = "Stop"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStopById(Int32) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-04 15:46:44.682 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE `s`.`id` = @__p_0
+LIMIT 1
+2025-06-04 15:46:44.796 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-04 15:46:44.797 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetStopById (Route-Service) in 172.1418ms
+2025-06-04 15:46:44.798 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:46:44.800 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - 400 null text/plain; charset=utf-8 198.5608ms
+2025-06-04 15:47:19.161 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - null null
+2025-06-04 15:47:19.167 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:47:19.168 +01:00 [INF] Route matched with {action = "GetStopById", controller = "Stop"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStopById(Int32) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-04 15:47:19.182 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE `s`.`id` = @__p_0
+LIMIT 1
+2025-06-04 15:47:19.259 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-04 15:47:19.262 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetStopById (Route-Service) in 92.1805ms
+2025-06-04 15:47:19.263 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:47:19.264 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - 400 null text/plain; charset=utf-8 103.8158ms
+2025-06-04 15:48:01.371 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/stop/1 - null null
+2025-06-04 15:48:01.458 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:48:01.460 +01:00 [INF] Route matched with {action = "GetStopById", controller = "Stop"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStopById(Int32) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-04 15:48:01.469 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE `s`.`id` = @__p_0
+LIMIT 1
+2025-06-04 15:48:01.561 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-04 15:48:01.565 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetStopById (Route-Service) in 103.3079ms
+2025-06-04 15:48:01.567 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:48:01.569 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/stop/1 - 400 null text/plain; charset=utf-8 197.5386ms
+2025-06-04 15:48:01.633 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/favicon.ico - null null
+2025-06-04 15:48:01.639 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/favicon.ico - 404 0 null 6.2349ms
+2025-06-04 15:48:01.645 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/favicon.ico, Response status code: 404
+2025-06-04 15:48:21.526 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7025/api/route/stop/13 - null null
+2025-06-04 15:48:21.539 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:48:21.541 +01:00 [INF] Route matched with {action = "GetStopById", controller = "Stop"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStopById(Int32) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-04 15:48:21.554 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE `s`.`id` = @__p_0
+LIMIT 1
+2025-06-04 15:48:21.708 +01:00 [INF] Executing OkObjectResult, writing value of type 'Shared.Dtos.StopResponse'.
+2025-06-04 15:48:21.719 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetStopById (Route-Service) in 173.4178ms
+2025-06-04 15:48:21.727 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:48:21.728 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7025/api/route/stop/13 - 200 null application/json; charset=utf-8 201.9155ms
+2025-06-04 15:49:11.558 +01:00 [INF] Now listening on: https://localhost:7025
+2025-06-04 15:49:11.590 +01:00 [INF] Now listening on: http://localhost:5067
+2025-06-04 15:49:11.674 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-04 15:49:11.675 +01:00 [INF] Hosting environment: Development
+2025-06-04 15:49:11.676 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-06-04 15:49:46.575 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - null null
+2025-06-04 15:49:46.610 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:49:46.633 +01:00 [INF] Route matched with {action = "GetStopById", controller = "Stop"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStopById(Int32) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-04 15:49:47.656 +01:00 [INF] Executed DbCommand (30ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE `s`.`id` = @__p_0
+LIMIT 1
+2025-06-04 15:49:47.808 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-04 15:49:47.821 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetStopById (Route-Service) in 1183.1102ms
+2025-06-04 15:49:47.828 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:49:47.837 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - 400 null text/plain; charset=utf-8 1263.4295ms
+2025-06-04 15:50:10.467 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - null null
+2025-06-04 15:50:10.478 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:50:10.522 +01:00 [INF] Route matched with {action = "GetStopById", controller = "Stop"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStopById(Int32) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-04 15:50:10.551 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE `s`.`id` = @__p_0
+LIMIT 1
+2025-06-04 15:50:10.628 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-04 15:50:10.630 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetStopById (Route-Service) in 99.781ms
+2025-06-04 15:50:10.631 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:50:10.632 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - 400 null text/plain; charset=utf-8 165.3344ms
+2025-06-04 15:50:36.177 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - null null
+2025-06-04 15:50:36.183 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:50:36.189 +01:00 [INF] Route matched with {action = "GetStopById", controller = "Stop"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStopById(Int32) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-04 15:50:36.248 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE `s`.`id` = @__p_0
+LIMIT 1
+2025-06-04 15:50:36.352 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-04 15:50:36.368 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetStopById (Route-Service) in 174.7799ms
+2025-06-04 15:50:36.369 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:50:36.372 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/api/route/stop/1 - 400 null text/plain; charset=utf-8 194.7722ms
+2025-06-04 15:50:57.663 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/api/route/stop/13 - null null
+2025-06-04 15:50:57.667 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:50:57.672 +01:00 [INF] Route matched with {action = "GetStopById", controller = "Stop"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStopById(Int32) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-04 15:50:57.727 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE `s`.`id` = @__p_0
+LIMIT 1
+2025-06-04 15:50:57.828 +01:00 [INF] Executing OkObjectResult, writing value of type 'Shared.Dtos.StopResponse'.
+2025-06-04 15:50:57.838 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetStopById (Route-Service) in 125.2629ms
+2025-06-04 15:50:57.839 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-04 15:50:57.840 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/api/route/stop/13 - 200 null application/json; charset=utf-8 177.2118ms

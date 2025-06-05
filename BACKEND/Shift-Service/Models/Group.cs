@@ -12,6 +12,9 @@ namespace Shift_Service.Models
         public virtual Shift? Shift { get; set; }
         [Column("shift_id")]
         public int ShiftId { get; set; }
+        [Column("role")]
+
+        public Role Role { get; set; }
 
         [Column("created_at")]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

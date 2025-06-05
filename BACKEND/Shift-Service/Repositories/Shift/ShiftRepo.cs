@@ -27,7 +27,7 @@ namespace Shift_Service.Repositories.Shift
             var shifts = _context.Shifts.Where(r => !r.IsDeleted);
             return shifts;
         }
-        private async Task<Models.Shift> GetShiftById(int id)
+        public async Task<Models.Shift> GetShiftById(int id)
         {
             var shift = await _context.Shifts.Where(r => !r.IsDeleted).FirstOrDefaultAsync(r => r.Id == id) ?? throw new Exception("shift with id " + id + "not found");
             return shift;

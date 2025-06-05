@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "VtF+oeKvNfdDzDaniBBO6Vn67LJ+4Gv194VwXHlZb/Q=",
+  "Source": "Shift-Service",
+  "BasePath": "_content/Shift-Service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
