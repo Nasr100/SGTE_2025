@@ -1,0 +1,41 @@
+<div class="grid grid-cols-1 w-[900px] h-full p-7">
+    <div>
+        <h2 class="text-3xl font-bold underline">Add Trip </h2>
+    </div>
+    <div>
+        <form action="">
+             <div class="flex flex-col pt-5">
+                <div class="w-full  mb-6">
+                        <label for="" class="text-lg  font-semibold">Name</label>
+                        <input  formControlName="name" class="text-xl mt-4 w-full bg-transparent placeholder:text-slate-400 text-slate-700  border rounded-md px-3 py-3 transition duration-300 ease  hover:border-slate-300  border-neutral-300 " placeholder="Name" />
+                        <!-- <span class="text-red-400" *ngIf="routeForm.get('name')?.errors?.['required'] && routeForm.get('address')?.touched">Addresse Required</span> -->
+
+                </div>
+                  
+                <div class="flex w-full gap-x-1 items-center">
+                    <select  class="select bg-white rounded-2xl border-neutral-300 focus:outline-0 select-lg cursor-pointer">
+                            <option disabled selected>Shift</option>
+                            <option value="matin">Matin</option>
+                            <option value="soir">Soir</option>
+                            <option value="nuit">Nuit</option>
+                    </select>   
+                    <select  class="select bg-white rounded-2xl border-neutral-300 focus:outline-0 select-lg cursor-pointer">
+                            <option disabled selected>Direction</option>
+                            <option value="pickup">Pickup</option>
+                            <option value="dropoff">Dropoff</option>
+                    </select>   
+                    <select  class="select bg-white rounded-2xl border-neutral-300 focus:outline-0 select-lg cursor-pointer">
+                            <option disabled selected>Role</option>
+                            <option value="admin">Administration</option>
+                            <option value="worker">Workers</option>
+                    </select>   
+                </div>
+                 <div class="mt-5 flex justify-end">   
+                    <button  type="button"  class="active:bg-gray-900 cursor-pointer flex items-center  gap-x-4 text-white bg-gray-800 hover:bg-gray-700  font-medium rounded-lg  px-6 py-3 ">
+                        Save Trip
+                     </button>
+        </div>
+             </div>
+        </form>
+    </div>
+</div>

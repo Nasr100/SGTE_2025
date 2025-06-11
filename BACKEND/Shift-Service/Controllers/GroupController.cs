@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Dtos;
+using Shift_Service.Enums;
 using Shift_Service.Repositories.Group;
 using Shift_Service.Services.Group;
 
@@ -100,5 +101,20 @@ namespace Shift_Service.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet("shift")]
+        public async Task<ActionResult> GetGroupsByshift([FromQuery]string shift)
+        {
+            try
+            {
+                var group = await _groupService.GetDriverGroupByshift(shift);
+                return Ok(group);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }

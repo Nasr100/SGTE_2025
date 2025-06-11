@@ -41,10 +41,7 @@ namespace Route_Service.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder
-           .Entity<Bus>()
-           .Property(d => d.Status)
-           .HasConversion<string>();
+          
 
             modelBuilder
           .Entity<Stop>()
@@ -68,7 +65,6 @@ namespace Route_Service.Data
                 );
            
         }
-        public DbSet<Bus> Buses { get; set; }
         public DbSet<Stop> Stops { get; set; }
         public DbSet<Models.Route>  Routes { get; set; }
         public DbSet<RouteStops> RouteStops { get; set; }

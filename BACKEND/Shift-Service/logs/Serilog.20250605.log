@@ -482,3 +482,53 @@ SELECT ROW_COUNT();
 2025-06-05 01:39:12.439 +01:00 [INF] Application started. Press Ctrl+C to shut down.
 2025-06-05 01:39:12.443 +01:00 [INF] Hosting environment: Development
 2025-06-05 01:39:12.449 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Shift-Service
+2025-06-05 23:39:09.938 +01:00 [INF] Now listening on: https://localhost:7009
+2025-06-05 23:39:10.000 +01:00 [INF] Now listening on: http://localhost:5135
+2025-06-05 23:39:10.057 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 23:39:10.087 +01:00 [INF] Hosting environment: Development
+2025-06-05 23:39:10.114 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Shift-Service
+2025-06-05 23:42:49.293 +01:00 [INF] Now listening on: https://localhost:7009
+2025-06-05 23:42:49.318 +01:00 [INF] Now listening on: http://localhost:5135
+2025-06-05 23:42:49.369 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 23:42:49.372 +01:00 [INF] Hosting environment: Development
+2025-06-05 23:42:49.373 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Shift-Service
+2025-06-05 23:45:29.070 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7009/api/Group/1 - null null
+2025-06-05 23:45:29.108 +01:00 [INF] Executing endpoint 'Shift_Service.Controllers.GroupController.GetGroupById (Shift-Service)'
+2025-06-05 23:45:29.131 +01:00 [INF] Route matched with {action = "GetGroupById", controller = "Group"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetGroupById(Int32) on controller Shift_Service.Controllers.GroupController (Shift-Service).
+2025-06-05 23:45:30.696 +01:00 [INF] Executed DbCommand (34ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`id`, `g`.`created_at`, `g`.`is_deleted`, `g`.`name`, `g`.`role`, `g`.`shift_id`, `g`.`updated_at`, `s`.`id`, `s`.`created_at`, `s`.`end_shift`, `s`.`is_deleted`, `s`.`role`, `s`.`start_shift`, `s`.`updated_at`, `s`.`shift_type`
+FROM `Groups` AS `g`
+INNER JOIN `Shifts` AS `s` ON `g`.`shift_id` = `s`.`id`
+WHERE NOT (`g`.`is_deleted`) AND (`g`.`id` = @__id_0)
+LIMIT 1
+2025-06-05 23:45:30.798 +01:00 [ERR] GROUPE : 1
+2025-06-05 23:45:30.816 +01:00 [ERR] GROUPE : Soir
+2025-06-05 23:45:30.952 +01:00 [INF] Executing OkObjectResult, writing value of type 'Shared.Dtos.GroupResposne'.
+2025-06-05 23:45:31.007 +01:00 [INF] Executed action Shift_Service.Controllers.GroupController.GetGroupById (Shift-Service) in 1867.4212ms
+2025-06-05 23:45:31.038 +01:00 [INF] Executed endpoint 'Shift_Service.Controllers.GroupController.GetGroupById (Shift-Service)'
+2025-06-05 23:45:31.078 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7009/api/Group/1 - 200 null application/json; charset=utf-8 2009.2142ms
+2025-06-05 23:46:27.522 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7009/api/Group/1 - null null
+2025-06-05 23:46:27.531 +01:00 [INF] Executing endpoint 'Shift_Service.Controllers.GroupController.GetGroupById (Shift-Service)'
+2025-06-05 23:46:27.533 +01:00 [INF] Route matched with {action = "GetGroupById", controller = "Group"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetGroupById(Int32) on controller Shift_Service.Controllers.GroupController (Shift-Service).
+2025-06-05 23:46:27.563 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`id`, `g`.`created_at`, `g`.`is_deleted`, `g`.`name`, `g`.`role`, `g`.`shift_id`, `g`.`updated_at`, `s`.`id`, `s`.`created_at`, `s`.`end_shift`, `s`.`is_deleted`, `s`.`role`, `s`.`start_shift`, `s`.`updated_at`, `s`.`shift_type`
+FROM `Groups` AS `g`
+INNER JOIN `Shifts` AS `s` ON `g`.`shift_id` = `s`.`id`
+WHERE NOT (`g`.`is_deleted`) AND (`g`.`id` = @__id_0)
+LIMIT 1
+2025-06-05 23:46:27.614 +01:00 [ERR] GROUPE : 1
+2025-06-05 23:46:27.638 +01:00 [ERR] GROUPE : Soir
+2025-06-05 23:46:27.645 +01:00 [INF] Executing OkObjectResult, writing value of type 'Shared.Dtos.GroupResposne'.
+2025-06-05 23:46:27.654 +01:00 [INF] Executed action Shift_Service.Controllers.GroupController.GetGroupById (Shift-Service) in 117.526ms
+2025-06-05 23:46:27.658 +01:00 [INF] Executed endpoint 'Shift_Service.Controllers.GroupController.GetGroupById (Shift-Service)'
+2025-06-05 23:46:27.659 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7009/api/Group/1 - 200 null application/json; charset=utf-8 137.3804ms
+2025-06-05 23:50:44.053 +01:00 [INF] Now listening on: https://localhost:7009
+2025-06-05 23:50:44.080 +01:00 [INF] Now listening on: http://localhost:5135
+2025-06-05 23:50:44.129 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 23:50:44.130 +01:00 [INF] Hosting environment: Development
+2025-06-05 23:50:44.132 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Shift-Service
+2025-06-05 23:57:06.130 +01:00 [INF] Now listening on: https://localhost:7009
+2025-06-05 23:57:06.157 +01:00 [INF] Now listening on: http://localhost:5135
+2025-06-05 23:57:06.224 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 23:57:06.225 +01:00 [INF] Hosting environment: Development
+2025-06-05 23:57:06.226 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Shift-Service

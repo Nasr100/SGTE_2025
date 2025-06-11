@@ -10,6 +10,7 @@ namespace Shift_Service.Services.Group
         public  Task<GroupResposne> GetGroupById(int id);
         public  Task DeleteGroup(int id);
         public Task<GroupResposne> UpdateGroup(int id, GroupRequest groupRequest);
+        public Task<GroupResposne> GetDriverGroupByshift(string shift);
 
         public Task<GroupResposne> GetGroupsByRole(string Role);
 

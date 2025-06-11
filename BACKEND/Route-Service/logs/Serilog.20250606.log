@@ -1,0 +1,77 @@
+2025-06-06 00:00:15.713 +01:00 [INF] Now listening on: https://localhost:7025
+2025-06-06 00:00:15.752 +01:00 [INF] Now listening on: http://localhost:5067
+2025-06-06 00:00:15.818 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 00:00:15.820 +01:00 [INF] Hosting environment: Development
+2025-06-06 00:00:15.821 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-06-06 00:01:10.698 +01:00 [INF] Now listening on: https://localhost:7025
+2025-06-06 00:01:10.750 +01:00 [INF] Now listening on: http://localhost:5067
+2025-06-06 00:01:10.866 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 00:01:10.867 +01:00 [INF] Hosting environment: Development
+2025-06-06 00:01:10.869 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-06-06 00:06:26.521 +01:00 [INF] Now listening on: https://localhost:7025
+2025-06-06 00:06:26.559 +01:00 [INF] Now listening on: http://localhost:5067
+2025-06-06 00:06:26.637 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 00:06:26.638 +01:00 [INF] Hosting environment: Development
+2025-06-06 00:06:26.639 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-06-06 00:06:54.595 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/api/Employee/13 - null null
+2025-06-06 00:06:54.639 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/api/Employee/13 - 404 0 null 45.2488ms
+2025-06-06 00:06:54.655 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/api/Employee/13, Response status code: 404
+2025-06-06 00:06:56.480 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/api/Employee/13 - null null
+2025-06-06 00:06:56.488 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/api/Employee/13 - 404 0 null 8.3105ms
+2025-06-06 00:06:56.492 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/api/Employee/13, Response status code: 404
+2025-06-06 00:07:30.525 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/api/route/stop/14 - null null
+2025-06-06 00:07:30.531 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-06 00:07:30.551 +01:00 [INF] Route matched with {action = "GetStopById", controller = "Stop"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStopById(Int32) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-06 00:07:31.668 +01:00 [INF] Executed DbCommand (27ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE `s`.`id` = @__p_0
+LIMIT 1
+2025-06-06 00:07:31.793 +01:00 [INF] Executing OkObjectResult, writing value of type 'Shared.Dtos.StopResponse'.
+2025-06-06 00:07:31.834 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetStopById (Route-Service) in 1274.8026ms
+2025-06-06 00:07:31.859 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-06 00:07:31.872 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/api/route/stop/14 - 200 null application/json; charset=utf-8 1347.7174ms
+2025-06-06 00:12:25.545 +01:00 [INF] Now listening on: https://localhost:7025
+2025-06-06 00:12:25.598 +01:00 [INF] Now listening on: http://localhost:5067
+2025-06-06 00:12:25.677 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 00:12:25.679 +01:00 [INF] Hosting environment: Development
+2025-06-06 00:12:25.680 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-06-06 00:17:49.739 +01:00 [INF] Now listening on: https://localhost:7025
+2025-06-06 00:17:49.787 +01:00 [INF] Now listening on: http://localhost:5067
+2025-06-06 00:17:49.863 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 00:17:49.864 +01:00 [INF] Hosting environment: Development
+2025-06-06 00:17:49.865 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-06-06 00:19:17.949 +01:00 [INF] Now listening on: https://localhost:7025
+2025-06-06 00:19:17.985 +01:00 [INF] Now listening on: http://localhost:5067
+2025-06-06 00:19:18.052 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 00:19:18.054 +01:00 [INF] Hosting environment: Development
+2025-06-06 00:19:18.055 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-06-06 00:21:07.867 +01:00 [INF] Now listening on: https://localhost:7025
+2025-06-06 00:21:07.899 +01:00 [INF] Now listening on: http://localhost:5067
+2025-06-06 00:21:07.977 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 00:21:07.979 +01:00 [INF] Hosting environment: Development
+2025-06-06 00:21:07.980 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Route-Service
+2025-06-06 00:21:12.141 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/api/route/Stop/14 - null null
+2025-06-06 00:21:12.179 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-06 00:21:12.199 +01:00 [INF] Route matched with {action = "GetStopById", controller = "Stop"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStopById(Int32) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-06 00:21:13.215 +01:00 [INF] Executed DbCommand (32ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE `s`.`id` = @__p_0
+LIMIT 1
+2025-06-06 00:21:13.368 +01:00 [INF] Executing OkObjectResult, writing value of type 'Shared.Dtos.StopResponse'.
+2025-06-06 00:21:13.384 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetStopById (Route-Service) in 1180.6193ms
+2025-06-06 00:21:13.389 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-06 00:21:13.398 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/api/route/Stop/14 - 200 null application/json; charset=utf-8 1258.7346ms
+2025-06-06 00:21:16.901 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7025/api/route/Stop/14 - null null
+2025-06-06 00:21:16.909 +01:00 [INF] Executing endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-06 00:21:16.912 +01:00 [INF] Route matched with {action = "GetStopById", controller = "Stop"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStopById(Int32) on controller Route_Service.Controllers.StopController (Route-Service).
+2025-06-06 00:21:16.972 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`id`, `s`.`address`, `s`.`CreatedAt`, `s`.`description`, `s`.`is_deleted`, `s`.`name`, `s`.`status`, `s`.`updated_at`, `s`.`longitude`, `s`.`latitude`
+FROM `Stops` AS `s`
+WHERE `s`.`id` = @__p_0
+LIMIT 1
+2025-06-06 00:21:16.975 +01:00 [INF] Executing OkObjectResult, writing value of type 'Shared.Dtos.StopResponse'.
+2025-06-06 00:21:16.977 +01:00 [INF] Executed action Route_Service.Controllers.StopController.GetStopById (Route-Service) in 60.3497ms
+2025-06-06 00:21:16.978 +01:00 [INF] Executed endpoint 'Route_Service.Controllers.StopController.GetStopById (Route-Service)'
+2025-06-06 00:21:16.980 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7025/api/route/Stop/14 - 200 null application/json; charset=utf-8 78.8164ms

@@ -17,19 +17,23 @@ namespace Shared.Dtos
         public required string LastName { get; set; }
         [Required]
         public required string Address { get; set; }
-
+        [Required]
+        public string Role { get; set; }
+        
         [Required]
         [Phone]
         public required string PhoneNumber { get; set; }
         [Required]
         public required string BadgeNumber { get; set; }
-        public bool IsAdmin { get; set; } = false;
         [Required]
         [EmailAddress]
         public required string Email { get; set; }
         [Required]
         [MinLength(8)]
         public required string Password { get; set; }
+        public string Status { get; set; } = "active";
+        public int? StopId {  get; set; }
+        public int? GroupId { get; set; }
     }
 
 
@@ -40,10 +44,13 @@ namespace Shared.Dtos
         public required string LastName { get; set; }
         public required string PhoneNumber { get; set; }
         public required string Address { get; set; }
-        public bool IsAdmin { get; set; }
-
+        public string Role { get; set; }
         public required string BadgeNumber { get; set; }
         public required string Email { get; set; }
+        public string Status { get; set; } 
+        public StopResponse? Stop { get; set; }
+        public GroupResposne? Group {  get; set; } 
+
         public required string Password { get; set; }
     }
 }

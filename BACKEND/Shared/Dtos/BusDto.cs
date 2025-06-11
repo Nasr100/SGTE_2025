@@ -12,20 +12,16 @@ namespace Shared.Dtos
     {
         [Required]
         public required string Number { get; set; }
+        public string BusStatus { get; set; } = "active";
         [Required]
-        public required string Plate { get; set; }
-        public int? RouteId { get; set; }
-        public short? StartYear { get; set; }
-        public string? Status { get; set; }
+        public int Capacity { get; set; }
     }
 
     public class BusResponse
     {
         public int Id { get; set; }
         public required string Number { get; set; }
-        public required string Plate { get; set; }
-        public RouteStopsResponse? RouteStops { get; set; }
-        public short? StartYear { get; set; }
-        public string? Status { get; set; }
+        public required string BusStatus { get; set; } 
+        public int Capacity { get; set; }
     }
 }

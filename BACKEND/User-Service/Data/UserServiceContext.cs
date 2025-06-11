@@ -43,20 +43,27 @@ namespace User_Service.Data
            .Property(d => d.Status)
            .HasConversion<string>();
 
-
             modelBuilder
-           .Entity<Driver>()
-           .Property(d => d.PermisType)
+           .Entity<Employee>()
+           .Property(d => d.Role)
            .HasConversion<string>();
+
+          
+
+
+            // modelBuilder
+            //.Entity<Driver>()
+            //.Property(d => d.PermisType)
+            //.HasConversion<string>();
 
 
             //modelBuilder.Entity<Employee>().HasMany(d => d.Roles).WithMany(d => d.Employees).UsingEntity("roles_employees");
 
         }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Driver> Drivers { get; set; }
-        public DbSet<Worker> Workers { get; set; }
-        public DbSet<Administration> Administrations { get; set; }  
+        //public DbSet<Driver> Drivers { get; set; }
+        //public DbSet<Worker> Workers { get; set; }
+        //public DbSet<Administration> Administrations { get; set; }  
         //public DbSet<Role> Roles { get; set; }
     }
 }

@@ -54,6 +54,18 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "GeoCoordinate.NetCore": {
+              "target": "Package",
+              "version": "[1.0.0.1, )"
+            },
+            "Google.OrTools": {
+              "target": "Package",
+              "version": "[9.13.4784, )"
+            },
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.31.1, )"
+            },
             "Gridify": {
               "target": "Package",
               "version": "[2.16.3, )"

@@ -2,8 +2,8 @@
 {
     public enum  RolesEnum
     {
-        Worker,
-        Driver,
-        Administration
+        worker,
+        driver,
+        admin
     }
 }

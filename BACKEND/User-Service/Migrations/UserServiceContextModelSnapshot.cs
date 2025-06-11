@@ -22,66 +22,6 @@ namespace User_Service.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("User_Service.Models.Administration", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Departement")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("departement");
-
-                    b.Property<int>("EmployeeId")
-                        .HasColumnType("int")
-                        .HasColumnName("employee_id");
-
-                    b.Property<int?>("StopId")
-                        .HasColumnType("int")
-                        .HasColumnName("stop_id");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EmployeeId");
-
-                    b.ToTable("Administrations");
-                });
-
-            modelBuilder.Entity("User_Service.Models.Driver", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("EmployeeId")
-                        .HasColumnType("int")
-                        .HasColumnName("employee_id");
-
-                    b.Property<string>("LicenceNumber")
-                        .IsRequired()
-                        .HasMaxLength(16)
-                        .HasColumnType("varchar(16)")
-                        .HasColumnName("licence_number");
-
-                    b.Property<string>("PermisType")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("permis_type");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EmployeeId");
-
-                    b.ToTable("Drivers");
-                });
-
             modelBuilder.Entity("User_Service.Models.Employee", b =>
                 {
                     b.Property<int>("Id")
@@ -109,7 +49,8 @@ namespace User_Service.Migrations
                         .HasColumnName("badge_number");
 
                     b.Property<DateTime>("Created_at")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("created_at");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -120,6 +61,9 @@ namespace User_Service.Migrations
                         .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("first_name");
+
+                    b.Property<int?>("GroupId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)")
@@ -148,82 +92,26 @@ namespace User_Service.Migrations
                         .HasColumnType("datetime(6)")
                         .HasColumnName("refresh_token_expiry");
 
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("role");
+
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("status");
 
-                    b.Property<DateTime?>("Updated_at")
-                        .HasColumnType("datetime(6)");
+                    b.Property<int?>("StopId")
+                        .HasColumnType("int");
 
-                    b.Property<bool>("isAdmin")
-                        .HasColumnType("tinyint(1)")
-                        .HasColumnName("is_admin");
+                    b.Property<DateTime?>("Updated_at")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("updated_at");
 
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
-                });
-
-            modelBuilder.Entity("User_Service.Models.Worker", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("EmployeeId")
-                        .HasColumnType("int")
-                        .HasColumnName("employee_id");
-
-                    b.Property<int?>("GroupId")
-                        .HasColumnType("int")
-                        .HasColumnName("group_id");
-
-                    b.Property<int?>("StopId")
-                        .HasColumnType("int")
-                        .HasColumnName("stop_id");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EmployeeId");
-
-                    b.ToTable("Workers");
-                });
-
-            modelBuilder.Entity("User_Service.Models.Administration", b =>
-                {
-                    b.HasOne("User_Service.Models.Employee", "Employee")
-                        .WithMany()
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Employee");
-                });
-
-            modelBuilder.Entity("User_Service.Models.Driver", b =>
-                {
-                    b.HasOne("User_Service.Models.Employee", "Employee")
-                        .WithMany()
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Employee");
-                });
-
-            modelBuilder.Entity("User_Service.Models.Worker", b =>
-                {
-                    b.HasOne("User_Service.Models.Employee", "Employee")
-                        .WithMany()
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Employee");
                 });
 #pragma warning restore 612, 618
         }

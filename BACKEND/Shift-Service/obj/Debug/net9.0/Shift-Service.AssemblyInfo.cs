@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Shift-Service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22203313f6cfdec252924a6514d51097ab5738e4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a6f2da945d1e5bbafe9b790d558c5b3b44b4c17")]
 [assembly: System.Reflection.AssemblyProductAttribute("Shift-Service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Shift-Service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

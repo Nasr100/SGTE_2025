@@ -16,10 +16,13 @@ import { AddStopComponent } from "../../features/Stops/admin/add-stop/add-stop.c
 import { RouteAdminComponent } from "../../features/Routes/admin/route-admin/route-admin.component";
 import { RouteMapComponent } from "../../shared/components/route-map/route-map.component";
 import { DetailsRouteComponent } from "../../features/Routes/admin/details-route/details-route.component";
+import { HomeTripsComponent } from "../../features/Trips/admin/home-trips/home-trips.component";
+import { TripDetailsComponent } from "../../features/Trips/admin/trip-details/trip-details.component";
+import { MinitripCardComponent } from "../../features/Minitrips/admin/minitrip-card/minitrip-card.component";
 
 @Component({
   selector: 'app-admin-layout',
-  imports: [HeaderComponent, SideBarComponent, RouterOutlet, AdministrationsComponent, FORM_IMPORTS, DriverAdminComponent, AdministartionDetailComponent, MapComponent, MapCardComponent, StopAdminComponent, StopFormComponent, AddFormComponent, StopDetailComponent, AddStopComponent, RouteAdminComponent, RouteMapComponent, DetailsRouteComponent],
+  imports: [HeaderComponent, SideBarComponent, RouterOutlet, AdministrationsComponent, FORM_IMPORTS, DriverAdminComponent, AdministartionDetailComponent, MapComponent, MapCardComponent, StopAdminComponent, StopFormComponent, AddFormComponent, StopDetailComponent, AddStopComponent, RouteAdminComponent, RouteMapComponent, DetailsRouteComponent, HomeTripsComponent, TripDetailsComponent, MinitripCardComponent],
   templateUrl: './admin-layout.component.html',
   styleUrl: './admin-layout.component.css'
 })

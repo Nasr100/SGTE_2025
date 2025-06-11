@@ -18,7 +18,7 @@ namespace Shift_Service.Repositories.Group
         public async Task<GroupResposne> AddGroup(GroupRequest group)
         {
             var shift = _context.Shifts.Find(group.ShiftId);
-          
+
             if (shift.Role.ToString().Equals(group.Role))
             {
                 var groupModel = group.Adapt<Models.Group>();
@@ -27,19 +27,19 @@ namespace Shift_Service.Repositories.Group
                 return groupModel.Adapt<GroupResposne>();
             }
             throw new Exception("shift and group have different roles");
-           
+
         }
 
         public IQueryable<Models.Group> GetAllGroups()
         {
-            var groups = _context.Groups.Where(r => !r.IsDeleted).Include(r=>r.Shift);
-            
+            var groups = _context.Groups.Where(r => !r.IsDeleted).Include(r => r.Shift);
+
             return groups;
         }
 
         public async Task<Models.Group> GetGroupById(int id)
         {
-            var group = await _context.Groups.Include(r=>r.Shift).Where(r => !r.IsDeleted).FirstOrDefaultAsync(r => r.Id == id) ?? throw new Exception("shift with id " + id + "not found");
+            var group = await _context.Groups.Include(r => r.Shift).Where(r => !r.IsDeleted).FirstOrDefaultAsync(r => r.Id == id) ?? throw new Exception("shift with id " + id + "not found");
             return group;
         }
 

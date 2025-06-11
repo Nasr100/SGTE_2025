@@ -13,6 +13,9 @@ namespace User_Service.Models
         public required string FirstName { get; set; }
         [Column("address")]
         public required string Address {  get; set; }
+        [Column("role")]
+        [Required]
+        public RolesEnum Role { get; set; }
         [Required]
         [Column("last_name")]
         public required string LastName { get; set; }
@@ -43,10 +46,15 @@ namespace User_Service.Models
         public StatusEnum Status { get; set; } = StatusEnum.active;
         [Column("is_deleted")]
         public bool IsDeleted { get; set; } = false;
+        [Column("created_at")]
         public DateTime Created_at { get; set; } = DateTime.UtcNow;
+        [Column("updated_at")]
         public DateTime? Updated_at { get; set; } = null;
-        [Column("is_admin")]
-        public bool isAdmin { get; set; }
+
+        public int? StopId {  get; set; }
+        public int? GroupId { get; set; }
+        
+        
 
 
 

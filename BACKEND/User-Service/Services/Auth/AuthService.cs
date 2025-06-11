@@ -7,17 +7,18 @@ using System.Linq;
 using Shared.Dtos;
 using User_Service.Repositories.Employee;
 using User_Service.Data;
+using User_Service.Services.Employee;
 
 
 namespace User_Service.Services.Auth
 {
-    public class AuthService(IConfiguration configuration, IEmployeeRepo _employeeRepo, UserServiceContext _context,ILogger<AuthService> _logger) : IAuthService
+    public class AuthService(IConfiguration configuration, IEmployeeService _employeeService, UserServiceContext _context,ILogger<AuthService> _logger) : IAuthService
     {
        
         public async Task<object> Login(AuthRequest AuthReq)
         {
 
-            var employee = await _employeeRepo.GetByEmail(AuthReq.Email);
+            var employee = await _employeeService.GetEmployeeByEmail(AuthReq.Email);
             if (employee != null && employee.Password == AuthReq.Password)
             {
                 string accessToken = GenerateAccessToken(employee);
@@ -51,15 +52,11 @@ namespace User_Service.Services.Auth
             {
                 new Claim(ClaimTypes.NameIdentifier, employee.Id.ToString()),
                 new Claim(ClaimTypes.Email, employee.Email),
-               
+                new Claim(ClaimTypes.Role, employee.Role.ToString())
+
             };
-            if (employee.isAdmin)
-            {
-                claims.Add(new Claim(ClaimTypes.Role, "Admin"));
-            }
-
-        
-
+            
+ 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtSettings:SecretKey"]!));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -98,7 +95,7 @@ namespace User_Service.Services.Auth
 
         public async Task<string> checkRefreshToken(string RefreshToken)
         {
-            var employee = await _employeeRepo.GetByRefreshToken(RefreshToken);
+            var employee = await _employeeService.GetByRefreshToken(RefreshToken);
             if (employee.RefreshTokenExpiry < DateTime.UtcNow)
             {
                 throw new Exception("refresh token expired");

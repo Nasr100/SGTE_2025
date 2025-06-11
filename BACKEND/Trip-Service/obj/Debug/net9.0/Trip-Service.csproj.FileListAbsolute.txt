@@ -1,0 +1,8 @@
+D:\PFE\CODE-BASE\BACKEND\Trip-Service\obj\Debug\net9.0\Trip-Service.csproj.AssemblyReference.cache
+D:\PFE\CODE-BASE\BACKEND\Trip-Service\obj\Debug\net9.0\Trip-Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\PFE\CODE-BASE\BACKEND\Trip-Service\obj\Debug\net9.0\Trip-Service.AssemblyInfoInputs.cache
+D:\PFE\CODE-BASE\BACKEND\Trip-Service\obj\Debug\net9.0\Trip-Service.AssemblyInfo.cs
+D:\PFE\CODE-BASE\BACKEND\Trip-Service\obj\Debug\net9.0\Trip-Service.csproj.CoreCompileInputs.cache
+D:\PFE\CODE-BASE\BACKEND\Trip-Service\obj\Debug\net9.0\Trip-Service.MvcApplicationPartsAssemblyInfo.cs
+D:\PFE\CODE-BASE\BACKEND\Trip-Service\obj\Debug\net9.0\Trip-Service.MvcApplicationPartsAssemblyInfo.cache
+D:\PFE\CODE-BASE\BACKEND\Trip-Service\obj\Debug\net9.0\Trip-Service.sourcelink.json

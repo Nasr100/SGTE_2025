@@ -116,6 +116,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Shift_Service.Controllers.GroupController",
+    "Method": "GetGroupsByshift",
+    "RelativePath": "api/Group/shift",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shift",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Shift_Service.Controllers.ShiftController",
     "Method": "GetAllShifts",
     "RelativePath": "api/Shift",

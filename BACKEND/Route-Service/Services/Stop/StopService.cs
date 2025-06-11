@@ -44,5 +44,7 @@ namespace Route_Service.Services.Stop
         {
             await _stopRepo.DeleteStop(id);
         }
+
+        
     }
 }

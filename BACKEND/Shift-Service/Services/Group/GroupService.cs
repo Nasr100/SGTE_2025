@@ -58,7 +58,17 @@ namespace Shift_Service.Services.Group
             return groups.Adapt<GroupResposne>();
         }
 
-       
+        public async Task<GroupResposne> GetDriverGroupByshift(string shift)
+        {
+            var DriverGroups =  _GroupRepo.GetAllGroups().Where(g => g.Role.ToString() == "driver");
+           var group =  await DriverGroups.FirstOrDefaultAsync(dg => dg.Shift.shift.ToString() == shift);
+
+            //var group = await _GroupRepo.GetAllGroups().Where(g => g.Shift.shift.ToString().Equals(shift)).ToListAsync();
+            //_logger.LogError("GROUP"+group.)
+            return group.Adapt<GroupResposne>();
+        }
+
+
 
 
     }

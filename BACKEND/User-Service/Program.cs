@@ -3,16 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using User_Service.Data;
-using User_Service.Repositories.Administration;
-using User_Service.Services.Administration;
+
 using Scalar.AspNetCore;
 using Serilog;
 using User_Service.Repositories.Employee;
 using User_Service.Services.Auth;
-using User_Service.Repositories.Driver;
-using User_Service.Services.Driver;
-using User_Service.Repositories.Worker;
-using User_Service.Services.Worker;
+
+using User_Service.Services.Employee;
+using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,16 +18,34 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration));
 //services
-builder.Services.AddScoped<IAdministrationRepo,AdministrationRepo>();
-builder.Services.AddScoped<IDriverRepo, DriverRepo>();
-builder.Services.AddScoped<IEmployeeRepo, EmployeeRepo>();
-builder.Services.AddScoped<IWorkerRepo,WorkerRepo>();
 
-builder.Services.AddScoped<IAdministrationService, AdministrationService>();
-builder.Services.AddScoped<IDriverService, DriverService>();
-builder.Services.AddScoped<IWorkerService, WorkerService>();
+builder.Services.AddScoped<IEmployeeRepo, EmployeeRepo>();
+
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
 
 builder.Services.AddScoped<IAuthService,AuthService>();
+
+
+
+
+
+builder.Services.AddMassTransit(x =>
+{
+
+x.UsingRabbitMq((context, cfg) =>
+{
+    cfg.Host("localhost", "/", h =>
+    {
+        h.Username("guest");
+        h.Password("guest");
+    });
+
+    cfg.ConfigureEndpoints(context);
+});
+
+
+
 
 builder.Services.AddCors(options =>
 {
