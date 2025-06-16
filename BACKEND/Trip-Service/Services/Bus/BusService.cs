@@ -7,7 +7,7 @@ using Trip_Service.Repositories.Bus;
 
 namespace Trip_Service.Services.Bus
 {
-    public class BusService
+    public class BusService : IBusService
     {
         private readonly IBusRepo _busRepo;
 

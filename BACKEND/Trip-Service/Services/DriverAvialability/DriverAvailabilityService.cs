@@ -27,7 +27,7 @@ namespace Trip_Service.Services.DriverAvialability
             var drivers = await _httpClient.GetFromJsonAsync<List<EmployeeResponse>>($"{EmployeeServiceUrl}Employee/group/{group.Id}");
 
             var busyDriverIds = await _context.minitrips
-      .Where(mt => mt.Trip.Date.Date == tripDate.Date)
+      
       .Select(mt => mt.DriverId)
       .Distinct().ToListAsync();
      

@@ -1,0 +1,6 @@
+2025-06-14 22:12:43.575 +01:00 [INF] Bus started: "rabbitmq://localhost/"
+2025-06-14 22:12:43.610 +01:00 [INF] Now listening on: https://localhost:7235
+2025-06-14 22:12:43.617 +01:00 [INF] Now listening on: http://localhost:5091
+2025-06-14 22:12:43.670 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-14 22:12:43.672 +01:00 [INF] Hosting environment: Development
+2025-06-14 22:12:43.672 +01:00 [INF] Content root path: D:\PFE\CODE-BASE\BACKEND\Trip-Service

@@ -1,3 +1,4 @@
+import { MinitripResponse } from "./minitrip.dto";
 
 export interface TripRequest{
     name:string;
@@ -13,4 +14,5 @@ export interface TripResponse{
     direction:string;
     type:string;
     shift:string;
+    miniTrips:MinitripResponse[];
 }

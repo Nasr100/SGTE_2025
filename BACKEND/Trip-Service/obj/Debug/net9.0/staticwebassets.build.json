@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Et69P7dYJfYhagciiLsRUZMXIn/EyyTK5jKIXfT3WxQ=",
+  "Source": "Trip-Service",
+  "BasePath": "_content/Trip-Service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

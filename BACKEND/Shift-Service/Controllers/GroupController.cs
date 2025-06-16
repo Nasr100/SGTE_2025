@@ -89,7 +89,7 @@ namespace Shift_Service.Controllers
         }
 
         [HttpGet("role")]
-        public async Task<ActionResult> GetGroupsByRole(string role)
+        public async Task<ActionResult> GetGroupsByRole([FromQuery]string role)
         {
             try
             {

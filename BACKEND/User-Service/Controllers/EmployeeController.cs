@@ -86,12 +86,40 @@ namespace User_Service.Controllers
             }
         }
 
-        [HttpGet("group/{id}")]
+        [HttpGet("group/{groupId}")]
         public async Task<ActionResult> GetDriversByGroupId(int groupId)
         {
             try
             {
                 var employees = await _employeeService.GetDriversByGroupId(groupId);
+                return Ok(employees);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("/Trip")]
+        public async Task<ActionResult> GetEmployeesByTripShiftRole([FromQuery] string shift, [FromQuery] string Role)
+        {
+            try
+            {
+                var employees = await _employeeService.GetEmployeesByShift(shift,Role);
+                return Ok(employees);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> GetEmployeeByRole([FromQuery]string role)
+        {
+            try
+            {
+                var employees = await _employeeService.GetEmployeeByRole(role);
                 return Ok(employees);
             }
             catch (Exception ex)

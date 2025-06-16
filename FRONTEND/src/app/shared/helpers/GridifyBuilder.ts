@@ -1,7 +1,7 @@
 import { Pagination } from "./pagination";
 
 export class GridifyBuilder{
-     pagination:Pagination;
+     pagination:Pagination|null;
     private conditions: string[][] ;
     private orderBy: string[][];
 
@@ -56,7 +56,7 @@ export class GridifyBuilder{
             orderBy:OrderByquery
         };
     }
-    setPagination(pagination:Pagination){
+    setPagination(pagination:Pagination|null){
         this.pagination = pagination;
     }
 }

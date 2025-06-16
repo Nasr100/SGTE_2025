@@ -3,9 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 using Serilog;
 using Trip_Service.Data;
+using Trip_Service.Repositories.AssignedEmpolyees;
 using Trip_Service.Repositories.Bus;
 using Trip_Service.Repositories.MiniTrip;
 using Trip_Service.Repositories.Trip;
+using Trip_Service.Services.AssignEmployees;
+using Trip_Service.Services.Bus;
 using Trip_Service.Services.Minitrip;
 using Trip_Service.Services.Trip;
 
@@ -16,61 +19,68 @@ builder.Host.UseSerilog((context, configuration) =>
 builder.Services.AddScoped<IMinitripRepo, MiniTripRepo>();
 builder.Services.AddScoped<ITripRepo, TripRepo>();
 builder.Services.AddScoped<IBusRepo, BusRepo>();
+builder.Services.AddScoped<IAssignedEmployeeRepo, AssignedEmployeesRepo>();
 
 builder.Services.AddScoped<IMinitripService,MinitripService>();
 builder.Services.AddScoped<ITripService, TripService>();
+builder.Services.AddScoped<IBusService, BusService>();
+builder.Services.AddScoped<IAssignEmployeeService, AssignEmployeeService>();
+
 
 
 
 
 builder.Services.AddMassTransit(x =>
 {
-x.UsingRabbitMq((context, cfg) =>
-{
-    cfg.Host("localhost", "/", h =>
+    x.UsingRabbitMq((context, cfg) =>
     {
-        h.Username("guest");
-        h.Password("guest");
+        cfg.Host("localhost", "/", h =>
+        {
+            h.Username("guest");
+            h.Password("guest");
+        });
+
+        cfg.ConfigureEndpoints(context);
+    });
+});
+    builder.Services.AddCors(options =>
+    {
+        options.AddPolicy("AllowAngularDevClient",
+            builder =>
+            {
+                builder
+                    .WithOrigins("http://localhost:4200") // Angular dev server
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
+            });
     });
 
-    cfg.ConfigureEndpoints(context);
-});
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAngularDevClient",
-        builder =>
-        {
-            builder
-                .WithOrigins("http://localhost:4200") // Angular dev server
-                .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowCredentials();
-        });
-});
+    builder.Services.AddDbContext<TripServiceContext>(options =>
+      options.UseMySql(builder.Configuration.GetConnectionString("default"),
+        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("default")))
+    );
+    builder.Services.AddControllers();
+    // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+    builder.Services.AddOpenApi();
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
+    var app = builder.Build();
 
-builder.Services.AddDbContext<TripServiceContext>(options =>
-  options.UseMySql(builder.Configuration.GetConnectionString("default"),
-    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("default")))
-);
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-var app = builder.Build();
+    // Configure the HTTP request pipeline.
+    if (app.Environment.IsDevelopment())
+    {
+        app.MapOpenApi();
+        app.MapScalarApiReference();
+    }
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-    app.MapScalarApiReference();
-}
+    app.UseHttpsRedirection();
+    app.UseCors("AllowAngularDevClient");
 
-app.UseHttpsRedirection();
-app.UseCors("AllowAngularDevClient");
+    app.UseAuthorization();
 
-app.UseAuthorization();
+    app.MapControllers();
 
-app.MapControllers();
+    app.Run();
 
-app.Run();
+

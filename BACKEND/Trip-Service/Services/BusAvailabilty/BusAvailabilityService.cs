@@ -41,7 +41,7 @@ namespace Trip_Service.Services.BusAvailabilty
                         .Select(mt => mt.BusId)
                         .Distinct()
                         .ToListAsync()
-                    : new List<int?>();
+                    : new List<int>();
 
                 // 4. Filter available buses
                 return allActiveBuses
@@ -87,8 +87,7 @@ namespace Trip_Service.Services.BusAvailabilty
         {
             // Buses with overlapping minitrips (excluding current bus if specified)
             var overlappingBusIds = await _context.minitrips
-                .Where(mt => miniTripStart < mt.EndTime &&
-                             miniTripEnd > mt.StartTime &&
+                .Where(mt => 
                              mt.BusId != excludedBusId)
                 .Select(mt => mt.BusId)
                 .Distinct()
@@ -102,13 +101,12 @@ namespace Trip_Service.Services.BusAvailabilty
                     .Select(mt => mt.BusId)
                     .Distinct()
                     .ToListAsync()
-                : new List<int?>();
+                : new List<int>();
 
             // Combine and return as hashset for efficient lookup
             return overlappingBusIds
                 .Union(nextShiftBusIds)
-                .Where(id => id.HasValue)
-                .Select(id => id.Value)
+                .Select(id => id)
                 .ToHashSet();
         }
 
@@ -157,8 +155,7 @@ namespace Trip_Service.Services.BusAvailabilty
             // 2. Check for time conflicts
             var hasTimeConflict = await _context.minitrips
                 .AnyAsync(mt => mt.BusId == busId &&
-                                miniTripStart < mt.EndTime &&
-                                miniTripEnd > mt.StartTime &&
+                               
                                 mt.Id != currentMiniTripId); // For update scenarios
 
             if (hasTimeConflict)

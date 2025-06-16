@@ -50,7 +50,13 @@ namespace Trip_Service.Data
             modelBuilder.Entity<Models.Trip>()
               .Property(t => t.TripRole)
               .HasConversion<string>();
+            modelBuilder.Entity<Models.Trip>()
+             .Property(t => t.Direction)
+             .HasConversion<string>();
 
+            modelBuilder.Entity<Models.Trip>()
+       .HasIndex(e => new { e.RouteId, e.Shift, e.Direction})
+       .IsUnique();
         }
 
        public DbSet<Bus> buses {  get; set; }

@@ -27,12 +27,12 @@ namespace Trip_Service.Controllers
             }
         }
 
-        [HttpGet("trip/{id}")]
-        public async Task<ActionResult> GetMiniTripByTrip(int id)
+        [HttpGet("trip/{Tripid}")]
+        public async Task<ActionResult> GetMiniTripByTrip(int Tripid)
         {
             try
             {
-                var minitrips = await _minitripService.GetMiniTripByTrip(id);
+                var minitrips = await _minitripService.GetMiniTripByTrip(Tripid);
                 return Ok(minitrips);
             }
             catch (Exception ex)
@@ -68,6 +68,22 @@ namespace Trip_Service.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPost]
+
+        public async Task<ActionResult> AddMiniTrip(MinitripRequest minitripRequest)
+        {
+            try
+            {
+                var minitrip = await _minitripService.AddMiniTrip( minitripRequest);
+                return Ok(minitrip);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
 
     }
 }

@@ -15,8 +15,13 @@ namespace Trip_Service.Services.Trip
 
         public async Task<TripResponse> AddTrip(TripRequest tripRequest)
         {
-            var trip = await _tripRepo.AddTrip(tripRequest);
-            return trip;
+           //bool x =  checkTripShiftAlreadyExist(tripRequest);
+            
+                var trip = await _tripRepo.AddTrip(tripRequest);
+                return trip;
+            
+            //throw new Exception("Trip already exist in this shift");
+
         }
 
         public async Task<TripResponse> GetTripById(int id)
@@ -40,6 +45,16 @@ namespace Trip_Service.Services.Trip
             var trip = await _tripRepo.UpdateTrip(id, tripRequest);
             return trip;
         }
+
+        //private bool checkTripShiftRouteAlreadyExist(TripRequest tripRequest)
+        //{
+        //    var trips = _tripRepo.GetAllTrips().Where(t=>t.Shift.ToString().Equals(tripRequest.Shift));
+        //    if (trips.Any()) 
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
 
     }
 }

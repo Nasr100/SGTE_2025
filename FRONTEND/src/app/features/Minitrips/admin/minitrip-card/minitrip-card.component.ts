@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,input } from '@angular/core';
 import { FORM_IMPORTS } from '../../../../shared/imports/Form.imports';
 import { RouterModule } from '@angular/router';
+import { MinitripResponse } from '../../../../shared/types/Dtos/minitrip.dto';
 
 @Component({
   selector: 'app-minitrip-card',
@@ -9,5 +10,6 @@ import { RouterModule } from '@angular/router';
   styleUrl: './minitrip-card.component.css'
 })
 export class MinitripCardComponent {
-
+  minitrip = input<MinitripResponse|null>();
+  constructor(){}
 }

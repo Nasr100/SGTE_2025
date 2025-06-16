@@ -6,7 +6,7 @@ using Trip_Service.Data;
 
 namespace Trip_Service.Repositories.AssignedEmpolyees
 {
-    public class AssignedEmployeesRepo
+    public class AssignedEmployeesRepo : IAssignedEmployeeRepo
     {
         private readonly TripServiceContext _TripServiceContext;
         public AssignedEmployeesRepo(TripServiceContext TripServiceContext)

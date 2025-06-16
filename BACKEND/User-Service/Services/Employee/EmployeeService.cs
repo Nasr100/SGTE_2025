@@ -17,6 +17,7 @@ namespace User_Service.Services.Employee
         public readonly ILogger<EmployeeService> _logger;
         private string StopServiceBaseUrl = "https://localhost:7025/api";
         private string GroupServiceBaseUrl = "https://localhost:7009/api";
+        string shiftServiceUrl = "https://localhost:7009/api/";
         private HttpClient _httpClient;
         public EmployeeService(IEmployeeRepo EmployeeRepo, ILogger<EmployeeService> logger)
         {
@@ -148,6 +149,34 @@ namespace User_Service.Services.Employee
             {
                 throw new Exception("Group shift not found");
             } 
+        }
+
+        public async Task<List<EmployeeResponse>> GetEmployeeByRole(string role)
+        {
+            var employees = await _EmployeeRepo.GetAllEmployees().Where(e=>e.Role.ToString() == role).ToListAsync();
+            return employees.Adapt<List<EmployeeResponse>>();
+        }
+
+        public async Task<List<EmployeeResponse>> GetAvailableDriversAsync(string shift, DateTime tripDate)
+        {
+            var group = await _httpClient.GetFromJsonAsync<GroupResposne>($"{shiftServiceUrl}Group/Group/shift?shift={shift}");
+            if(group != null)
+            {
+                var drivers = await GetDriversByGroupId(group.Id);
+
+            }
+
+            var busyDriverIds = await _context.minitrips
+      .Where(mt => mt.Trip.Date.Date == tripDate.Date)
+      .Select(mt => mt.DriverId)
+      .Distinct().ToListAsync();
+
+            // Step 4: Filter out busy drivers
+            var availableDrivers = drivers
+                .Where(d => !busyDriverIds.Contains(d.Id))
+                .ToList();
+
+            return availableDrivers;
         }
     }
 }

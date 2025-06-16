@@ -79,7 +79,7 @@ namespace Trip_Service.Repositories.Bus
                         .Select(mt => mt.BusId)
                         .Distinct()
                         .ToListAsync()
-                    : new List<int?>();
+                    : new List<int>();
 
                 // 4. Filter available buses
                 return allActiveBuses

@@ -13,6 +13,10 @@ namespace User_Service.Services.Employee
         public Task<Models.Employee> GetEmployeeByEmail(string email);
         public Task<Models.Employee> GetByRefreshToken(string RefreshToken);
         public  Task<EmployeeResponse> GetDriversByGroupId(int groupId);
+        public  Task<List<EmployeeResponse>> GetEmployeesByShift(string Tripshift, string TripRole);
+        public  Task<List<EmployeeResponse>> GetEmployeeByRole(string role);
+
+
 
 
 

@@ -1,0 +1,77 @@
+<div class="w-[1000px] px-5">
+    <div class="w-full flex items-center flex-col border-b-1 border-gray-300 p-2">
+        <!-- <label for="" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label> -->
+         <input
+            type="text"
+            placeholder="Name"
+            autocomplete="email"
+            aria-label="" 
+             [(ngModel)]="MinitripName"
+            class="block w-full max-w-[700px] rounded-2xl border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"
+          />
+    </div>
+    <div class="grid grid-cols-2 gap-5 ">
+        <div class="w-full border-b-1 border-gray-300">
+        <div class=" pt-5">
+            <label for="" class="block mb-2 text-sm font-medium text-gray-900 ">Bus</label>
+
+         <input
+            type="text"
+            placeholder="Choose Bus"
+            autocomplete="email"
+            aria-label=""  [(ngModel)]="busInput" (input)="busSearch()"
+            class="block w-full rounded-2xl border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"
+          />
+        <div class="mt-5 w-full ">
+            <ul class="w-full   overflow-y-auto max-h-[250px] ">
+                <li class="py-3 pl-3  cursor-pointer mb-3  transition hover:bg-gray-200 rounded-2xl" (click)="onBusclick(bus.id)" *ngFor="let bus of filteredBuses">
+                    <div class="flex items-center">
+                        <div class="flex-1 min-w-0 ">
+                            <p class=" font-medium text-gray-900 truncate " >{{bus.number}}</p>
+                        </div>
+                        <svg *ngIf="bus.isChecked" class="w-[24px] h-[24px] text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 11.917 9.724 16.5 19 7.5"/>
+                        </svg>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+ </div>
+        <div class="w-full border-b-1 border-gray-300">
+        <div class=" pt-5">
+            <label for="" class="block mb-2 text-sm font-medium text-gray-900 ">Drivers</label>
+
+         <input
+            type="text"
+            placeholder="Choose Driver"
+            autocomplete="email"
+            aria-label="" 
+            (input)="driverSearch()" [(ngModel)]="driverInput"
+            class="block w-full rounded-2xl border  border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/3 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5"
+          />
+        <div class="mt-5 w-full ">
+            <ul class="w-full   overflow-y-auto max-h-[250px] ">
+                <li class="py-3 pl-3  cursor-pointer mb-3  transition hover:bg-gray-200 rounded-2xl" (click)="onDriverclick(driver.id)" *ngFor="let driver of this.filteredDrivers">
+                    <div class="flex items-center">
+                        <div class="flex-1 min-w-0 ">
+                            <p class=" font-medium text-gray-900 truncate ">{{driver.firstName}} {{driver.lastName}}</p>
+                        </div>
+                        <svg *ngIf="driver.isChecked" class="w-[24px] h-[24px] text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 11.917 9.724 16.5 19 7.5"/>
+                        </svg>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+ </div>
+   
+    </div>
+     <div class="mt-5 flex justify-end">
+        <button (click)="onSubmit()" type="button" class="text-white cursor-pointer bg-gray-800 hover:bg-gray-900 active:bg-gray-700  font-medium rounded-lg text-sm px-10 py-3 me-2 mb-2 dark:bg-gray-800 ">+ Add Minitrip</button>
+
+    </div>
+</div>

@@ -15,13 +15,13 @@ namespace Shared.Dtos
         [Required]
         public string Direction { get; set; }
         [Required]
-        public string type { get; set; }
-        [Required]
         public string Shift { get; set; }
         [Required]
         public string TripRole { get; set; }
         [Required]
         public string Name { get; set; }
+        [Required]
+        public int RouteId { get; set; }
 
     }
     public class TripResponse
@@ -29,10 +29,10 @@ namespace Shared.Dtos
         public int Id { get; set; }
         //public string Date { get; set; } 
         public string Direction { get; set; }
-        public string type { get; set; }
-        public string Name { get; set; }
         public string Shift { get; set; }
+        public string Name { get; set; }
         public string TripRole { get; set; }
+        public RouteResponse Route { get; set; }
 
 
         public List<MinitripResponse> Minitrips { get; set; }
@@ -43,10 +43,10 @@ namespace Shared.Dtos
         public int Id { get; set; }
         //public string Date { get; set; }
         public string Direction { get; set; }
-        public string type { get; set; }
         public string Name { get; set; }
         public string Shift { get; set; }
         public string TripRole { get; set; }
+        public RouteResponse Route { get; set; }
 
 
 

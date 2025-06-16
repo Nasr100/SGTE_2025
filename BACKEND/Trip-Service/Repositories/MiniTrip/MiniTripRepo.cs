@@ -1,14 +1,17 @@
-﻿using Mapster;
+﻿using System.Collections.Generic;
+using Mapster;
 using Microsoft.EntityFrameworkCore;
 using Shared.Dtos;
 using Trip_Service.Data;
+using Trip_Service.Models;
 
 namespace Trip_Service.Repositories.MiniTrip
 {
     public class MiniTripRepo:IMinitripRepo
     {
         private readonly TripServiceContext _context;
-
+        private readonly HttpClient _httpClient;
+        string userServieBaseUrl = "https://localhost:7115";
         public MiniTripRepo(TripServiceContext context)
         {
             _context = context;
@@ -25,8 +28,19 @@ namespace Trip_Service.Repositories.MiniTrip
 
         public async  Task<List<MinitripResponse>> GetMiniTripByTrip(int TripId)
         {
-            var miniTrips =await _context.minitrips.Where(mt => !mt.IsDeleted && mt.TripId == TripId).Include(mt=>mt.Trip).ToListAsync();
-            return miniTrips.Adapt<List<MinitripResponse>>();
+           
+            var miniTripsModel =await _context.minitrips.Where(mt => !mt.IsDeleted && mt.TripId == TripId).Include(mt=>mt.Bus).ToListAsync();
+            var minitrips = miniTripsModel.Adapt<List<MinitripResponse>>();
+            foreach (var minitrip in minitrips)
+            {
+                var driver =await GetDriverById(minitrip.Driver.Id);
+                if (driver != null)
+                {
+                    minitrip.Driver = driver;
+                }
+            }
+           
+            return minitrips;
         }
         public async Task<Models.MiniTrip> GetMinitripById(int id)
         {
@@ -47,6 +61,16 @@ namespace Trip_Service.Repositories.MiniTrip
             minitripRequest.Adapt(minitrip);
             await _context.SaveChangesAsync();
             return minitrip.Adapt<MinitripResponse>();
+        }
+
+        private async Task<EmployeeResponse?> GetDriverById(int id)
+        {
+            var employee =await _httpClient.GetFromJsonAsync<EmployeeResponse>($"{userServieBaseUrl}/{id}");
+            if (employee == null)
+            {
+                throw new Exception($"employee with id {id} not found");
+            }
+            return employee;
         }
     }
 }

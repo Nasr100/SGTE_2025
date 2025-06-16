@@ -1,27 +1,33 @@
-import { Role } from "../models/Role.model";
+import { GroupResponse } from "./group.dto";
+import { StopResponse } from "./stop.dto";
 
 export interface EmployeeRequest{
      firstName:string;
      lastName:string;
      phoneNumber:string;
      badgeNumber:string;
-    //  roles:Array<Role>;
+     role:string;
      email:string;
      password:string;
-     address:string
-     isAdmin:boolean;
+     address:string;
+     status:string;
+     stopId:number;
+     groupId:number;
 
 } 
 export interface EmployeeResponse{
-    id:number;
+     id:number;
      firstName:string;
      lastName:string;
      phoneNumber:string;
      badgeNumber:string;
-    //  roles:Array<Role>;
+     role:string;
      email:string;
      password:string;
-     address:string
-     isAdmin:boolean;
+     address:string;
+     status:string;
+     stop:StopResponse;
+     group:GroupResponse;
+
 
 } 

@@ -23,7 +23,10 @@ namespace Trip_Service.Models
         public DateTime? UpdatedAt { get; set; } = null;
         [Column("is_deleted")]
         public bool IsDeleted { get; set; } = false;
-        public List<MiniTrip>? MiniTrips { get; set; } 
-        
+        public List<MiniTrip>? MiniTrips { get; set; }
+        [Column("route_id")]
+        public int RouteId { get; set; }
+
+
     }
 }

@@ -1,3 +1,8 @@
+<ng-template #addForm >
+    <app-minitrip-form></app-minitrip-form>
+</ng-template>
+
+
 <div class="p-5">
     <div class="flex justify-between">
         <h2 class="text-3xl font-semibold underline pb-3">Trip Details</h2>
@@ -50,6 +55,12 @@
     <div class="pt-5">
          <div class="flex justify-between">
             <h2 class="text-3xl font-semibold underline pb-3">MiniTrips</h2>
+            <button type="button" (click)="AddMinitrip()" class="text-white cursor-pointer bg-gray-800 hover:bg-gray-900 active:bg-gray-700  font-medium rounded-lg text-sm px-6 py-3 me-2 mb-2 dark:bg-gray-800 ">+ Add</button>
+
+        </div>
+        <div class="grid grid-cols-4 gap-5">
+                <app-minitrip-card *ngFor="let minitrip of this.minitrips" [minitrip]="minitrip"></app-minitrip-card>
+                
         </div>
     </div>
    
